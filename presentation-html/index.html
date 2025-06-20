@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Fund Investing Workshop - Tech Professional's Guide</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Header -->
+        <header class="presentation-header">
+            <div class="header-left">
+                <h1 class="presentation-title">MF Investing Workshop</h1>
+            </div>
+            <div class="header-center">
+                <div class="slide-counter">
+                    <span id="slide-counter">1 / 28</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="slide-overview" class="control-btn" title="Slide Overview">
+                    📋
+                </button>
+                <button id="speaker-notes-toggle" class="control-btn" title="Toggle Speaker Notes">
+                    📝
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle Theme">
+                    🌙
+                </button>
+                <button id="fullscreen-toggle" class="control-btn" title="Toggle Fullscreen">
+                    ⛶
+                </button>
+            </div>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 3.57%;"></div>
+        </div>        <!-- Main Slide Container -->
+        <main class="slide-main">
+            <div id="slide-container" class="slide-container">
+                <!-- Slides will be dynamically loaded here -->
+            </div>
+        </main>
+
+        <!-- Navigation Controls -->
+        <nav class="slide-navigation">
+            <button id="prev-slide" class="nav-btn prev-btn" title="Previous Slide (←)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15,18 9,12 15,6"></polyline>
+                </svg>
+                <span>Previous</span>
+            </button>            <div class="slide-info">
+                <div class="slide-progress">
+                    <span id="current-slide-number">1</span> of <span id="total-slides">28</span>
+                </div>
+            </div>
+            
+            <button id="next-slide" class="nav-btn next-btn" title="Next Slide (→)">
+                <span>Next</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9,18 15,12 9,6"></polyline>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Speaker Notes Panel -->
+        <aside id="speaker-notes-panel" class="speaker-notes-panel">
+            <div class="notes-header">
+                <h3>Speaker Notes</h3>
+                <button id="notes-close" class="close-btn">&times;</button>
+            </div>
+            <div id="speaker-notes-content" class="notes-content">
+                <p>Speaker notes will appear here...</p>
+            </div>
+        </aside>
+
+        <!-- Slide Overview Modal -->
+        <div id="slide-overview-modal" class="modal-overlay" style="display: none;">
+            <div class="modal-content slide-overview-content">
+                <div class="modal-header">
+                    <h2>Slide Overview</h2>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div id="overview-grid" class="overview-grid">
+                    <!-- Overview grid will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>    </div><!-- JavaScript Files -->
+    <script>
+        // Robust presentation initialization
+        console.log('🚀 Initializing Mutual Fund Workshop Presentation');
+        
+        // Check if we're on a proper server or file:// protocol
+        const isFileProtocol = window.location.protocol === 'file:';
+        const isLocalServer = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.port;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide error display initially
+            const errorDisplay = document.getElementById('error-display');
+            if (errorDisplay) {
+                errorDisplay.style.display = 'none';
+            }
+            
+            if (isFileProtocol) {
+                console.log('📄 File protocol detected - using minimal presentation system');
+                showWorkingPresentation();
+            } else {
+                console.log('🌐 Server detected - attempting to load modular system');
+                loadModularSystem();
+            }
+        });
+        
+        // Working presentation for file:// protocol
+        function showWorkingPresentation() {
+            const slideContainer = document.getElementById('slide-container');
+            if (slideContainer) {
+                slideContainer.innerHTML = `
+                    <div class="slide active" style="display: flex; flex-direction: column; height: 100%; padding: 2rem;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <h1 style="font-size: 3rem; color: #2c5282; margin-bottom: 1rem;">🚀 Mutual Fund Workshop</h1>
+                            <h2 style="font-size: 1.8rem; color: #4a5568; margin-bottom: 2rem;">Tech Professional's Guide to MF Investing</h2>
+                        </div>
+                        
+                        <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                            <div style="max-width: 800px; text-align: center;">
+                                <div style="background: #f7fafc; padding: 2rem; border-radius: 1rem; margin-bottom: 2rem; border-left: 4px solid #3182ce;">
+                                    <h3 style="color: #2d3748; margin-bottom: 1rem;">✅ Presentation Ready!</h3>
+                                    <p style="color: #4a5568; margin-bottom: 1rem;">Welcome to the Mutual Fund Investing Workshop.</p>
+                                    
+                                    <div style="text-align: left; margin: 1rem 0;">
+                                        <h4 style="color: #2c5282;">📋 What We'll Cover Today:</h4>
+                                        <ul style="color: #4a5568; line-height: 1.6;">
+                                            <li><strong>🎯 Investment Goals:</strong> Define your financial objectives</li>
+                                            <li><strong>📊 MF Fundamentals:</strong> Understanding mutual funds like code libraries</li>
+                                            <li><strong>🤖 SIP Strategies:</strong> Automate your investments</li>
+                                            <li><strong>⚖️ Portfolio Construction:</strong> Build your diversified stack</li>
+                                            <li><strong>📈 Performance Tracking:</strong> Monitor and optimize</li>
+                                            <li><strong>💰 Tax Optimization:</strong> Maximize your returns</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div style="background: #e6fffa; padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid #38b2ac;">
+                                    <h4 style="color: #2c7a7b; margin-bottom: 0.5rem;">🚀 Ready to Start Your Investment Journey?</h4>
+                                    <p style="color: #4a5568;">This presentation will transform how you think about mutual fund investing using concepts familiar to tech professionals.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <p style="color: #718096; font-size: 0.9rem;">
+                                💡 For the full interactive experience with individual slides, 
+                                <br>run <code style="background: #e2e8f0; padding: 0.25rem 0.5rem; border-radius: 0.25rem;">start-presentation.bat</code> 
+                                or use VS Code Live Server
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }            // Update navigation
+            updatePresentationStatus('Ready ✅', 1, 1);
+            
+            // Setup navigation buttons
+            setupNavigationButtons();
+        }
+        
+        // Try to load modular system for servers
+        function loadModularSystem() {
+            // Load the modular scripts
+            const scripts = [
+                'assets/js/slideLoader.js',
+                'assets/js/presentation.js',
+                'assets/js/navigation.js'
+            ];
+            
+            let loaded = 0;
+            scripts.forEach(src => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.onload = () => {
+                    loaded++;
+                    if (loaded === scripts.length) {
+                        initializeModularSystem();
+                    }
+                };
+                script.onerror = () => {
+                    console.warn(`Failed to load ${src}`);
+                    showWorkingPresentation();
+                };
+                document.head.appendChild(script);
+            });
+        }
+        
+        // Initialize the modular system
+        function initializeModularSystem() {
+            try {
+                if (typeof SlideLoader !== 'undefined') {
+                    window.slideLoader = new SlideLoader();
+                    console.log('✅ Modular SlideLoader initialized');
+                } else {
+                    console.log('⚠️ SlideLoader not available, using working presentation');
+                    showWorkingPresentation();
+                }
+            } catch (error) {
+                console.error('❌ Error with modular system:', error);
+                showWorkingPresentation();
+            }
+        }        // Update presentation status
+        function updatePresentationStatus(status, current, total) {
+            // Update header slide counter
+            const slideCounter = document.getElementById('slide-counter');
+            if (slideCounter) {
+                slideCounter.textContent = status;
+            }
+            
+            // Update navigation slide numbers
+            const currentSlideNumber = document.getElementById('current-slide-number');
+            const totalSlides = document.getElementById('total-slides');
+            if (currentSlideNumber) currentSlideNumber.textContent = current;
+            if (totalSlides) totalSlides.textContent = total;
+            
+            console.log(`Presentation Status: ${status} - Slide ${current}/${total}`);
+        }
+        
+        // Handle any errors gracefully
+        window.addEventListener('error', function(e) {
+            console.error('Presentation Error:', e.error);
+            showWorkingPresentation();
+        });
+        
+        // Simple navigation functionality
+        function setupNavigationButtons() {
+            const prevBtn = document.getElementById('prev-slide');
+            const nextBtn = document.getElementById('next-slide');
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    console.log('Previous slide clicked');
+                    // For now, just log - can be expanded for actual slide navigation
+                });
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    console.log('Next slide clicked');
+                    // For now, just log - can be expanded for actual slide navigation
+                });
+            }
+        }
+    </script>
+</body>
+</html>

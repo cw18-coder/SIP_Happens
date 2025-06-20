@@ -1,0 +1,706 @@
+/* Responsive Design Styles */
+
+/* Base Mobile-First Approach */
+.slide {
+  padding: var(--space-lg);
+}
+
+.slide-title {
+  font-size: 2rem;
+  margin-bottom: var(--space-lg);
+}
+
+.slide-subtitle {
+  font-size: 1rem;
+  margin-bottom: var(--space-lg);
+}
+
+/* Extra Small Devices (phones, 576px and down) */
+@media (max-width: 575.98px) {
+  .slide {
+    padding: var(--space-md);
+  }
+  
+  .slide-title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  
+  .slide-subtitle {
+    font-size: 0.875rem;
+  }
+  
+  .main-title {
+    font-size: 2rem !important;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem !important;
+  }
+  
+  .presentation-nav {
+    top: var(--space-xs);
+    right: var(--space-xs);
+    left: var(--space-xs);
+    padding: var(--space-xs);
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .nav-controls {
+    order: 2;
+  }
+  
+  .nav-tools {
+    order: 1;
+    justify-content: center;
+  }
+  
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .sidebar {
+    order: -1;
+  }
+  
+  .hook-point {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+  
+  .hook-point .icon {
+    font-size: 1.5rem;
+  }
+  
+  .microservices-diagram {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .service-card {
+    padding: var(--space-md);
+  }
+  
+  .service-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+  
+  .trinity-triangle {
+    width: 280px;
+    height: 200px;
+  }
+  
+  .trinity-point {
+    min-width: 100px;
+    padding: var(--space-sm);
+  }
+  
+  .trinity-point h3 {
+    font-size: 0.75rem;
+  }
+  
+  .trinity-point p {
+    font-size: 0.625rem;
+  }
+  
+  .trinity-center {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .center-text {
+    font-size: 0.625rem;
+  }
+  
+  .triage-matrix {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .matrix-item {
+    padding: var(--space-lg);
+  }
+  
+  .fund-grid,
+  .debt-fund-grid,
+  .hybrid-fund-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .fund-card,
+  .debt-card,
+  .hybrid-card {
+    padding: var(--space-md);
+  }
+  
+  .category-title {
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+  
+  .final-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .final-title {
+    font-size: 1.75rem;
+  }
+  
+  .terminal-window {
+    margin-top: var(--space-lg);
+  }
+  
+  .terminal-content {
+    padding: var(--space-md);
+    font-size: 0.75rem;
+  }
+  
+  .challenge-step {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+  
+  .code-content {
+    padding: var(--space-md);
+    font-size: 0.75rem;
+  }
+  
+  .title-slide {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    text-align: center;
+  }
+  
+  .title-visual {
+    order: -1;
+  }
+}
+
+/* Small Devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .slide {
+    padding: var(--space-lg);
+  }
+  
+  .slide-title {
+    font-size: 2.25rem;
+  }
+  
+  .main-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .subtitle {
+    font-size: 1.75rem !important;
+  }
+  
+  .presentation-nav {
+    top: var(--space-sm);
+    right: var(--space-sm);
+    padding: var(--space-sm);
+  }
+  
+  .microservices-diagram {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  
+  .trinity-triangle {
+    width: 350px;
+    height: 280px;
+  }
+  
+  .trinity-point {
+    min-width: 120px;
+  }
+  
+  .trinity-center {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .fund-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  
+  .debt-fund-grid,
+  .hybrid-fund-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .slide {
+    padding: var(--space-xl);
+  }
+  
+  .slide-title {
+    font-size: 2.5rem;
+  }
+  
+  .main-title {
+    font-size: 3rem !important;
+  }
+  
+  .subtitle {
+    font-size: 2rem !important;
+  }
+  
+  .content-grid {
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .trinity-triangle {
+    width: 400px;
+    height: 320px;
+  }
+  
+  .trinity-point {
+    min-width: 140px;
+  }
+  
+  .triage-matrix {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .microservices-diagram {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  
+  .fund-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  
+  .debt-fund-grid,
+  .hybrid-fund-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  
+  .final-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .slide {
+    padding: var(--space-2xl);
+  }
+  
+  .slide-title {
+    font-size: 2.75rem;
+  }
+  
+  .main-title {
+    font-size: 3.5rem !important;
+  }
+  
+  .subtitle {
+    font-size: 2.25rem !important;
+  }
+  
+  .trinity-triangle {
+    width: 450px;
+    height: 360px;
+  }
+  
+  .trinity-point {
+    min-width: 160px;
+  }
+  
+  .microservices-diagram {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .fund-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .debt-fund-grid,
+  .hybrid-fund-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .slide {
+    padding: var(--space-3xl);
+  }
+  
+  .slide-title {
+    font-size: 3rem;
+  }
+  
+  .main-title {
+    font-size: 4rem !important;
+  }
+  
+  .subtitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .trinity-triangle {
+    width: 500px;
+    height: 400px;
+  }
+  
+  .trinity-point {
+    min-width: 180px;
+  }
+  
+  .microservices-diagram {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .fund-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .debt-fund-grid,
+  .hybrid-fund-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+/* Ultra Wide Screens (1400px and up) */
+@media (min-width: 1400px) {
+  .slide-content {
+    max-width: 1400px;
+  }
+  
+  .slide-title {
+    font-size: 3.5rem;
+  }
+  
+  .main-title {
+    font-size: 4.5rem !important;
+  }
+  
+  .microservices-diagram {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  
+  .fund-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+/* Landscape Orientation */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  .slide {
+    padding: var(--space-md) var(--space-xl);
+  }
+  
+  .slide-title {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+  }
+  
+  .slide-subtitle {
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+  }
+  
+  .presentation-nav {
+    top: var(--space-xs);
+    right: var(--space-xs);
+    padding: var(--space-xs);
+  }
+  
+  .trinity-triangle {
+    width: 350px;
+    height: 250px;
+  }
+  
+  .trinity-point {
+    padding: var(--space-sm);
+  }
+  
+  .trinity-center {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .hook-point {
+    padding: var(--space-md);
+  }
+  
+  .service-card,
+  .fund-card,
+  .debt-card,
+  .hybrid-card {
+    padding: var(--space-md);
+  }
+  
+  .matrix-item {
+    padding: var(--space-md);
+  }
+  
+  .final-title {
+    font-size: 2rem;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .terminal-content {
+    min-height: 120px;
+  }
+}
+
+/* High Density Displays */
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+       screen and (min-resolution: 192dpi) {
+  .slide-title,
+  .main-title,
+  .subtitle {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .nav-btn,
+  .tool-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .service-card:hover,
+  .fund-card:hover,
+  .debt-card:hover,
+  .hybrid-card:hover {
+    transform: none;
+  }
+  
+  .trinity-point:hover {
+    transform: none;
+  }
+  
+  .matrix-item:hover {
+    transform: none;
+  }
+  
+  .interactive:hover {
+    transform: none;
+  }
+}
+
+/* Print Optimizations */
+@media print {
+  .slide {
+    page-break-after: always;
+    padding: 1.5cm;
+    min-height: auto;
+    height: auto;
+  }
+  
+  .slide-title {
+    font-size: 24pt;
+    margin-bottom: 12pt;
+  }
+  
+  .slide-subtitle {
+    font-size: 14pt;
+    margin-bottom: 18pt;
+  }
+  
+  .main-title {
+    font-size: 32pt !important;
+  }
+  
+  .subtitle {
+    font-size: 20pt !important;
+  }
+  
+  .microservices-diagram,
+  .fund-grid,
+  .debt-fund-grid,
+  .hybrid-fund-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12pt;
+  }
+  
+  .service-card,
+  .fund-card,
+  .debt-card,
+  .hybrid-card {
+    break-inside: avoid;
+    padding: 12pt;
+    margin-bottom: 6pt;
+  }
+  
+  .triage-matrix {
+    grid-template-columns: 1fr;
+    gap: 18pt;
+  }
+  
+  .matrix-item {
+    break-inside: avoid;
+    padding: 12pt;
+  }
+  
+  .trinity-triangle {
+    width: 300px;
+    height: 200px;
+  }
+  
+  .trinity-point {
+    min-width: 100px;
+    padding: 8pt;
+  }
+  
+  .trinity-center {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .code-content {
+    font-size: 10pt;
+    padding: 8pt;
+  }
+  
+  .terminal-content {
+    font-size: 10pt;
+    padding: 8pt;
+  }
+  
+  .final-grid {
+    grid-template-columns: 1fr;
+    gap: 18pt;
+  }
+  
+  .challenge-step {
+    break-inside: avoid;
+  }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .fund-card,
+  .debt-card,
+  .hybrid-card,
+  .matrix-item,
+  .trinity-point,
+  .interactive {
+    transition: none !important;
+  }
+  
+  .service-card:hover,
+  .fund-card:hover,
+  .debt-card:hover,
+  .hybrid-card:hover,
+  .matrix-item:hover,
+  .trinity-point:hover,
+  .interactive:hover {
+    transform: none !important;
+  }
+}
+
+/* Container Queries Support (Future-proofing) */
+@supports (container-type: inline-size) {
+  .slide-content {
+    container-type: inline-size;
+  }
+  
+  @container (max-width: 600px) {
+    .microservices-diagram,
+    .fund-grid,
+    .debt-fund-grid,
+    .hybrid-fund-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @container (min-width: 900px) {
+    .microservices-diagram {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .fund-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+/* Flexible Grid Systems */
+.responsive-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.responsive-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.responsive-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+@media (max-width: 767.98px) {
+  .responsive-grid-auto,
+  .responsive-grid-2,
+  .responsive-grid-3 {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* Utility Classes for Responsive Design */
+.text-center-mobile {
+  text-align: left;
+}
+
+@media (max-width: 767.98px) {
+  .text-center-mobile {
+    text-align: center;
+  }
+}
+
+.hide-mobile {
+  display: block;
+}
+
+@media (max-width: 767.98px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+.show-mobile {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .show-mobile {
+    display: block !important;
+  }
+}
+
+.full-width-mobile {
+  width: auto;
+}
+
+@media (max-width: 767.98px) {
+  .full-width-mobile {
+    width: 100% !important;
+  }
+}
