@@ -234,13 +234,12 @@ class SlideLoader {
         
         // Trigger slide change event
         this.triggerSlideChangeEvent(slideNumber, slideData.config);
-    }
-
-    updateSlideCounter(slideNumber) {
-        const slideCounter = document.getElementById('slide-counter');
-        if (slideCounter) {
-            slideCounter.textContent = `${slideNumber} / ${this.totalSlides}`;
-        }
+    }    updateSlideCounter(slideNumber) {
+        // Update the bottom navigation counter
+        const currentSlideNumber = document.getElementById('current-slide-number');
+        const totalSlides = document.getElementById('total-slides');
+        if (currentSlideNumber) currentSlideNumber.textContent = slideNumber;
+        if (totalSlides) totalSlides.textContent = this.totalSlides;
 
         const progressBar = document.querySelector('.progress-bar');
         if (progressBar) {

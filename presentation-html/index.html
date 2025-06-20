@@ -18,15 +18,9 @@
 </head>
 <body>
     <div class="presentation-container">
-        <!-- Header -->
-        <header class="presentation-header">
+        <!-- Header -->        <header class="presentation-header">
             <div class="header-left">
                 <h1 class="presentation-title">MF Investing Workshop</h1>
-            </div>
-            <div class="header-center">
-                <div class="slide-counter">
-                    <span id="slide-counter">1 / 28</span>
-                </div>
             </div>
             <div class="header-right">
                 <button id="slide-overview" class="control-btn" title="Slide Overview">
@@ -222,13 +216,7 @@
             }
         }        // Update presentation status
         function updatePresentationStatus(status, current, total) {
-            // Update header slide counter
-            const slideCounter = document.getElementById('slide-counter');
-            if (slideCounter) {
-                slideCounter.textContent = status;
-            }
-            
-            // Update navigation slide numbers
+            // Update navigation slide numbers at the bottom
             const currentSlideNumber = document.getElementById('current-slide-number');
             const totalSlides = document.getElementById('total-slides');
             if (currentSlideNumber) currentSlideNumber.textContent = current;
