@@ -10,6 +10,9 @@ class SlideLoader {
         this.init();
     }    async init() {
         try {
+            // Load preferred theme first
+            this.loadPreferredTheme();
+            
             await this.loadSlidesConfig();
             this.totalSlides = this.slidesConfig.slides.length;
             
@@ -228,9 +231,11 @@ class SlideLoader {
         
         // Update navigation state
         this.updateNavigation();
-        
-        // Handle speaker notes
+          // Handle speaker notes
         this.handleSpeakerNotes();
+        
+        // Auto-close speaker notes when navigating to new slide
+        this.autoCloseSpeakerNotes();
         
         // Trigger slide change event
         this.triggerSlideChangeEvent(slideNumber, slideData.config);
@@ -268,7 +273,76 @@ class SlideLoader {
         if (notesElement && speakerNotesPanel) {
             speakerNotesPanel.innerHTML = notesElement.innerHTML;
         }
-    }    async nextSlide() {
+    }    autoCloseSpeakerNotes() {
+        const speakerNotesPanel = document.getElementById('speaker-notes-panel');
+        if (speakerNotesPanel && speakerNotesPanel.classList.contains('active')) {
+            speakerNotesPanel.classList.remove('active');
+        }
+    }    toggleTheme() {
+        const themes = ['light', 'dark'];
+        const body = document.body;
+        
+        // Get current theme from data-theme attribute or default to light
+        let currentTheme = body.getAttribute('data-theme') || 'light';
+        
+        // Find current theme index
+        let currentIndex = themes.indexOf(currentTheme);
+        
+        // Move to next theme, or wrap to first if at end
+        let nextIndex = (currentIndex + 1) % themes.length;
+        let nextTheme = themes[nextIndex];
+        
+        // Apply theme transition class
+        body.classList.add('theme-transition');
+        
+        // Set new theme
+        body.setAttribute('data-theme', nextTheme);
+        
+        // Store theme preference
+        localStorage.setItem('preferred-theme', nextTheme);
+        
+        // Remove transition class after animation
+        setTimeout(() => {
+            body.classList.remove('theme-transition');
+        }, 500);
+        
+        console.log(`🎨 Theme changed to: ${nextTheme}`);
+        
+        // Update tooltip to show current theme
+        this.updateThemeTooltip(nextTheme);
+    }
+
+    updateThemeTooltip(themeName) {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            // Capitalize theme name and make it more readable
+            const readableThemeName = this.getReadableThemeName(themeName);
+            themeToggle.setAttribute('title', `Current theme: ${readableThemeName} (click to change)`);
+        }
+    }    getReadableThemeName(themeName) {
+        const themeNames = {
+            'light': 'Light',
+            'dark': 'Dark'
+        };
+        return themeNames[themeName] || themeName;
+    }
+
+    loadPreferredTheme() {
+        const savedTheme = localStorage.getItem('preferred-theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          let theme = savedTheme;
+        if (!theme) {
+            // Default to dark if system prefers dark, otherwise light
+            theme = systemPrefersDark ? 'dark' : 'light';
+        }
+          document.body.setAttribute('data-theme', theme);
+        console.log(`🎨 Loaded theme: ${theme}`);
+        
+        // Update tooltip to show current theme
+        this.updateThemeTooltip(theme);
+    }
+
+    async nextSlide() {
         if (this.currentSlide < this.totalSlides) {
             await this.goToSlide(this.currentSlide + 1);
         }
@@ -350,24 +424,124 @@ class SlideLoader {
         if (overviewBtn) {
             overviewBtn.addEventListener('click', () => this.showSlideOverview());
         }
-    }
 
-    showSlideOverview() {
+        // Speaker notes toggle
+        const speakerNotesToggle = document.getElementById('speaker-notes-toggle');
+        const speakerNotesPanel = document.getElementById('speaker-notes-panel');
+        const notesCloseBtn = document.getElementById('notes-close');
+
+        if (speakerNotesToggle && speakerNotesPanel) {
+            speakerNotesToggle.addEventListener('click', () => {
+                speakerNotesPanel.classList.toggle('active');
+            });
+        }
+
+        if (notesCloseBtn && speakerNotesPanel) {
+            notesCloseBtn.addEventListener('click', () => {
+                speakerNotesPanel.classList.remove('active');
+            });
+        }
+
+        // Close speaker notes when clicking outside
+        document.addEventListener('click', (e) => {
+            if (speakerNotesPanel && 
+                speakerNotesPanel.classList.contains('active') && 
+                !speakerNotesPanel.contains(e.target) && 
+                !speakerNotesToggle.contains(e.target)) {
+                speakerNotesPanel.classList.remove('active');
+            }
+        });
+
+        // Close speaker notes on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && speakerNotesPanel && speakerNotesPanel.classList.contains('active')) {
+                speakerNotesPanel.classList.remove('active');
+            }
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => this.toggleTheme());
+        }
+    }    showSlideOverview() {
         const modal = document.createElement('div');
         modal.className = 'slide-overview-modal';
         modal.innerHTML = `
             <div class="overview-content">
                 <div class="overview-header">
                     <h2>Slide Overview</h2>
+                    <div class="overview-search">
+                        <input type="text" id="slide-search" placeholder="Search slides..." class="search-input">
+                        <button class="clear-search" id="clear-search" title="Clear search">×</button>
+                    </div>
                     <button class="close-overview">&times;</button>
                 </div>
-                <div class="overview-grid">
+                <div class="overview-stats">
+                    <span id="overview-count">${this.slidesConfig.slides.length} slides total</span>
+                    <span id="overview-filter-count" style="display: none;"></span>
+                </div>
+                <div class="overview-grid" id="overview-grid">
                     ${this.generateOverviewGrid()}
                 </div>
             </div>
-        `;
+        `;        document.body.appendChild(modal);
 
-        document.body.appendChild(modal);
+        // Search functionality
+        const searchInput = modal.querySelector('#slide-search');
+        const clearSearch = modal.querySelector('#clear-search');
+        const overviewGrid = modal.querySelector('#overview-grid');
+        const overviewCount = modal.querySelector('#overview-count');
+        const filterCount = modal.querySelector('#overview-filter-count');
+
+        const performSearch = (query) => {
+            const slides = modal.querySelectorAll('.overview-slide');
+            const searchTerm = query.toLowerCase().trim();
+            let visibleCount = 0;
+
+            slides.forEach(slide => {
+                const title = slide.querySelector('.overview-slide-title').textContent.toLowerCase();
+                const type = slide.querySelector('.overview-slide-type').textContent.toLowerCase();
+                const slideNumber = slide.querySelector('.overview-slide-number').textContent;
+                
+                const matches = title.includes(searchTerm) || 
+                               type.includes(searchTerm) || 
+                               slideNumber.includes(searchTerm);
+                
+                if (matches || searchTerm === '') {
+                    slide.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    slide.style.display = 'none';
+                }
+            });
+
+            // Update counts
+            if (searchTerm === '') {
+                filterCount.style.display = 'none';
+                overviewCount.textContent = `${this.slidesConfig.slides.length} slides total`;
+            } else {
+                filterCount.style.display = 'inline';
+                filterCount.textContent = `${visibleCount} of ${this.slidesConfig.slides.length} slides found`;
+                overviewCount.textContent = `Search: "${query}"`;
+            }
+
+            // Show clear button if there's text
+            clearSearch.style.display = searchTerm ? 'block' : 'none';
+        };
+
+        searchInput.addEventListener('input', (e) => {
+            performSearch(e.target.value);
+        });
+
+        clearSearch.addEventListener('click', () => {
+            searchInput.value = '';
+            performSearch('');
+            searchInput.focus();
+        });
+
+        // Focus search input for immediate typing
+        setTimeout(() => searchInput.focus(), 100);
 
         // Close modal handlers
         modal.querySelector('.close-overview').addEventListener('click', () => {
@@ -380,25 +554,48 @@ class SlideLoader {
             }
         });
 
+        // ESC key to close
+        const escapeHandler = (e) => {
+            if (e.key === 'Escape') {
+                document.body.removeChild(modal);
+                document.removeEventListener('keydown', escapeHandler);
+            }
+        };
+        document.addEventListener('keydown', escapeHandler);
+
         // Slide navigation from overview
         modal.querySelectorAll('.overview-slide').forEach(slide => {
             slide.addEventListener('click', (e) => {
                 const slideNumber = parseInt(e.currentTarget.dataset.slide);
                 this.goToSlide(slideNumber);
                 document.body.removeChild(modal);
+                document.removeEventListener('keydown', escapeHandler);
             });
         });
-    }
 
-    generateOverviewGrid() {
+        // Slide preview functionality
+        this.setupSlidePreview(modal);
+    }    generateOverviewGrid() {
         return this.slidesConfig.slides.map((slide, index) => {
             const slideNumber = index + 1;
             const isActive = slideNumber === this.currentSlide;
+            const previewId = `preview-${slideNumber}`;
+            
             return `
-                <div class="overview-slide ${isActive ? 'active' : ''}" data-slide="${slideNumber}">
-                    <div class="overview-slide-number">${slideNumber}</div>
+                <div class="overview-slide ${isActive ? 'active' : ''}" 
+                     data-slide="${slideNumber}"
+                     data-preview-id="${previewId}">
+                    <div class="overview-slide-header">
+                        <div class="overview-slide-number">${slideNumber}</div>
+                        <button class="preview-btn" data-slide="${slideNumber}" title="Preview slide">
+                            👁️
+                        </button>
+                    </div>
                     <div class="overview-slide-title">${slide.title}</div>
                     <div class="overview-slide-type">${slide.type}</div>
+                    <div class="overview-slide-description">
+                        ${slide.description || 'No description available'}
+                    </div>
                 </div>
             `;
         }).join('');
@@ -465,7 +662,141 @@ class SlideLoader {
 
         // Set initial state
         window.history.replaceState({ slide: this.currentSlide }, '', window.location);
-    }}
+    }
+
+    setupSlidePreview(modal) {
+        // Create preview overlay
+        const previewOverlay = document.createElement('div');
+        previewOverlay.className = 'slide-preview-overlay';
+        previewOverlay.style.display = 'none';
+        previewOverlay.innerHTML = `
+            <div class="slide-preview-container">
+                <div class="slide-preview-header">
+                    <h3 id="preview-title">Slide Preview</h3>
+                    <button class="close-preview">&times;</button>
+                </div>
+                <div class="slide-preview-content" id="preview-content">
+                    <div class="preview-loading">Loading slide preview...</div>
+                </div>
+                <div class="slide-preview-footer">
+                    <button class="preview-nav-btn" id="preview-prev">← Previous</button>
+                    <span id="preview-info">Slide 1 of ${this.slidesConfig.slides.length}</span>
+                    <button class="preview-nav-btn" id="preview-next">Next →</button>
+                </div>
+            </div>
+        `;
+        modal.appendChild(previewOverlay);
+
+        let currentPreviewSlide = 1;
+
+        const showPreview = async (slideNumber) => {
+            currentPreviewSlide = slideNumber;
+            const slideConfig = this.slidesConfig.slides[slideNumber - 1];
+            
+            previewOverlay.style.display = 'flex';
+            document.getElementById('preview-title').textContent = `${slideConfig.title} (Slide ${slideNumber})`;
+            document.getElementById('preview-info').textContent = `Slide ${slideNumber} of ${this.slidesConfig.slides.length}`;
+            
+            // Load slide content
+            try {
+                const slideContent = await this.loadSlideContent(slideConfig.file);
+                document.getElementById('preview-content').innerHTML = slideContent;
+                
+                // Apply preview-specific styling
+                const previewContent = document.getElementById('preview-content');
+                previewContent.classList.add('preview-slide-content');
+                
+            } catch (error) {
+                document.getElementById('preview-content').innerHTML = `
+                    <div class="preview-error">
+                        <h3>Preview not available</h3>
+                        <p>Unable to load slide content: ${error.message}</p>
+                        <p><strong>Title:</strong> ${slideConfig.title}</p>
+                        <p><strong>Type:</strong> ${slideConfig.type}</p>
+                        <p><strong>File:</strong> ${slideConfig.file}</p>
+                    </div>
+                `;
+            }
+            
+            // Update navigation buttons
+            document.getElementById('preview-prev').disabled = slideNumber === 1;
+            document.getElementById('preview-next').disabled = slideNumber === this.slidesConfig.slides.length;
+        };
+
+        const hidePreview = () => {
+            previewOverlay.style.display = 'none';
+        };
+
+        // Preview button handlers
+        modal.querySelectorAll('.preview-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent slide selection
+                const slideNumber = parseInt(btn.dataset.slide);
+                showPreview(slideNumber);
+            });
+        });
+
+        // Preview overlay handlers
+        previewOverlay.querySelector('.close-preview').addEventListener('click', hidePreview);
+        
+        previewOverlay.addEventListener('click', (e) => {
+            if (e.target === previewOverlay) {
+                hidePreview();
+            }
+        });
+
+        // Preview navigation
+        document.getElementById('preview-prev').addEventListener('click', () => {
+            if (currentPreviewSlide > 1) {
+                showPreview(currentPreviewSlide - 1);
+            }
+        });
+
+        document.getElementById('preview-next').addEventListener('click', () => {
+            if (currentPreviewSlide < this.slidesConfig.slides.length) {
+                showPreview(currentPreviewSlide + 1);
+            }
+        });
+
+        // Keyboard navigation in preview
+        const previewKeyHandler = (e) => {
+            if (previewOverlay.style.display === 'flex') {
+                switch(e.key) {
+                    case 'Escape':
+                        hidePreview();
+                        break;
+                    case 'ArrowLeft':
+                        if (currentPreviewSlide > 1) {
+                            showPreview(currentPreviewSlide - 1);
+                        }
+                        break;
+                    case 'ArrowRight':
+                        if (currentPreviewSlide < this.slidesConfig.slides.length) {
+                            showPreview(currentPreviewSlide + 1);
+                        }
+                        break;
+                }
+            }
+        };
+        
+        document.addEventListener('keydown', previewKeyHandler);
+        
+        // Cleanup when modal closes
+        const originalRemove = modal.remove;
+        modal.remove = function() {
+            document.removeEventListener('keydown', previewKeyHandler);
+            originalRemove.call(this);
+        };
+    }
+
+    async loadSlideContent(slideFile) {
+        const response = await fetch(`slides/${slideFile}`);
+        if (!response.ok) {
+            throw new Error(`Failed to load slide: ${response.status}`);
+        }
+        return await response.text();
+    }
+}
 
 // Initialize slide loader when DOM is ready
 let slideLoader;

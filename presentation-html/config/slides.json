@@ -5,41 +5,49 @@
     "author": "Workshop Presenter",
     "totalSlides": 28
   },
-  "slides": [
-    {
+  "slides": [    {
       "id": 1,
       "title": "Title Slide",
       "subtitle": "The Code to Wealth: Mutual Fund Investing for Tech Professionals",
       "type": "title",
-      "template": "title.html"
+      "template": "title.html",
+      "file": "slide-01.html",
+      "description": "Introduction and welcome to the mutual fund investing workshop designed specifically for technology professionals"
     },
     {
       "id": 2,
       "title": "Opening Hook",
       "subtitle": "Why This Presentation Won't Be Another Boring Finance Lecture",
       "type": "content",
-      "template": "content.html"
+      "template": "content.html",
+      "file": "slide-02.html",
+      "description": "Engaging opening that connects technology concepts with financial investing principles"
     },
     {
       "id": 3,
       "title": "The MF Stack",
       "subtitle": "Understanding the Basics - Mutual Funds: The Microservices of Investment",
       "type": "content",
-      "template": "content.html"
-    },
-    {
+      "template": "content.html",
+      "file": "slide-03.html",
+      "description": "Fundamental explanation of mutual funds using technology analogies and microservices concepts"
+    },    {
       "id": 4,
       "title": "The Three Pillars Framework",
       "subtitle": "Goal-Time-Risk: The Holy Trinity of Investment",
       "type": "framework",
-      "template": "framework.html"
+      "template": "framework.html",
+      "file": "slide-04.html",
+      "description": "Core framework for investment decision-making based on three key factors: investment goals, time horizon, and risk tolerance"
     },
     {
       "id": 5,
       "title": "The Goal-Time-Risk Triage Matrix",
       "subtitle": "Matching Funds to Your Life's User Stories",
       "type": "matrix",
-      "template": "matrix.html"
+      "template": "matrix.html",
+      "file": "slide-05.html",
+      "description": "Interactive decision matrix to help match appropriate mutual fund types to individual investment scenarios and life situations"
     },
     {
       "id": 6,

@@ -7,22 +7,7 @@ echo.
 echo Starting local web server for the presentation...
 echo.
 
-REM Check if Python is available
-python --version >nul 2>&1
-if %errorlevel% == 0 (
-    echo Using Python to start web server...
-    echo.
-    echo Presentation will be available at:
-    echo http://localhost:8000
-    echo.
-    echo Press Ctrl+C to stop the server
-    echo.
-    cd /d "%~dp0"
-    python -m http.server 8000
-    goto :end
-)
-
-REM Check if Node.js is available
+REM Check if Node.js is available first
 node --version >nul 2>&1
 if %errorlevel% == 0 (
     echo Using Node.js to start web server...
@@ -37,6 +22,21 @@ if %errorlevel% == 0 (
     echo.
     cd /d "%~dp0"
     npx serve . -p 3000
+    goto :end
+)
+
+REM Check if Python is available
+python --version >nul 2>&1
+if %errorlevel% == 0 (
+    echo Using Python to start web server...
+    echo.
+    echo Presentation will be available at:
+    echo http://localhost:8000
+    echo.
+    echo Press Ctrl+C to stop the server
+    echo.
+    cd /d "%~dp0"
+    python -m http.server 8000
     goto :end
 )
 

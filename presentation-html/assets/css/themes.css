@@ -6,11 +6,15 @@
   --secondary-bg: #f8fafc;
   --tertiary-bg: #e2e8f0;
   --accent-bg: #cbd5e0;
+  --nav-bg: #f1f5f9;
+  --nav-hover-bg: #e2e8f0;
   
   --primary-text: #1a202c;
   --secondary-text: #4a5568;
   --muted-text: #718096;
   --accent-text: #2b6cb0;
+  --nav-text: #1a202c;
+  --heading-text: #1a202c;
   
   --primary-accent: #2b6cb0;
   --secondary-accent: #805ad5;
@@ -18,6 +22,16 @@
   --warning-color: #d69e2e;
   --error-color: #e53e3e;
   --info-color: #3182ce;
+  
+  --border-color: #e2e8f0;
+  --nav-border: #cbd5e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --shadow-raised: rgba(0, 0, 0, 0.08);
+  --shadow-raised-hover: rgba(0, 0, 0, 0.12);
+  --accent-color: #2b6cb0;
+  --bg-color: #ffffff;
+  --text-color: #1a202c;
 }
 
 [data-theme="light"] .code-block {
@@ -31,6 +45,52 @@
 [data-theme="light"] .variable { color: #e53e3e; }
 [data-theme="light"] .string { color: #38a169; }
 [data-theme="light"] .boolean { color: #3182ce; }
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --primary-bg: #1a202c;
+  --secondary-bg: #2d3748;
+  --tertiary-bg: #4a5568;
+  --accent-bg: #718096;
+  --nav-bg: #2d3748;
+  --nav-hover-bg: #4a5568;
+  
+  --primary-text: #f7fafc;
+  --secondary-text: #e2e8f0;
+  --muted-text: #a0aec0;
+  --accent-text: #63b3ed;
+  --nav-text: #f7fafc;
+  --heading-text: #ffffff;
+  
+  --primary-accent: #63b3ed;
+  --secondary-accent: #9f7aea;
+  --success-color: #68d391;
+  --warning-color: #fbd38d;
+  --error-color: #fc8181;
+  --info-color: #63b3ed;
+  
+  --border-color: #4a5568;
+  --nav-border: #718096;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-hover: rgba(0, 0, 0, 0.4);
+  --shadow-raised: rgba(0, 0, 0, 0.25);
+  --shadow-raised-hover: rgba(0, 0, 0, 0.35);
+  --accent-color: #63b3ed;
+  --bg-color: #1a202c;
+  --text-color: #f7fafc;
+}
+
+[data-theme="dark"] .code-block {
+  background: var(--secondary-bg);
+  border: 1px solid var(--tertiary-bg);
+}
+
+[data-theme="dark"] .keyword { color: #9f7aea; }
+[data-theme="dark"] .module { color: #63b3ed; }
+[data-theme="dark"] .function { color: #fbd38d; }
+[data-theme="dark"] .variable { color: #fc8181; }
+[data-theme="dark"] .string { color: #68d391; }
+[data-theme="dark"] .boolean { color: #63b3ed; }
 
 /* High Contrast Theme */
 [data-theme="high-contrast"] {
@@ -225,4 +285,122 @@ button:focus,
   
   --primary-accent: #ff6b9d;
   --secondary-accent: #ffd23f;
+}
+
+/* Theme Adaptation for All Page Elements */
+
+/* Ensure all text elements use theme colors */
+* {
+  color: inherit;
+}
+
+/* Base elements */
+body, html {
+  background-color: var(--primary-bg) !important;
+  color: var(--primary-text) !important;
+}
+
+/* Typography elements */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-text) !important;
+}
+
+p, span, div {
+  color: var(--primary-text);
+}
+
+/* Link elements */
+a {
+  color: var(--accent-text);
+}
+
+a:hover {
+  color: var(--primary-accent);
+}
+
+/* Form elements */
+input, textarea, select {
+  background-color: var(--secondary-bg);
+  color: var(--primary-text);
+  border-color: var(--border-color);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary-accent);
+  outline-color: var(--primary-accent);
+}
+
+/* Code elements */
+code, pre {
+  background-color: var(--tertiary-bg);
+  color: var(--primary-text);
+  border-color: var(--border-color);
+}
+
+/* Table elements */
+table {
+  background-color: var(--secondary-bg);
+  color: var(--primary-text);
+}
+
+th {
+  background-color: var(--tertiary-bg);
+  color: var(--heading-text);
+  border-color: var(--border-color);
+}
+
+td {
+  color: var(--primary-text);
+  border-color: var(--border-color);
+}
+
+/* List elements */
+ul, ol {
+  color: var(--secondary-text);
+}
+
+li {
+  color: var(--secondary-text);
+}
+
+/* Blockquote */
+blockquote {
+  background-color: var(--secondary-bg);
+  color: var(--secondary-text);
+  border-left-color: var(--primary-accent);
+}
+
+/* HR elements */
+hr {
+  border-color: var(--border-color);
+}
+
+/* Scrollbar theming for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-bg);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-accent);
+}
+
+/* Selection theming */
+::selection {
+  background-color: var(--primary-accent);
+  color: var(--primary-bg);
+}
+
+::-moz-selection {
+  background-color: var(--primary-accent);
+  color: var(--primary-bg);
 }
