@@ -12,9 +12,19 @@ class SlideLoader {
         try {
             await this.loadSlidesConfig();
             this.totalSlides = this.slidesConfig.slides.length;
-            await this.loadSlide(1);
+            
+            // Check URL for slide parameter, default to slide 1
+            const urlParams = new URLSearchParams(window.location.search);
+            const slideParam = urlParams.get('slide');
+            const initialSlide = slideParam ? parseInt(slideParam, 10) : 1;
+            
+            // Validate slide number
+            const slideToLoad = (initialSlide >= 1 && initialSlide <= this.totalSlides) ? initialSlide : 1;
+            
+            await this.loadSlide(slideToLoad);
             this.setupEventListeners();
-            console.log('✅ Slide loader initialized successfully');
+            this.setupUrlNavigation();
+            console.log(`✅ Slide loader initialized successfully - loaded slide ${slideToLoad}`);
         } catch (error) {
             console.error('❌ Failed to initialize slide loader:', error);
             this.showFallbackPresentation();
@@ -177,9 +187,7 @@ class SlideLoader {
         });
 
         this.displaySlide(slideNumber);
-    }
-
-    displaySlide(slideNumber) {
+    }    displaySlide(slideNumber) {
         const slideData = this.loadedSlides.get(slideNumber);
         if (!slideData) {
             console.error(`Slide ${slideNumber} not loaded`);
@@ -214,6 +222,9 @@ class SlideLoader {
         
         // Update current slide
         this.currentSlide = slideNumber;
+        
+        // Update URL without refreshing the page
+        this.updateUrl(slideNumber);
         
         // Update navigation state
         this.updateNavigation();
@@ -258,17 +269,15 @@ class SlideLoader {
         if (notesElement && speakerNotesPanel) {
             speakerNotesPanel.innerHTML = notesElement.innerHTML;
         }
-    }
-
-    async nextSlide() {
+    }    async nextSlide() {
         if (this.currentSlide < this.totalSlides) {
-            await this.loadSlide(this.currentSlide + 1);
+            await this.goToSlide(this.currentSlide + 1);
         }
     }
 
     async previousSlide() {
         if (this.currentSlide > 1) {
-            await this.loadSlide(this.currentSlide - 1);
+            await this.goToSlide(this.currentSlide - 1);
         }
     }
 
@@ -430,11 +439,34 @@ class SlideLoader {
                         <p>The slide could not be loaded. Please check your connection and try again.</p>
                         <button onclick="slideLoader.loadSlide(${slideNumber})">Retry</button>
                     </div>
-                </div>
-            `;
+                </div>            `;
         }
     }
-}
+
+    // URL Navigation Methods
+    updateUrl(slideNumber) {
+        const url = new URL(window.location);
+        url.searchParams.set('slide', slideNumber);
+        window.history.replaceState({ slide: slideNumber }, '', url);
+    }
+
+    setupUrlNavigation() {
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.slide) {
+                this.goToSlide(event.state.slide);
+            } else {
+                // If no state, check URL parameters
+                const urlParams = new URLSearchParams(window.location.search);
+                const slideParam = urlParams.get('slide');
+                const slideNumber = slideParam ? parseInt(slideParam, 10) : 1;
+                this.goToSlide(slideNumber);
+            }
+        });
+
+        // Set initial state
+        window.history.replaceState({ slide: this.currentSlide }, '', window.location);
+    }}
 
 // Initialize slide loader when DOM is ready
 let slideLoader;

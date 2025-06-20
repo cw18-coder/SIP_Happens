@@ -121,9 +121,13 @@
                 loadModularSystem();
             }
         });
-        
-        // Working presentation for file:// protocol
+          // Working presentation for file:// protocol
         function showWorkingPresentation() {
+            // Check URL for slide parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const slideParam = urlParams.get('slide');
+            const currentSlide = slideParam ? parseInt(slideParam, 10) : 1;
+            
             const slideContainer = document.getElementById('slide-container');
             if (slideContainer) {
                 slideContainer.innerHTML = `
@@ -169,7 +173,7 @@
                     </div>
                 `;
             }            // Update navigation
-            updatePresentationStatus('Ready ✅', 1, 1);
+            updatePresentationStatus('Ready ✅', currentSlide, 28);
             
             // Setup navigation buttons
             setupNavigationButtons();
@@ -238,25 +242,37 @@
             console.error('Presentation Error:', e.error);
             showWorkingPresentation();
         });
-        
-        // Simple navigation functionality
+          // Simple navigation functionality
         function setupNavigationButtons() {
             const prevBtn = document.getElementById('prev-slide');
             const nextBtn = document.getElementById('next-slide');
             
             if (prevBtn) {
                 prevBtn.addEventListener('click', function() {
-                    console.log('Previous slide clicked');
-                    // For now, just log - can be expanded for actual slide navigation
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const currentSlide = parseInt(urlParams.get('slide') || '1', 10);
+                    if (currentSlide > 1) {
+                        navigateToSlide(currentSlide - 1);
+                    }
                 });
             }
             
             if (nextBtn) {
                 nextBtn.addEventListener('click', function() {
-                    console.log('Next slide clicked');
-                    // For now, just log - can be expanded for actual slide navigation
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const currentSlide = parseInt(urlParams.get('slide') || '1', 10);
+                    if (currentSlide < 28) {
+                        navigateToSlide(currentSlide + 1);
+                    }
                 });
             }
+        }
+        
+        // Navigate to a specific slide by updating URL
+        function navigateToSlide(slideNumber) {
+            const url = new URL(window.location);
+            url.searchParams.set('slide', slideNumber);
+            window.location.href = url.toString();
         }
     </script>
 </body>
