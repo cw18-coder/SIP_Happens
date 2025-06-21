@@ -467,13 +467,23 @@ class SlideLoader {
             if (e.key === 'Escape' && speakerNotesPanel && speakerNotesPanel.classList.contains('active')) {
                 speakerNotesPanel.classList.remove('active');
             }
-        });
-
-        // Theme toggle functionality
+        });        // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         if (themeToggle) {
             themeToggle.addEventListener('click', () => this.toggleTheme());
+        }        // Fullscreen toggle functionality
+        const fullscreenToggle = document.getElementById('fullscreen-toggle');
+        if (fullscreenToggle) {
+            fullscreenToggle.addEventListener('click', () => this.toggleFullscreen());
         }
+
+        // Listen for fullscreen changes to update icon
+        document.addEventListener('fullscreenchange', () => this.updateFullscreenIcon());
+        document.addEventListener('webkitfullscreenchange', () => this.updateFullscreenIcon());
+        document.addEventListener('msfullscreenchange', () => this.updateFullscreenIcon());
+        
+        // Set initial fullscreen icon
+        this.updateFullscreenIcon();
     }    showSlideOverview() {
         const modal = document.createElement('div');
         modal.className = 'slide-overview-modal';
@@ -836,6 +846,45 @@ class SlideLoader {
                 </div>
             </div>
         `;
+    }
+
+    toggleFullscreen() {
+        const presentationContainer = document.querySelector('.presentation-container');
+        
+        if (!document.fullscreenElement) {
+            // Enter fullscreen
+            if (presentationContainer.requestFullscreen) {
+                presentationContainer.requestFullscreen();
+            } else if (presentationContainer.webkitRequestFullscreen) {
+                presentationContainer.webkitRequestFullscreen();
+            } else if (presentationContainer.msRequestFullscreen) {
+                presentationContainer.msRequestFullscreen();
+            }
+            console.log('🔲 Entering fullscreen mode');
+        } else {
+            // Exit fullscreen
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+            console.log('🪟 Exiting fullscreen mode');
+        }
+    }
+
+    updateFullscreenIcon() {
+        const fullscreenToggle = document.getElementById('fullscreen-toggle');
+        if (fullscreenToggle) {
+            // Update icon based on fullscreen state
+            const isFullscreen = !!document.fullscreenElement;
+            const icon = isFullscreen ? '🪟' : '⛶';
+            fullscreenToggle.textContent = icon;
+            fullscreenToggle.setAttribute('title', 
+                isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'
+            );
+        }
     }
 }
 
