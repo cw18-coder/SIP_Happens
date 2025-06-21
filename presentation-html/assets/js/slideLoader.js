@@ -281,6 +281,7 @@ class SlideLoader {
     }    toggleTheme() {
         const themes = ['light', 'dark'];
         const body = document.body;
+        const presentationContainer = document.querySelector('.presentation-container');
         
         // Get current theme from data-theme attribute or default to light
         let currentTheme = body.getAttribute('data-theme') || 'light';
@@ -294,9 +295,15 @@ class SlideLoader {
         
         // Apply theme transition class
         body.classList.add('theme-transition');
+        if (presentationContainer) {
+            presentationContainer.classList.add('theme-transition');
+        }
         
-        // Set new theme
+        // Set new theme on both body and presentation container
         body.setAttribute('data-theme', nextTheme);
+        if (presentationContainer) {
+            presentationContainer.setAttribute('data-theme', nextTheme);
+        }
         
         // Store theme preference
         localStorage.setItem('preferred-theme', nextTheme);
@@ -304,6 +311,9 @@ class SlideLoader {
         // Remove transition class after animation
         setTimeout(() => {
             body.classList.remove('theme-transition');
+            if (presentationContainer) {
+                presentationContainer.classList.remove('theme-transition');
+            }
         }, 500);
           console.log(`🎨 Theme changed to: ${nextTheme}`);
         
@@ -312,7 +322,7 @@ class SlideLoader {
         
         // Update tooltip to show current theme
         this.updateThemeTooltip(nextTheme);
-    }    updateThemeIcon(themeName) {
+    }updateThemeIcon(themeName) {
         const themeToggle = document.getElementById('theme-toggle');
         if (themeToggle) {
             // Update icon to represent the current theme
@@ -335,16 +345,20 @@ class SlideLoader {
             'dark': 'Dark'
         };
         return themeNames[themeName] || themeName;
-    }
-
-    loadPreferredTheme() {
+    }    loadPreferredTheme() {
         const savedTheme = localStorage.getItem('preferred-theme');
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const presentationContainer = document.querySelector('.presentation-container');
           let theme = savedTheme;
         if (!theme) {
             // Default to dark if system prefers dark, otherwise light
             theme = systemPrefersDark ? 'dark' : 'light';
-        }        document.body.setAttribute('data-theme', theme);
+        }        
+        // Set theme on both body and presentation container
+        document.body.setAttribute('data-theme', theme);
+        if (presentationContainer) {
+            presentationContainer.setAttribute('data-theme', theme);
+        }
         console.log(`🎨 Loaded theme: ${theme}`);
         
         // Update icon and tooltip to show current theme

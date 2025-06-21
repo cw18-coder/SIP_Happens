@@ -122,8 +122,15 @@
   transition: background-color 0.3s ease;
 }
 
-.slide {
-  transition: background-color 0.3s ease;
+/* Ensure theme styles apply properly to presentation container */
+[data-theme="light"] .presentation-container {
+  background: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+[data-theme="dark"] .presentation-container {
+  background: var(--primary-bg);
+  color: var(--primary-text);
 }
 
 /* Typography Themes */
@@ -182,9 +189,9 @@ button:focus,
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Color Scheme Preferences */
+/* Color Scheme Preferences - Only apply when no explicit theme is set */
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not([data-theme]) {
     --primary-bg: #ffffff;
     --secondary-bg: #f8fafc;
     --tertiary-bg: #e2e8f0;
@@ -197,6 +204,23 @@ button:focus,
     
     --primary-accent: #2b6cb0;
     --secondary-accent: #805ad5;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --primary-bg: #1a202c;
+    --secondary-bg: #2d3748;
+    --tertiary-bg: #4a5568;
+    --accent-bg: #718096;
+    
+    --primary-text: #f7fafc;
+    --secondary-text: #e2e8f0;
+    --muted-text: #a0aec0;
+    --accent-text: #63b3ed;
+    
+    --primary-accent: #63b3ed;
+    --secondary-accent: #9f7aea;
   }
 }
 
