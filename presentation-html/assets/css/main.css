@@ -152,14 +152,14 @@ body {
 /* Navigation */
 .presentation-nav {
   position: fixed;
-  top: var(--space-lg);
-  right: var(--space-lg);
+  top: var(--space-md);
+  right: var(--space-md);
   z-index: 1000;
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
+  gap: var(--space-sm);
   background: var(--secondary-bg);
-  padding: var(--space-sm) var(--space-md);
+  padding: 0.5rem 0.75rem;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
   backdrop-filter: blur(10px);
@@ -181,17 +181,18 @@ body {
   background: var(--nav-bg);
   border: 2px solid var(--nav-border);
   color: var(--nav-text);
-  padding: 0.75rem;
-  border-radius: 12px;
+  padding: 0.5rem;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 48px;
-  min-height: 48px;
+  min-width: 36px;
+  min-height: 36px;
+  font-size: 0.9rem;
   box-shadow: 
-    0 4px 12px var(--shadow-raised),
+    0 3px 8px var(--shadow-raised),
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
   background-image: linear-gradient(135deg, 
     rgba(255, 255, 255, 0.2) 0%, 
@@ -202,9 +203,9 @@ body {
 .tool-btn:hover {
   background: var(--nav-hover-bg);
   border-color: var(--primary-accent);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: 
-    0 8px 24px var(--shadow-raised-hover),
+    0 6px 16px var(--shadow-raised-hover),
     inset 0 1px 0 rgba(255, 255, 255, 0.25);
   background-image: linear-gradient(135deg, 
     rgba(255, 255, 255, 0.3) 0%, 
@@ -226,18 +227,18 @@ body {
 
 .slide-counter {
   font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: var(--secondary-text);
-  min-width: 4rem;
+  min-width: 3rem;
   text-align: center;
   background: rgba(255, 255, 255, 0.1);
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.75rem;
 }
 
 /* Progress Bar */
 .progress-container {
-  height: 4px;
+  height: 3px;
   background: rgba(255, 255, 255, 0.1);
   position: relative;
 }
@@ -1112,28 +1113,28 @@ em, i {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem;
+    padding: 1rem 1.5rem;
     background: var(--primary-bg);
     border-top: 2px solid var(--border-color);
-    box-shadow: 0 -4px 20px var(--shadow-color);
+    box-shadow: 0 -3px 15px var(--shadow-color);
 }
 
 .nav-btn {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
     background: var(--nav-bg);
     color: var(--nav-text);
     border: 2px solid var(--nav-border);
-    border-radius: 16px;
+    border-radius: 12px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 
-        0 6px 20px var(--shadow-raised),
-        0 2px 6px var(--shadow-color),
+        0 4px 16px var(--shadow-raised),
+        0 2px 4px var(--shadow-color),
         inset 0 1px 0 rgba(255, 255, 255, 0.15),
         inset 0 -1px 0 rgba(0, 0, 0, 0.1);
     position: relative;
@@ -1144,7 +1145,7 @@ em, i {
         rgba(255, 255, 255, 0.05) 50%, 
         rgba(0, 0, 0, 0.05) 100%);
     backdrop-filter: blur(10px);
-    min-width: 120px;
+    min-width: 100px;
     text-align: center;
 }
 
@@ -1162,10 +1163,10 @@ em, i {
 .nav-btn:hover:not(:disabled) {
     background: var(--nav-hover-bg);
     border-color: var(--primary-accent);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     box-shadow: 
-        0 12px 32px var(--shadow-raised-hover),
-        0 6px 12px var(--shadow-hover),
+        0 8px 24px var(--shadow-raised-hover),
+        0 4px 8px var(--shadow-hover),
         inset 0 1px 0 rgba(255, 255, 255, 0.25),
         inset 0 -1px 0 rgba(0, 0, 0, 0.1);
     background-image: linear-gradient(135deg, 
@@ -1179,10 +1180,10 @@ em, i {
 }
 
 .nav-btn:active:not(:disabled) {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 
-        0 8px 24px var(--shadow-raised),
-        0 3px 8px var(--shadow-color),
+        0 6px 16px var(--shadow-raised),
+        0 2px 6px var(--shadow-color),
         inset 0 1px 0 rgba(255, 255, 255, 0.2),
         inset 0 -1px 0 rgba(0, 0, 0, 0.15);
 }
@@ -1211,25 +1212,25 @@ em, i {
     text-align: center;
     background: var(--nav-bg);
     color: var(--nav-text);
-    padding: 1rem 2rem;
-    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
     border: 1px solid var(--nav-border);
     box-shadow: 
-        0 4px 12px var(--shadow-raised),
+        0 3px 8px var(--shadow-raised),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 
 .slide-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin: 0 0 0.25rem;
+    margin: 0 0 0.2rem;
     color: var(--primary-text);
 }
 
 .slide-progress {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--secondary-text);
     font-family: var(--font-mono);
     font-weight: 500;
