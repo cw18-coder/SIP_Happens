@@ -497,8 +497,7 @@ class SlideLoader {
         document.addEventListener('msfullscreenchange', () => this.updateFullscreenIcon());
         
         // Set initial fullscreen icon
-        this.updateFullscreenIcon();
-    }    showSlideOverview() {
+        this.updateFullscreenIcon();    }    showSlideOverview() {
         const modal = document.createElement('div');
         modal.className = 'slide-overview-modal';
         modal.innerHTML = `
@@ -519,7 +518,11 @@ class SlideLoader {
                     ${this.generateOverviewGrid()}
                 </div>
             </div>
-        `;        document.body.appendChild(modal);
+        `;        
+        // Append to the correct container based on fullscreen state
+        const isFullscreen = document.fullscreenElement;
+        const container = isFullscreen ? document.fullscreenElement : document.body;
+        container.appendChild(modal);
 
         // Search functionality
         const searchInput = modal.querySelector('#slide-search');
@@ -572,37 +575,41 @@ class SlideLoader {
             searchInput.value = '';
             performSearch('');
             searchInput.focus();
-        });
-
-        // Focus search input for immediate typing
+        });        // Focus search input for immediate typing
         setTimeout(() => searchInput.focus(), 100);
+
+        // Helper function to remove modal from correct container
+        const removeModal = () => {
+            const currentContainer = modal.parentNode;
+            if (currentContainer) {
+                currentContainer.removeChild(modal);
+            }
+        };
 
         // Close modal handlers
         modal.querySelector('.close-overview').addEventListener('click', () => {
-            document.body.removeChild(modal);
+            removeModal();
         });
 
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
-                document.body.removeChild(modal);
+                removeModal();
             }
         });
 
         // ESC key to close
         const escapeHandler = (e) => {
             if (e.key === 'Escape') {
-                document.body.removeChild(modal);
+                removeModal();
                 document.removeEventListener('keydown', escapeHandler);
             }
         };
-        document.addEventListener('keydown', escapeHandler);
-
-        // Slide navigation from overview
+        document.addEventListener('keydown', escapeHandler);        // Slide navigation from overview
         modal.querySelectorAll('.overview-slide').forEach(slide => {
             slide.addEventListener('click', (e) => {
                 const slideNumber = parseInt(e.currentTarget.dataset.slide);
                 this.goToSlide(slideNumber);
-                document.body.removeChild(modal);
+                removeModal();
                 document.removeEventListener('keydown', escapeHandler);
             });
         });
