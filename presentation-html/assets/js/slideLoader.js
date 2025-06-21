@@ -305,11 +305,21 @@ class SlideLoader {
         setTimeout(() => {
             body.classList.remove('theme-transition');
         }, 500);
+          console.log(`🎨 Theme changed to: ${nextTheme}`);
         
-        console.log(`🎨 Theme changed to: ${nextTheme}`);
+        // Update theme toggle icon
+        this.updateThemeIcon(nextTheme);
         
         // Update tooltip to show current theme
         this.updateThemeTooltip(nextTheme);
+    }    updateThemeIcon(themeName) {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            // Update icon to represent the current theme
+            // Light theme shows sun, dark theme shows moon
+            const icon = themeName === 'light' ? '☀️' : '🌙';
+            themeToggle.textContent = icon;
+        }
     }
 
     updateThemeTooltip(themeName) {
@@ -334,11 +344,11 @@ class SlideLoader {
         if (!theme) {
             // Default to dark if system prefers dark, otherwise light
             theme = systemPrefersDark ? 'dark' : 'light';
-        }
-          document.body.setAttribute('data-theme', theme);
+        }        document.body.setAttribute('data-theme', theme);
         console.log(`🎨 Loaded theme: ${theme}`);
         
-        // Update tooltip to show current theme
+        // Update icon and tooltip to show current theme
+        this.updateThemeIcon(theme);
         this.updateThemeTooltip(theme);
     }
 
