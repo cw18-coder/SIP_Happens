@@ -674,8 +674,7 @@ class SlideLoader {
                 <div class="slide-preview-header">
                     <h3 id="preview-title">Slide Preview</h3>
                     <button class="close-preview">&times;</button>
-                </div>
-                <div class="slide-preview-content" id="preview-content">
+                </div>                <div class="slide-preview-content" id="preview-content">
                     <div class="preview-loading">Loading slide preview...</div>
                 </div>
                 <div class="slide-preview-footer">
@@ -687,11 +686,11 @@ class SlideLoader {
         `;
         modal.appendChild(previewOverlay);
 
-        let currentPreviewSlide = 1;
-
-        const showPreview = async (slideNumber) => {
+        let currentPreviewSlide = 1;        const showPreview = async (slideNumber) => {
             currentPreviewSlide = slideNumber;
             const slideConfig = this.slidesConfig.slides[slideNumber - 1];
+            
+            console.log('🔍 Showing preview for slide:', slideNumber, slideConfig);
             
             previewOverlay.style.display = 'flex';
             document.getElementById('preview-title').textContent = `${slideConfig.title} (Slide ${slideNumber})`;
@@ -699,23 +698,36 @@ class SlideLoader {
             
             // Load slide content
             try {
-                const slideContent = await this.loadSlideContent(slideConfig.file);
-                document.getElementById('preview-content').innerHTML = slideContent;
+                let slideContent;
+                if (slideConfig.file) {
+                    console.log('📁 Loading slide content from file:', slideConfig.file);
+                    slideContent = await this.loadSlideContent(slideConfig.file);
+                    console.log('✅ Slide content loaded, length:', slideContent.length);
+                } else {
+                    console.log('🔧 Generating fallback content for slide');
+                    slideContent = this.generateFallbackSlide(slideConfig);
+                }
+                  const previewContentDiv = document.getElementById('preview-content');
+                previewContentDiv.innerHTML = slideContent;
                 
                 // Apply preview-specific styling
-                const previewContent = document.getElementById('preview-content');
-                previewContent.classList.add('preview-slide-content');
+                previewContentDiv.classList.add('preview-slide-content');
                 
-            } catch (error) {
-                document.getElementById('preview-content').innerHTML = `
-                    <div class="preview-error">
-                        <h3>Preview not available</h3>
-                        <p>Unable to load slide content: ${error.message}</p>
-                        <p><strong>Title:</strong> ${slideConfig.title}</p>
-                        <p><strong>Type:</strong> ${slideConfig.type}</p>
-                        <p><strong>File:</strong> ${slideConfig.file}</p>
-                    </div>
-                `;
+                // Force visibility of slide elements in preview
+                const slideElements = previewContentDiv.querySelectorAll('.slide');
+                slideElements.forEach(slide => {
+                    slide.style.display = 'block';
+                    slide.style.visibility = 'visible';
+                    slide.style.opacity = '1';
+                });
+                  console.log('✅ Preview content set successfully, slide elements:', slideElements.length);
+                  } catch (error) {
+                console.error('❌ Error loading preview content:', error);
+                // Show fallback content instead of error
+                const fallbackContent = this.generateFallbackSlide(slideConfig);
+                document.getElementById('preview-content').innerHTML = fallbackContent;
+                
+                console.log('🔄 Showing fallback content for preview');
             }
             
             // Update navigation buttons
@@ -725,13 +737,12 @@ class SlideLoader {
 
         const hidePreview = () => {
             previewOverlay.style.display = 'none';
-        };
-
-        // Preview button handlers
+        };        // Preview button handlers
         modal.querySelectorAll('.preview-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation(); // Prevent slide selection
                 const slideNumber = parseInt(btn.dataset.slide);
+                console.log('👁️ Preview button clicked for slide:', slideNumber);
                 showPreview(slideNumber);
             });
         });
@@ -795,6 +806,26 @@ class SlideLoader {
             throw new Error(`Failed to load slide: ${response.status}`);
         }
         return await response.text();
+    }
+
+    generateFallbackSlide(slideConfig) {
+        return `
+            <div class="slide active">
+                <div class="slide-content">
+                    <h1 class="slide-title">${slideConfig.title}</h1>
+                    ${slideConfig.subtitle ? `<p class="slide-subtitle">${slideConfig.subtitle}</p>` : ''}
+                    <div class="slide-placeholder">
+                        <div class="placeholder-icon">📄</div>
+                        <p>This slide is configured but doesn't have content yet.</p>
+                        <div class="slide-meta">
+                            <p><strong>Type:</strong> ${slideConfig.type}</p>
+                            <p><strong>Template:</strong> ${slideConfig.template || 'Not specified'}</p>
+                            ${slideConfig.description ? `<p><strong>Description:</strong> ${slideConfig.description}</p>` : ''}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
     }
 }
 
