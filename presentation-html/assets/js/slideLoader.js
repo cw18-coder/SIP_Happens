@@ -886,14 +886,13 @@ class SlideLoader {
             }
             console.log('🪟 Exiting fullscreen mode');
         }
-    }
-
-    updateFullscreenIcon() {
+    }    updateFullscreenIcon() {
         const fullscreenToggle = document.getElementById('fullscreen-toggle');
         if (fullscreenToggle) {
             // Update icon based on fullscreen state
             const isFullscreen = !!document.fullscreenElement;
-            const icon = isFullscreen ? '🪟' : '⛶';
+            // Use more visible icons: arrows expanding for enter, arrows contracting for exit
+            const icon = isFullscreen ? '🔽' : '🔲';
             fullscreenToggle.textContent = icon;
             fullscreenToggle.setAttribute('title', 
                 isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'
