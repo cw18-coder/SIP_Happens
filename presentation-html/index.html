@@ -25,10 +25,9 @@
             <div class="header-right">
                 <button id="slide-overview" class="control-btn" title="Slide Overview">
                     📋
-                </button>
-                <button id="speaker-notes-toggle" class="control-btn" title="Toggle Speaker Notes">
+                </button>                <button id="speaker-notes-toggle" class="control-btn" title="Toggle Key Takeaways">
                     📝
-                </button>                <button id="theme-toggle" class="control-btn" title="Toggle Theme">
+                </button><button id="theme-toggle" class="control-btn" title="Toggle Theme">
                     🌙
                 </button>
                 <button id="fullscreen-toggle" class="control-btn" title="Toggle Fullscreen">
@@ -66,16 +65,14 @@
                     <polyline points="9,18 15,12 9,6"></polyline>
                 </svg>
             </button>
-        </nav>
-
-        <!-- Speaker Notes Panel -->
+        </nav>        <!-- Speaker Notes Panel -->
         <aside id="speaker-notes-panel" class="speaker-notes-panel">
             <div class="notes-header">
-                <h3>Speaker Notes</h3>
+                <h3>Key Takeaways</h3>
                 <button id="notes-close" class="close-btn">&times;</button>
             </div>
             <div id="speaker-notes-content" class="notes-content">
-                <p>Speaker notes will appear here...</p>
+                <p>Key takeaways will appear here...</p>
             </div>
         </aside>
 
@@ -169,9 +166,9 @@
             updatePresentationStatus('Ready ✅', currentSlide, 28);
             
             // Setup navigation buttons
-            setupNavigationButtons();
-        }
-          // Try to load modular system for servers
+            setupNavigationButtons();        }
+          
+        // Try to load modular system for servers
         function loadModularSystem() {
             // Load the modular scripts
             const scripts = [

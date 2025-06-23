@@ -510,9 +510,8 @@ class NavigationController {
                             <h4>Presentation</h4>
                             <div class="help-item">
                                 <kbd>F</kbd> <span>Toggle fullscreen</span>
-                            </div>
-                            <div class="help-item">
-                                <kbd>S</kbd> <span>Toggle speaker notes</span>
+                            </div>                            <div class="help-item">
+                                <kbd>S</kbd> <span>Toggle key takeaways</span>
                             </div>
                             <div class="help-item">
                                 <kbd>T</kbd> <span>Toggle theme</span>

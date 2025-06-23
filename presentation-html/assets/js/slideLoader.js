@@ -264,21 +264,116 @@ class SlideLoader {
         if (nextBtn) {
             nextBtn.disabled = this.currentSlide >= this.totalSlides;
         }
-    }
-
-    handleSpeakerNotes() {
-        const notesElement = document.querySelector('.slide-notes');
+    }    handleSpeakerNotes() {
         const speakerNotesPanel = document.getElementById('speaker-notes-content');
         
-        if (notesElement && speakerNotesPanel) {
-            speakerNotesPanel.innerHTML = notesElement.innerHTML;
-        }
-    }    autoCloseSpeakerNotes() {
+        if (speakerNotesPanel) {
+            // Use the TL;DR content from our getSpeakerNotes function
+            const tldrContent = this.getSpeakerNotes(this.currentSlide);
+            speakerNotesPanel.innerHTML = tldrContent;
+        }    }
+    
+    autoCloseSpeakerNotes() {
         const speakerNotesPanel = document.getElementById('speaker-notes-panel');
         if (speakerNotesPanel && speakerNotesPanel.classList.contains('active')) {
             speakerNotesPanel.classList.remove('active');
         }
-    }    toggleTheme() {
+    }
+    
+    getSpeakerNotes(slideNumber) {
+        const tldrContent = {
+            1: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Code-to-wealth journey:</strong> Apply programming concepts to build financial wealth systematically</li>
+                    <li><strong>Tech professional advantage:</strong> Logical thinking and systematic approaches give you an investing edge</li>
+                    <li><strong>Workshop promise:</strong> Learn practical, actionable mutual fund strategies using familiar tech analogies</li>
+                    <li><strong>Outcome goal:</strong> Transform from investment beginner to confident portfolio architect</li>
+                    <li><strong>Mindset shift:</strong> Treat investments like building scalable, maintainable code - methodical and long-term focused</li>
+                </ul>
+            `,
+            2: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Finance education gap:</strong> Most investment content is boring and irrelevant to tech professionals</li>
+                    <li><strong>Tech analogy approach:</strong> Use familiar concepts (APIs, frameworks, DevOps) to understand investing</li>
+                    <li><strong>Practical focus:</strong> Actionable strategies over theoretical concepts - like learning to code by building projects</li>
+                    <li><strong>Audience targeting:</strong> Content specifically designed for logical, systems-thinking tech minds</li>
+                    <li><strong>Learning promise:</strong> Make investing as intuitive as choosing the right technology stack</li>
+                </ul>
+            `,
+            3: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Mutual funds = service libraries:</strong> Pre-built, professionally managed investment components</li>
+                    <li><strong>Fund manager = tech lead:</strong> Expert who makes day-to-day decisions while you focus on other priorities</li>
+                    <li><strong>Portfolio diversification:</strong> Like microservices - spread risk across multiple components</li>
+                    <li><strong>NAV (Net Asset Value):</strong> Real-time pricing like API endpoints - always current and accessible</li>
+                    <li><strong>Cost efficiency:</strong> Expense ratios are like cloud costs - optimize but don't sacrifice quality for savings</li>
+                </ul>
+            `,
+            4: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Investment Trinity:</strong> Goals, Time Horizon, and Risk Appetite must align for optimal results</li>
+                    <li><strong>Unlike PM trade-offs:</strong> With proper time planning, you can optimize all three investment factors simultaneously</li>
+                    <li><strong>Framework comparison:</strong> Traditional PM requires compromises, but investment frameworks allow compounding optimization</li>
+                    <li><strong>Alignment matters:</strong> Mismatched goals, time, and risk lead to poor investment outcomes</li>
+                    <li><strong>Time advantage:</strong> Unlike fixed project deadlines, time works in your favor with investments</li>
+                </ul>
+            `,
+            5: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Time-based fund matching:</strong> Short-term goals need conservative funds, long-term goals can handle aggressive ones</li>
+                    <li><strong>Risk-return spectrum:</strong> 1-3 years (4-7% returns), 3-7 years (8-12% returns), 7+ years (12-15% returns)</li>
+                    <li><strong>Project analogy:</strong> Match investment tools to objectives like choosing tech stacks for different project requirements</li>
+                    <li><strong>Goal categorization:</strong> Sprint goals (emergency funds), Release cycles (major purchases), Platform building (retirement)</li>
+                    <li><strong>Triage system:</strong> Use time horizon as primary filter, then optimize for risk tolerance within that timeframe</li>
+                </ul>
+            `,
+            6: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Three main fund types:</strong> Equity (high growth, high risk), Debt (steady income, low risk), Hybrid (balanced mix)</li>
+                    <li><strong>Equity sub-categories:</strong> Large cap (stable like Google), Mid cap (growth phase like Zomato), Small cap (startup potential)</li>
+                    <li><strong>Debt fund spectrum:</strong> Liquid funds (Redis-like instant access) up to medium duration (PostgreSQL-like complexity)</li>
+                    <li><strong>Hybrid allocation models:</strong> Conservative (80% debt), Balanced (50-50), Aggressive (70% equity)</li>
+                    <li><strong>Tech stack analogy:</strong> Choose fund categories like selecting technologies - match complexity and risk to project requirements</li>
+                </ul>
+            `,
+            15: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>SIP = Investment DevOps:</strong> Automation removes emotional decisions and human errors from investing</li>
+                    <li><strong>Rupee cost averaging:</strong> Buy more units when prices are low, fewer when high - automatic optimization</li>
+                    <li><strong>Four key practices:</strong> Start early & small, increase annually, don't stop during downturns, use goal-based allocation</li>
+                    <li><strong>SIP vs Lumpsum:</strong> SIP wins for most investors due to behavioral advantages and risk mitigation</li>
+                    <li><strong>Compound amplification:</strong> Time multiplies small consistent investments into exponential wealth growth</li>
+                </ul>
+            `,
+            28: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Action items:</strong> Download investment app, calculate emergency fund target, set first SIP amount, schedule start date</li>
+                    <li><strong>21-day challenge:</strong> Complete KYC (Day 1), start first SIP (Day 7), set up emergency fund (Day 14), share progress (Day 21)</li>
+                    <li><strong>Ongoing support:</strong> Workshop materials, discussion group, monthly market updates, quarterly portfolio reviews</li>
+                    <li><strong>Key momentum:</strong> Implementation within 7 days prevents analysis paralysis and ensures action</li>
+                    <li><strong>Community aspect:</strong> Accountability through shared progress and group support system</li>
+                </ul>
+            `
+        };
+        
+        return tldrContent[slideNumber] || `
+            <h3>TL;DR</h3>
+            <p>Key takeaways for slide ${slideNumber} - content coming soon!</p>
+            <ul>
+                <li>💡 This slide contains valuable investment insights</li>
+                <li>🚀 Focus on practical application of concepts</li>
+                <li>📚 Reference the full workshop materials for details</li>
+            </ul>
+        `;
+    }toggleTheme() {
         const themes = ['light', 'dark'];
         const body = document.body;
         const presentationContainer = document.querySelector('.presentation-container');
