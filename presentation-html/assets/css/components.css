@@ -1725,3 +1725,401 @@
         max-width: 400px;
     }
 }
+
+/* Modern Framework Comparison Table Styles */
+.framework-table-container {
+    background: var(--secondary-bg);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.framework-comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--primary-bg);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 2px 15px var(--shadow-raised);
+    table-layout: fixed; /* Force fixed table layout */
+    display: table; /* Ensure table display */
+}
+
+/* Table Header Styling */
+.framework-comparison-table thead {
+    background: var(--tertiary-bg);
+    display: table-header-group; /* Ensure proper header display */
+}
+
+.framework-comparison-table tbody {
+    display: table-row-group; /* Ensure proper body display */
+}
+
+.framework-comparison-table th {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    color: var(--heading-text);
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    position: relative;
+    vertical-align: middle;
+    display: table-cell; /* Ensure proper cell display */
+}
+
+.aspect-header {
+    width: 25%;
+    background: var(--secondary-bg) !important;
+    color: var(--heading-text);
+}
+
+.traditional-header {
+    width: 37.5%;
+    background: rgba(49, 130, 206, 0.2) !important; /* Light blue with transparency */
+    color: var(--heading-text);
+    border-bottom: 2px solid var(--info-color);
+}
+
+.investment-header {
+    width: 37.5%;
+    background: rgba(56, 161, 105, 0.2) !important; /* Light green with transparency */
+    color: var(--heading-text);
+    border-bottom: 2px solid var(--success-color);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.header-icon {
+    font-size: 1.5rem;
+}
+
+.header-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+
+.header-title {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.header-subtitle {
+    font-size: 0.8rem;
+    font-weight: 400;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.header-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Table Body Styling */
+.framework-comparison-table tbody tr {
+    transition: all 0.3s ease;
+    background: var(--primary-bg);
+    display: table-row; /* Ensure proper row display */
+}
+
+.framework-comparison-table tbody tr:hover {
+    background: var(--secondary-bg);
+    transform: scale(1.01);
+    box-shadow: 0 4px 15px var(--shadow-hover);
+}
+
+.framework-comparison-table tbody tr.highlight-row {
+    background: var(--tertiary-bg);
+    border-left: 4px solid var(--success-color);
+}
+
+.framework-comparison-table tbody tr.highlight-row:hover {
+    background: var(--accent-bg);
+}
+
+.framework-comparison-table td {
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+    position: relative;
+    word-wrap: break-word;
+    display: table-cell; /* Ensure proper cell display */
+}
+
+.framework-comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Cell Styling */
+.aspect-cell {
+    background: var(--secondary-bg);
+    font-weight: 600;
+    color: var(--heading-text);
+    text-align: center;
+    border-right: 2px solid var(--border-color);
+    white-space: normal; /* Allow wrapping for aspect labels */
+}
+
+.traditional-cell,
+.investment-cell {
+    white-space: nowrap; /* Only prevent wrapping in comparison cells */
+}
+
+.traditional-cell {
+    border-left: 4px solid var(--info-color);
+    position: relative;
+}
+
+.traditional-cell::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--info-color);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.investment-cell {
+    border-left: 4px solid var(--success-color);
+    position: relative;
+}
+
+.investment-cell::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--success-color);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.traditional-cell,
+.investment-cell {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-height: 60px; /* Ensure consistent cell height */
+}
+
+.cell-value {
+    font-size: 0.95rem;
+    color: var(--primary-text);
+    font-weight: 500;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.cell-indicator {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.cell-indicator.positive {
+    color: var(--success-color);
+}
+
+.cell-indicator.negative {
+    color: var(--error-color);
+}
+
+.cell-indicator.neutral {
+    color: var(--muted-text);
+}
+
+/* Table Insight Footer */
+.table-insight {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 0.75rem;
+    border: 1px solid #28a745;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.insight-icon {
+    font-size: 1.4rem;
+    color: #28a745;
+}
+
+.insight-text {
+    font-size: 0.95rem;
+    color: var(--primary-text);
+    font-weight: 500;
+}
+
+/* Responsive Design for Framework Table */
+@media (max-width: 1200px) {
+    .framework-table-container {
+        padding: 1.5rem;
+    }
+    
+    .framework-comparison-table th {
+        padding: 1.25rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .header-title {
+        font-size: 0.9rem;
+    }
+    
+    .header-subtitle {
+        font-size: 0.75rem;
+    }
+    
+    .framework-comparison-table td {
+        padding: 1rem 0.75rem;
+    }
+    
+    .cell-value {
+        font-size: 0.9rem;
+    }    .traditional-cell,
+    .investment-cell {
+        position: relative;
+    }
+    
+    .traditional-cell::before,
+    .investment-cell::before {
+        border-radius: 0.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .framework-table-container {
+        padding: 1rem;
+        margin: 1rem 0;
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+    }
+    
+    .framework-comparison-table {
+        font-size: 0.85rem;
+        min-width: 600px; /* Minimum width to prevent cramping */
+    }
+    
+    .framework-comparison-table th {
+        padding: 1rem 0.5rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .header-text-group {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .header-title {
+        font-size: 0.85rem;
+    }
+    
+    .header-subtitle {
+        font-size: 0.7rem;
+    }
+    
+    .framework-comparison-table td {
+        padding: 0.75rem 0.5rem;
+    }
+      .traditional-cell,
+    .investment-cell {
+        gap: 0.5rem;
+        min-height: 50px;
+        position: relative;
+    }
+    
+    .traditional-cell::before,
+    .investment-cell::before {
+        border-radius: 0.25rem;
+    }
+    
+    .cell-value {
+        font-size: 0.85rem;
+    }
+    
+    .cell-indicator {
+        font-size: 1.1rem;
+    }
+    
+    .table-insight {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .insight-text {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .framework-comparison-table {
+        min-width: 500px; /* Ensure table doesn't get too cramped */
+    }
+    
+    .aspect-header {
+        width: 30%;
+    }
+    
+    .traditional-header,
+    .investment-header {
+        width: 35%;
+    }
+    
+    .framework-comparison-table th,
+    .framework-comparison-table td {
+        padding: 0.5rem 0.25rem;
+    }
+    
+    .header-icon {
+        font-size: 1.2rem;
+    }
+    
+    .header-title {
+        font-size: 0.8rem;
+    }
+    
+    .header-subtitle {
+        font-size: 0.65rem;
+    }
+    
+    .cell-value {
+        font-size: 0.8rem;
+    }
+      .traditional-cell,
+    .investment-cell {
+        gap: 0.25rem;
+        min-height: 45px;
+        position: relative;
+    }
+    
+    .traditional-cell::before,
+    .investment-cell::before {
+        border-radius: 0.25rem;
+    }
+}

@@ -2327,28 +2327,7 @@ em, i {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .comparison-table-container {
-    margin: 0 -var(--space-lg);
-  }
-  
-  .framework-comparison-table th,
-  .framework-comparison-table td {
-    padding: var(--space-md);
-    font-size: 0.9rem;
-  }
-  
-  .framework-comparison-table th {
-    font-size: 1rem;
-  }
-  
-  .aspect-header {
-    width: 30%;
-  }
-  
-  .traditional-header,
-  .investment-header {
-    width: 35%;
-  }
+  /* Mobile responsive styles can be added here if needed */
 }
 
 @media (max-width: 1024px) {
