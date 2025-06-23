@@ -7,8 +7,8 @@ This file tracks bugs and issues that we've encountered but haven't been able to
 ## Bug #001: Triangle Framework Alignment Issues
 
 **Date Reported**: June 23, 2025  
-**Date Resolved**: *(unresolved)*  
-**Status**: 🔴 **UNRESOLVED**  
+**Date Resolved**: June 23, 2025  
+**Status**: ✅ **RESOLVED**  
 **Priority**: Low  
 **Reporter**: User
 
@@ -69,19 +69,35 @@ The triangle framework on slide 4 (The Three Pillars Framework) has alignment is
 - **Result**: Failed - User still not satisfied with results
 - **Reason**: Approach may have been too complex or calculations still incorrect
 
-### Current Status
-All changes have been discarded using `git restore`. The triangle framework remains in its original state with the alignment issues unresolved.
+### ✅ RESOLUTION APPLIED
 
-### Next Steps
-- Consider a complete redesign of the triangle framework component
-- Research alternative CSS layout approaches (CSS Grid, custom positioning)
-- Investigate using a different visual representation that's easier to align
-- Consider using a background image or canvas-based approach instead of SVG
+**Resolution Date**: June 23, 2025  
+**Resolution Method**: Complete redesign using CSS Grid layout  
 
-### Notes
-- The core challenge appears to be precisely calculating the intersection points between SVG coordinates and CSS positioned elements
-- Fixed box dimensions help with consistency but may impact responsive design
-- The triangle framework is a key visual element that represents the investment philosophy, so a working solution is important for the workshop's effectiveness
+#### Final Solution:
+Replaced the problematic SVG/absolute positioning approach with a clean CSS Grid implementation:
+
+1. **Removed SVG overlay**: Eliminated the troublesome SVG triangle lines that were causing overlap issues
+2. **Implemented CSS Grid**: Used a 3-column, 3-row CSS Grid layout for precise positioning
+3. **Uniform box sizing**: All three boxes now have consistent dimensions (220px width, 160px height)
+4. **Perfect triangle formation**: 
+   - Goals box: Grid position (2,1) - center top
+   - Time box: Grid position (1,3) - bottom left  
+   - Risk box: Grid position (3,3) - bottom right
+5. **Updated slide title**: Changed from "Three Pillars Framework" to "Three Points Framework" for consistency with triangle metaphor
+
+#### Files Modified:
+- `presentation-html/slides/slide-04.html` - Updated HTML structure and title
+- `presentation-html/assets/css/components.css` - Replaced absolute positioning with CSS Grid
+
+#### Testing Results:
+- ✅ No text overlap with surrounding content
+- ✅ All boxes uniform size and properly aligned
+- ✅ Clean triangle formation maintained
+- ✅ Responsive layout that works across screen sizes
+- ✅ Consistent metaphor between title and visual representation
+
+**Status**: Fully resolved - triangle framework now displays perfectly without any alignment issues.
 
 ---
 

@@ -926,37 +926,65 @@
 }
 
 .trinity-triangle {
-    position: relative;
-    width: 400px;
-    height: 300px;
-    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 220px 1fr;
+    grid-template-rows: auto 1rem auto;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    align-items: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+/* Container for the three boxes - no longer needed */
+.pillars-container {
+    display: none;
+}
+
+/* Triangle roof - no longer needed */
+.triangle-roof {
+    display: none;
 }
 
 .triangle-point {
-    position: absolute;
-    text-align: center;
-    padding: 1rem;
     background: var(--bg-secondary);
-    border-radius: 1rem;
     border: 2px solid var(--accent-color);
-    width: 150px;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+    height: 160px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.triangle-point:hover {
+    transform: translateY(-4px);
+    border-color: var(--secondary-accent);
+    box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
+}
+
 .triangle-point.top {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: center;
 }
 
 .triangle-point.bottom-left {
-    bottom: 0;
-    left: 0;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    justify-self: center;
 }
 
 .triangle-point.bottom-right {
-    bottom: 0;
-    right: 0;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    justify-self: center;
 }
 
 .pillar-icon {
