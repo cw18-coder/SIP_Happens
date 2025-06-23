@@ -276,76 +276,97 @@ class PresentationController {
         const notes = this.getSpeakerNotes(this.currentSlide);
         notesContent.innerHTML = notes;
     }
-    
-    getSpeakerNotes(slideNumber) {
-        const speakerNotes = {
+      getSpeakerNotes(slideNumber) {
+        const tldrContent = {
             1: `
-                <h4>Title Slide - Opening Impact</h4>
+                <h3>TL;DR</h3>
                 <ul>
-                    <li><strong>Energy:</strong> Start with enthusiasm and confidence</li>
-                    <li><strong>Tech Connection:</strong> Emphasize the coding metaphor throughout</li>
-                    <li><strong>Audience Poll:</strong> "How many check GitHub more than bank balance?"</li>
-                    <li><strong>Setting Expectations:</strong> This won't be boring finance</li>
-                    <li><strong>Duration:</strong> 2-3 minutes maximum</li>
+                    <li><strong>Code-to-wealth journey:</strong> Apply programming concepts to build financial wealth systematically</li>
+                    <li><strong>Tech professional advantage:</strong> Logical thinking and systematic approaches give you an investing edge</li>
+                    <li><strong>Workshop promise:</strong> Learn practical, actionable mutual fund strategies using familiar tech analogies</li>
+                    <li><strong>Outcome goal:</strong> Transform from investment beginner to confident portfolio architect</li>
+                    <li><strong>Mindset shift:</strong> Treat investments like building scalable, maintainable code - methodical and long-term focused</li>
                 </ul>
-                <p><strong>Key Message:</strong> We're going to debug your financial portfolio like we debug code.</p>
             `,
             2: `
-                <h4>Opening Hook - Engaging the Audience</h4>
+                <h3>TL;DR</h3>
                 <ul>
-                    <li><strong>Interactive Start:</strong> Ask for show of hands on investment experience</li>
-                    <li><strong>Common Ground:</strong> Use shared tech experiences</li>
-                    <li><strong>Pain Points:</strong> Address common finance lecture boringness</li>
-                    <li><strong>Promise:</strong> Practical, actionable advice in tech language</li>
-                    <li><strong>Warning Box:</strong> Use humor to lighten the mood</li>
+                    <li><strong>Finance education gap:</strong> Most investment content is boring and irrelevant to tech professionals</li>
+                    <li><strong>Tech analogy approach:</strong> Use familiar concepts (APIs, frameworks, DevOps) to understand investing</li>
+                    <li><strong>Practical focus:</strong> Actionable strategies over theoretical concepts - like learning to code by building projects</li>
+                    <li><strong>Audience targeting:</strong> Content specifically designed for logical, systems-thinking tech minds</li>
+                    <li><strong>Learning promise:</strong> Make investing as intuitive as choosing the right technology stack</li>
                 </ul>
-                <p><strong>Transition:</strong> "Let's start with the basics - understanding the mutual fund architecture."</p>
             `,
             3: `
-                <h4>The MF Stack - Core Concepts</h4>
+                <h3>TL;DR</h3>
                 <ul>
-                    <li><strong>Microservices Analogy:</strong> Spend time on this - it's the foundation</li>
-                    <li><strong>Each Component:</strong> Explain clearly with real examples</li>
-                    <li><strong>Fund Manager:</strong> Like trusting your tech lead</li>
-                    <li><strong>Portfolio:</strong> Like a well-architected system</li>
-                    <li><strong>NAV:</strong> Automatic versioning vs manual</li>
-                    <li><strong>Costs:</strong> Like Azure bills - optimize but don't compromise</li>
+                    <li><strong>Mutual funds = service libraries:</strong> Pre-built, professionally managed investment components</li>
+                    <li><strong>Fund manager = tech lead:</strong> Expert who makes day-to-day decisions while you focus on other priorities</li>
+                    <li><strong>Portfolio diversification:</strong> Like microservices - spread risk across multiple components</li>
+                    <li><strong>NAV (Net Asset Value):</strong> Real-time pricing like API endpoints - always current and accessible</li>
+                    <li><strong>Cost efficiency:</strong> Expense ratios are like cloud costs - optimize but don't sacrifice quality for savings</li>
                 </ul>
-                <p><strong>Key Point:</strong> Unlike servers, mutual funds scale UP, not crash at 3 AM!</p>
             `,
             4: `
-                <h4>Three Pillars Framework - Investment Trinity</h4>
+                <h3>TL;DR</h3>
                 <ul>
-                    <li><strong>Triangle Analogy:</strong> Reference project management triangle</li>
-                    <li><strong>Key Difference:</strong> In investing, you CAN have all three with time</li>
-                    <li><strong>Goals:</strong> Like feature requirements - be specific</li>
-                    <li><strong>Time:</strong> Like sprint planning - realistic timelines</li>
-                    <li><strong>Risk:</strong> Like production tolerance - know your limits</li>
-                    <li><strong>Architecture Metaphor:</strong> This triangle determines everything</li>
+                    <li><strong>Investment Trinity:</strong> Goals, Time Horizon, and Risk Appetite must align for optimal results</li>
+                    <li><strong>Unlike PM trade-offs:</strong> With proper time planning, you can optimize all three investment factors simultaneously</li>
+                    <li><strong>Framework comparison:</strong> Traditional PM requires compromises, but investment frameworks allow compounding optimization</li>
+                    <li><strong>Alignment matters:</strong> Mismatched goals, time, and risk lead to poor investment outcomes</li>
+                    <li><strong>Time advantage:</strong> Unlike fixed project deadlines, time works in your favor with investments</li>
                 </ul>
-                <p><strong>Transition:</strong> "Now let's see how this applies to different time horizons."</p>
             `,
             5: `
-                <h4>Goal-Time-Risk Matrix - Practical Application</h4>
+                <h3>TL;DR</h3>
                 <ul>
-                    <li><strong>Sprint Goals (Short-term):</strong> Conservative, like stable libraries</li>
-                    <li><strong>Release Cycles (Medium-term):</strong> Balanced, like React vs new frameworks</li>
-                    <li><strong>Platform Building (Long-term):</strong> Aggressive, like betting on AI early</li>
-                    <li><strong>Examples:</strong> Use relatable goals for tech professionals</li>
-                    <li><strong>Risk Logic:</strong> Explain why each time horizon requires different risk</li>
+                    <li><strong>Time-based fund matching:</strong> Short-term goals need conservative funds, long-term goals can handle aggressive ones</li>
+                    <li><strong>Risk-return spectrum:</strong> 1-3 years (4-7% returns), 3-7 years (8-12% returns), 7+ years (12-15% returns)</li>
+                    <li><strong>Project analogy:</strong> Match investment tools to objectives like choosing tech stacks for different project requirements</li>
+                    <li><strong>Goal categorization:</strong> Sprint goals (emergency funds), Release cycles (major purchases), Platform building (retirement)</li>
+                    <li><strong>Triage system:</strong> Use time horizon as primary filter, then optimize for risk tolerance within that timeframe</li>
                 </ul>
-                <p><strong>Emphasis:</strong> Time horizon is the most important factor in determining strategy.</p>
+            `,
+            6: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Three main fund types:</strong> Equity (high growth, high risk), Debt (steady income, low risk), Hybrid (balanced mix)</li>
+                    <li><strong>Equity sub-categories:</strong> Large cap (stable like Google), Mid cap (growth phase like Zomato), Small cap (startup potential)</li>
+                    <li><strong>Debt fund spectrum:</strong> Liquid funds (Redis-like instant access) up to medium duration (PostgreSQL-like complexity)</li>
+                    <li><strong>Hybrid allocation models:</strong> Conservative (80% debt), Balanced (50-50), Aggressive (70% equity)</li>
+                    <li><strong>Tech stack analogy:</strong> Choose fund categories like selecting technologies - match complexity and risk to project requirements</li>
+                </ul>
+            `,
+            15: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>SIP = Investment DevOps:</strong> Automation removes emotional decisions and human errors from investing</li>
+                    <li><strong>Rupee cost averaging:</strong> Buy more units when prices are low, fewer when high - automatic optimization</li>
+                    <li><strong>Four key practices:</strong> Start early & small, increase annually, don't stop during downturns, use goal-based allocation</li>
+                    <li><strong>SIP vs Lumpsum:</strong> SIP wins for most investors due to behavioral advantages and risk mitigation</li>
+                    <li><strong>Compound amplification:</strong> Time multiplies small consistent investments into exponential wealth growth</li>
+                </ul>
+            `,
+            28: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Action items:</strong> Download investment app, calculate emergency fund target, set first SIP amount, schedule start date</li>
+                    <li><strong>21-day challenge:</strong> Complete KYC (Day 1), start first SIP (Day 7), set up emergency fund (Day 14), share progress (Day 21)</li>
+                    <li><strong>Ongoing support:</strong> Workshop materials, discussion group, monthly market updates, quarterly portfolio reviews</li>
+                    <li><strong>Key momentum:</strong> Implementation within 7 days prevents analysis paralysis and ensures action</li>
+                    <li><strong>Community aspect:</strong> Accountability through shared progress and group support system</li>
+                </ul>
             `
         };
         
-        return speakerNotes[slideNumber] || `
-            <h4>Slide ${slideNumber}</h4>
-            <p>Speaker notes for this slide would go here. Key points to cover:</p>
+        return tldrContent[slideNumber] || `
+            <h3>TL;DR</h3>
+            <p>Key takeaways for slide ${slideNumber} - content coming soon!</p>
             <ul>
-                <li>Main concepts to emphasize</li>
-                <li>Stories or examples to share</li>
-                <li>Interaction opportunities</li>
-                <li>Transition to next slide</li>
+                <li>💡 This slide contains valuable investment insights</li>
+                <li>🚀 Focus on practical application of concepts</li>
+                <li>📚 Reference the full workshop materials for details</li>
             </ul>
         `;
     }
