@@ -2062,3 +2062,313 @@ em, i {
     color: #333;
   }
 }
+
+/* Fund Categories Layered Reveal */
+.fund-main-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-xl);
+  margin: var(--space-2xl) 0;
+}
+
+.category-card {
+  background: var(--secondary-bg);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  border: 2px solid var(--accent-bg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-accent);
+}
+
+.category-card:active {
+  transform: translateY(-4px);
+}
+
+.category-card .category-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.category-card .emoji-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.category-card h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+  color: var(--primary-text);
+}
+
+.category-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--primary-accent);
+  font-style: italic;
+  margin-bottom: var(--space-lg);
+}
+
+.category-description {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+  margin-bottom: var(--space-lg);
+  line-height: 1.5;
+}
+
+.category-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: var(--tertiary-bg);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  color: var(--secondary-text);
+  border: 1px solid var(--accent-bg);
+}
+
+.explore-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+  border: none;
+  color: var(--primary-bg);
+  padding: var(--space-md);
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.explore-btn:hover {
+  background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Detailed View */
+.fund-detailed-view {
+  animation: fadeIn 0.5s ease;
+}
+
+.back-button {
+  margin-bottom: var(--space-xl);
+}
+
+.back-button button {
+  background: var(--secondary-bg);
+  border: 2px solid var(--accent-bg);
+  color: var(--primary-text);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.back-button button:hover {
+  border-color: var(--primary-accent);
+  background: var(--tertiary-bg);
+  transform: translateX(-4px);
+}
+
+.detail-content h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  color: var(--primary-text);
+  border-bottom: 2px solid var(--primary-accent);
+  padding-bottom: var(--space-md);
+}
+
+.fund-subcategories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-xl);
+}
+
+.fund-subcard {
+  background: var(--tertiary-bg);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--accent-bg);
+  transition: all 0.3s ease;
+}
+
+.fund-subcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-accent);
+}
+
+.subcard-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--accent-bg);
+}
+
+.subcard-header .emoji-icon,
+.subcard-header .tech-logo {
+  width: 32px;
+  height: 32px;
+  margin-bottom: var(--space-sm);
+}
+
+.subcard-header .tech-logo {
+  border-radius: 4px;
+  background: white;
+  padding: 2px;
+}
+
+.subcard-header h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--primary-text);
+}
+
+.analogy {
+  text-align: center;
+  font-style: italic;
+  color: var(--secondary-text);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-lg);
+  padding: var(--space-sm);
+  background: var(--accent-bg);
+  border-radius: var(--border-radius);
+}
+
+.fund-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  padding: var(--space-xs) 0;
+}
+
+.info-item strong {
+  color: var(--primary-text);
+  min-width: 100px;
+}
+
+.risk-moderate {
+  background: rgba(251, 191, 36, 0.2);
+  color: #f59e0b;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.risk-high {
+  background: rgba(249, 115, 22, 0.2);
+  color: #ea580c;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.risk-very-high {
+  background: rgba(239, 68, 68, 0.2);
+  color: #dc2626;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Hybrid Fund Allocation Bars */
+.allocation-mini {
+  display: flex;
+  width: 100%;
+  height: 20px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+  border: 1px solid var(--accent-bg);
+}
+
+.debt-bar {
+  background: linear-gradient(135deg, var(--info-color), #3b82f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.equity-bar {
+  background: linear-gradient(135deg, var(--primary-accent), #10b981);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .fund-main-categories {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .fund-subcategories {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .category-card {
+    padding: var(--space-lg);
+  }
+  
+  .fund-subcard {
+    padding: var(--space-md);
+  }
+  
+  .detail-content h3 {
+    font-size: 1.5rem;
+  }
+}

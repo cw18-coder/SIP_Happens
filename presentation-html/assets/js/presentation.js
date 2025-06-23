@@ -1,6 +1,12 @@
 // Main Presentation JavaScript
+console.log('presentation.js loaded successfully'); // Debug log
+
+// Test if basic JavaScript works
+console.log('Testing basic JS execution'); // Debug log
+
 class PresentationController {
     constructor() {
+        console.log('PresentationController constructor called'); // Debug log
         this.currentSlide = 1;
         this.totalSlides = 28;
         this.slides = document.querySelectorAll('.slide');
@@ -165,9 +171,13 @@ class PresentationController {
         this.updateProgressBar();
         this.updateNavigationButtons();
         this.updateSpeakerNotes();
-        
-        // Analytics tracking
+          // Analytics tracking
         this.trackSlideView(slideNumber);
+        
+        // Reset fund categories if navigating away from slide 6
+        if (window.fundCategories && slideNumber !== 6) {
+            window.fundCategories.reset();
+        }
         
         // Auto-hide speaker notes on mobile
         if (window.innerWidth <= 768 && this.speakerNotesVisible) {
@@ -526,14 +536,146 @@ class PresentationController {
     }
 }
 
+// Fund Categories Interactive Functionality
+console.log('About to define FundCategoriesController'); // Debug log
+
+class FundCategoriesController {
+    constructor() {
+        console.log('FundCategoriesController initialized'); // Debug log
+        this.currentView = 'overview'; // 'overview' or 'details'
+        this.currentCategory = null;
+        this.init();
+    }
+    
+    init() {
+        console.log('FundCategoriesController init called'); // Debug log
+        this.bindEvents();
+    }      bindEvents() {
+        console.log('bindEvents called'); // Debug log
+        
+        // Test: Log all clicks to see if event delegation works
+        document.addEventListener('click', (e) => {
+            console.log('Document click detected:', e.target); // Debug log
+        });
+        
+        // Main category card clicks and explore button clicks
+        document.addEventListener('click', (e) => {
+            const exploreBtn = e.target.closest('.explore-btn');
+            const categoryCard = e.target.closest('.category-card');
+            
+            console.log('Click check - exploreBtn:', exploreBtn, 'categoryCard:', categoryCard); // Debug log
+            
+            if ((exploreBtn || categoryCard) && this.currentView === 'overview') {
+                const targetCard = (exploreBtn || categoryCard).closest('.category-card');
+                const category = targetCard.getAttribute('data-category');
+                console.log('Clicked on category:', category); // Debug log
+                this.showCategoryDetails(category);
+                e.preventDefault(); // Prevent any default button behavior
+            }
+        });
+        
+        // Back button click
+        document.addEventListener('click', (e) => {
+            if (e.target.id === 'backToMain') {
+                this.showOverview();
+                e.preventDefault();
+            }
+        });
+        
+        // Escape key to go back
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.currentView === 'details') {
+                this.showOverview();
+                e.stopPropagation(); // Prevent other escape handlers
+            }        });
+    }
+    
+    showCategoryDetails(category) {
+        console.log('showCategoryDetails called with:', category); // Debug log
+        if (this.currentView === 'details') return;
+        
+        this.currentView = 'details';
+        this.currentCategory = category;
+        
+        // Hide main categories
+        const mainCategories = document.getElementById('mainCategories');
+        console.log('mainCategories element:', mainCategories); // Debug log
+        if (mainCategories) {
+            mainCategories.style.display = 'none';
+        }        
+        // Show detailed view container
+        const detailedView = document.getElementById('detailedView');
+        console.log('detailedView element:', detailedView); // Debug log
+        if (detailedView) {
+            detailedView.style.display = 'block';
+        }
+        
+        // Hide all category details first
+        const allDetails = document.querySelectorAll('.detail-content');
+        console.log('Found detail elements:', allDetails.length); // Debug log
+        allDetails.forEach(detail => {
+            detail.style.display = 'none';
+        });
+        
+        // Show specific category details
+        const categoryDetail = document.getElementById(`${category}Detail`);
+        console.log(`Looking for element: ${category}Detail, found:`, categoryDetail); // Debug log
+        if (categoryDetail) {
+            categoryDetail.style.display = 'block';
+        }
+        
+        // Smooth scroll to top of slide
+        const slide = document.querySelector('[data-slide="6"]');
+        if (slide) {
+            slide.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+    
+    showOverview() {
+        if (this.currentView === 'overview') return;
+        
+        this.currentView = 'overview';
+        this.currentCategory = null;
+        
+        // Hide detailed view
+        const detailedView = document.getElementById('detailedView');
+        if (detailedView) {
+            detailedView.style.display = 'none';
+        }
+          // Show main categories
+        const mainCategories = document.getElementById('mainCategories');
+        if (mainCategories) {
+            mainCategories.style.display = 'grid';
+        }
+        
+        // Smooth scroll to top of slide
+        const slide = document.querySelector('[data-slide="6"]');
+        if (slide) {
+            slide.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+    
+    // Reset to overview when slide changes
+    reset() {
+        this.showOverview();
+    }
+}
+
 // Initialize presentation when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded event fired'); // Debug log
+    
     // Load saved theme
     const savedTheme = localStorage.getItem('presentation-theme') || 'dark';
     document.body.setAttribute('data-theme', savedTheme);
     
     // Initialize presentation controller
     window.presentation = new PresentationController();
+    console.log('PresentationController created'); // Debug log
+    
+    // Initialize fund categories controller
+    window.fundCategories = new FundCategoriesController();
+    console.log('FundCategoriesController created'); // Debug log
     
     // Handle fullscreen changes
     document.addEventListener('fullscreenchange', () => {
@@ -559,3 +701,5 @@ document.addEventListener('DOMContentLoaded', () => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = PresentationController;
 }
+
+console.log('End of presentation.js file reached'); // Debug log
