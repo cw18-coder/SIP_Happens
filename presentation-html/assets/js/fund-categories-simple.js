@@ -1,7 +1,7 @@
-// Minimal Fund Categories Controller - Direct initialization
+// Minimal Fund Categories Controller - Direct initialization for slides 5 & 6
 console.log('fund-categories-simple.js loaded');
 
-// Function to initialize fund categories
+// Function to initialize fund categories (slide 6)
 function initFundCategories() {
     console.log('initFundCategories called');
     
@@ -9,7 +9,7 @@ function initFundCategories() {
     document.addEventListener('click', function(e) {
         console.log('Global click detected:', e.target.tagName, e.target.className);
         
-        // Check if click is on explore button
+        // Handle Slide 6 - Fund Categories
         if (e.target.classList.contains('explore-btn')) {
             console.log('Explore button clicked!');
             
@@ -47,7 +47,7 @@ function initFundCategories() {
             }
         }
         
-        // Check if click is on back button
+        // Handle Slide 6 back button
         if (e.target.id === 'backToMain') {
             console.log('Back button clicked!');
             
@@ -67,9 +67,68 @@ function initFundCategories() {
             
             e.preventDefault();
         }
+        
+        // Handle Slide 5 - Triage Matrix
+        if (e.target.classList.contains('explore-btn-triage')) {
+            console.log('Triage explore button clicked!');
+            
+            const timeCard = e.target.closest('.time-horizon-card');
+            if (timeCard) {
+                const timeframe = timeCard.getAttribute('data-timeframe');
+                console.log('Timeframe:', timeframe);
+                
+                // Hide main triage categories
+                const triageMain = document.getElementById('triageMainCategories');
+                if (triageMain) {
+                    triageMain.style.display = 'none';
+                    console.log('Triage main categories hidden');
+                }
+                
+                // Show detailed view
+                const triageDetailed = document.getElementById('triageDetailedView');
+                if (triageDetailed) {
+                    triageDetailed.style.display = 'block';
+                    console.log('Triage detailed view shown');
+                }
+                
+                // Hide all detail content first
+                const allTriageDetails = document.querySelectorAll('#triageDetailedView .detail-content');
+                allTriageDetails.forEach(detail => detail.style.display = 'none');
+                
+                // Show specific timeframe detail
+                const timeframeDetail = document.getElementById(timeframe + 'Detail');
+                if (timeframeDetail) {
+                    timeframeDetail.style.display = 'block';
+                    console.log('Timeframe detail shown:', timeframe);
+                }
+                
+                e.preventDefault();
+            }
+        }
+        
+        // Handle Slide 5 back button
+        if (e.target.id === 'backToTriageMain') {
+            console.log('Triage back button clicked!');
+            
+            // Hide detailed view
+            const triageDetailed = document.getElementById('triageDetailedView');
+            if (triageDetailed) {
+                triageDetailed.style.display = 'none';
+                console.log('Triage detailed view hidden');
+            }
+            
+            // Show main categories
+            const triageMain = document.getElementById('triageMainCategories');
+            if (triageMain) {
+                triageMain.style.display = 'grid';
+                console.log('Triage main categories shown');
+            }
+            
+            e.preventDefault();
+        }
     });
     
-    console.log('Fund categories click handlers attached');
+    console.log('Fund categories and triage click handlers attached');
 }
 
 // Try multiple initialization approaches

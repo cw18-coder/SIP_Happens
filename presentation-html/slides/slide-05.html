@@ -11,154 +11,231 @@
                 <p class="lead">Just like how you choose different tech stacks for different project requirements, you need different fund categories for different life goals. Here's your investment triage system:</p>
             </div>
             
-            <div class="triage-matrix">
-                <div class="matrix-item short-term">
-                    <div class="matrix-header">
-                        <div class="time-badge sprint">🏃‍♂️ SHORT TERM</div>
-                        <div class="timeframe">1-3 years - "Sprint Goals"</div>
+            <!-- Main Time Horizon Cards (Level 1) -->
+            <div class="triage-main-categories" id="triageMainCategories">
+                <div class="time-horizon-card" data-timeframe="short">
+                    <div class="card-header">
+                        <div class="time-icon">🏃‍♂️</div>
+                        <h3>Short Term</h3>
+                        <p class="timeframe">1-3 years - "Sprint Goals"</p>
+                    </div>
+                    <div class="card-preview">
+                        <div class="goal-examples">
+                            <span class="preview-label">Examples:</span>
+                            <span class="preview-text">Emergency fund, New laptop, Vacation</span>
+                        </div>
+                        <div class="risk-preview conservative">
+                            <span class="risk-level">Conservative Risk</span>
+                            <span class="returns-preview">4-7% returns</span>
+                        </div>
+                    </div>
+                    <button class="explore-btn-triage">Click to Explore →</button>
+                </div>
+                
+                <div class="time-horizon-card" data-timeframe="medium">
+                    <div class="card-header">
+                        <div class="time-icon">🚀</div>
+                        <h3>Medium Term</h3>
+                        <p class="timeframe">3-7 years - "Release Cycles"</p>
+                    </div>                    <div class="card-preview">
+                        <div class="goal-examples">
+                            <span class="preview-label">Examples:</span>
+                            <span class="preview-text">Home/Car down payment, Child's education</span>
+                        </div>
+                        <div class="risk-preview moderate">
+                            <span class="risk-level">Moderate Risk</span>
+                            <span class="returns-preview">8-12% returns</span>
+                        </div>
+                    </div>
+                    <button class="explore-btn-triage">Click to Explore →</button>
+                </div>
+                
+                <div class="time-horizon-card" data-timeframe="long">
+                    <div class="card-header">
+                        <div class="time-icon">🏗️</div>
+                        <h3>Long Term</h3>
+                        <p class="timeframe">7+ years - "Platform Building"</p>
+                    </div>                    <div class="card-preview">
+                        <div class="goal-examples">
+                            <span class="preview-label">Examples:</span>
+                            <span class="preview-text">Retirement, Children's Higher Education</span>
+                        </div>
+                        <div class="risk-preview aggressive">
+                            <span class="risk-level">Aggressive Risk</span>
+                            <span class="returns-preview">12-15% returns</span>
+                        </div>
+                    </div>
+                    <button class="explore-btn-triage">Click to Explore →</button>
+                </div>
+            </div>
+            
+            <!-- Detailed View (Level 2) -->
+            <div class="triage-detailed-view" id="triageDetailedView" style="display: none;">
+                <div class="back-button">
+                    <button id="backToTriageMain">← Back to Time Horizons</button>
+                </div>
+                
+                <!-- Short Term Detail -->
+                <div class="detail-content" id="shortDetail" style="display: none;">
+                    <div class="detail-header">
+                        <div class="time-icon-large">🏃‍♂️</div>
+                        <h3>Short Term Goals (1-3 years)</h3>
+                        <p class="detail-subtitle">"Sprint Goals" - Quick wins and essential needs</p>
                     </div>
                     
-                    <div class="matrix-content">
-                        <div class="goals-section">
+                    <div class="detail-grid">
+                        <div class="detail-section goals">
                             <h4>📋 Goal Examples</h4>
                             <ul>
-                                <li>Emergency fund</li>
-                                <li>New laptop</li>
-                                <li>Vacation</li>
+                                <li>Emergency fund (3-6 months expenses)</li>
+                                <li>New laptop or tech equipment</li>
+                                <li>Vacation or travel</li>
                                 <li>Wedding expenses</li>
+                                <li>Short-term medical needs</li>
                             </ul>
                         </div>
                         
-                        <div class="strategy-section">
-                            <div class="risk-profile conservative">
+                        <div class="detail-section strategy">
+                            <h4>🎯 Investment Strategy</h4>
+                            <div class="risk-profile-detail conservative">
                                 <strong>Risk Profile:</strong> Conservative
                                 <div class="analogy">Like using well-tested, stable libraries</div>
                             </div>
-                            
-                            <div class="fund-categories">
-                                <strong>Fund Categories:</strong>
+                            <div class="fund-recommendations">
+                                <strong>Recommended Funds:</strong>
                                 <ul>
                                     <li>Liquid funds</li>
                                     <li>Ultra-short duration funds</li>
                                     <li>Money market funds</li>
                                 </ul>
                             </div>
-                            
-                            <div class="returns">
+                            <div class="returns-detail">
                                 <strong>Expected Returns:</strong> 4-7% annually
                             </div>
                         </div>
                         
-                        <div class="tech-analogy">
-                            <div class="analogy-icon">💻</div>
-                            <div class="analogy-text">
-                                <strong>Tech Analogy:</strong> Like keeping your laptop charged - boring but absolutely essential for daily operations
+                        <div class="detail-section tech-analogy">
+                            <h4>💻 Tech Analogy</h4>
+                            <div class="analogy-box">
+                                <div class="analogy-icon">💻</div>
+                                <div class="analogy-content">
+                                    <p><strong>Like keeping your laptop charged</strong> - boring but absolutely essential for daily operations. You don't experiment with bleeding-edge power management; you use what works reliably.</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="rationale">
-                            <h5>Why Conservative?</h5>
+                        <div class="detail-section rationale">
+                            <h4>🤔 Why Conservative?</h4>
                             <p>Short timeframes don't allow you to recover from market downturns. It's like deploying untested code to production right before a major release - the risk-reward ratio doesn't make sense.</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="matrix-item medium-term">
-                    <div class="matrix-header">
-                        <div class="time-badge release">🚀 MEDIUM TERM</div>
-                        <div class="timeframe">3-7 years - "Release Cycles"</div>
+                <!-- Medium Term Detail -->
+                <div class="detail-content" id="mediumDetail" style="display: none;">
+                    <div class="detail-header">
+                        <div class="time-icon-large">🚀</div>
+                        <h3>Medium Term Goals (3-7 years)</h3>
+                        <p class="detail-subtitle">"Release Cycles" - Major life milestones</p>
                     </div>
                     
-                    <div class="matrix-content">
-                        <div class="goals-section">
+                    <div class="detail-grid">                        <div class="detail-section goals">
                             <h4>📋 Goal Examples</h4>
                             <ul>
-                                <li>House down payment</li>
-                                <li>Car purchase</li>
-                                <li>Child's education</li>
+                                <li>Home down payment</li>
+                                <li>Car down payment</li>
+                                <li>Child's primary/secondary education</li>
                                 <li>Major home renovation</li>
+                                <li>Starting a business</li>
                             </ul>
                         </div>
                         
-                        <div class="strategy-section">
-                            <div class="risk-profile moderate">
+                        <div class="detail-section strategy">
+                            <h4>🎯 Investment Strategy</h4>
+                            <div class="risk-profile-detail moderate">
                                 <strong>Risk Profile:</strong> Moderate
                                 <div class="analogy">Like adopting stable, proven frameworks</div>
                             </div>
-                            
-                            <div class="fund-categories">
-                                <strong>Fund Categories:</strong>
+                            <div class="fund-recommendations">
+                                <strong>Recommended Funds:</strong>
                                 <ul>
                                     <li>Hybrid funds</li>
                                     <li>Conservative hybrid funds</li>
                                     <li>Balanced advantage funds</li>
                                 </ul>
                             </div>
-                            
-                            <div class="returns">
+                            <div class="returns-detail">
                                 <strong>Expected Returns:</strong> 8-12% annually
                             </div>
                         </div>
                         
-                        <div class="tech-analogy">
-                            <div class="analogy-icon">⚛️</div>
-                            <div class="analogy-text">
-                                <strong>Tech Analogy:</strong> Like choosing React over the latest JavaScript framework - proven, reliable, with room for growth
+                        <div class="detail-section tech-analogy">
+                            <h4>⚛️ Tech Analogy</h4>
+                            <div class="analogy-box">
+                                <div class="analogy-icon">⚛️</div>
+                                <div class="analogy-content">
+                                    <p><strong>Like choosing React over the latest JavaScript framework</strong> - proven, reliable, with room for growth. Not the newest shiny thing, but battle-tested and scalable.</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="rationale">
-                            <h5>Why Balanced?</h5>
+                        <div class="detail-section rationale">
+                            <h4>🤔 Why Balanced?</h4>
                             <p>Medium-term goals need growth to beat inflation but also stability to ensure the money is there when you need it. It's like choosing a technology stack that's innovative enough to meet future needs but stable enough to not require constant rewrites.</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="matrix-item long-term">
-                    <div class="matrix-header">
-                        <div class="time-badge platform">🏗️ LONG TERM</div>
-                        <div class="timeframe">7+ years - "Platform Building"</div>
+                <!-- Long Term Detail -->
+                <div class="detail-content" id="longDetail" style="display: none;">
+                    <div class="detail-header">
+                        <div class="time-icon-large">🏗️</div>
+                        <h3>Long Term Goals (7+ years)</h3>
+                        <p class="detail-subtitle">"Platform Building" - Generational wealth</p>
                     </div>
                     
-                    <div class="matrix-content">
-                        <div class="goals-section">
+                    <div class="detail-grid">                        <div class="detail-section goals">
                             <h4>📋 Goal Examples</h4>
                             <ul>
                                 <li>Retirement corpus</li>
                                 <li>Children's higher education</li>
                                 <li>Wealth creation</li>
+                                <li>Financial independence</li>
+                                <li>Legacy building</li>
                             </ul>
                         </div>
                         
-                        <div class="strategy-section">
-                            <div class="risk-profile aggressive">
+                        <div class="detail-section strategy">
+                            <h4>🎯 Investment Strategy</h4>
+                            <div class="risk-profile-detail aggressive">
                                 <strong>Risk Profile:</strong> Aggressive
                                 <div class="analogy">Like betting on cutting-edge technology</div>
                             </div>
-                            
-                            <div class="fund-categories">
-                                <strong>Fund Categories:</strong>
+                            <div class="fund-recommendations">
+                                <strong>Recommended Funds:</strong>
                                 <ul>
                                     <li>Equity funds</li>
                                     <li>Index funds</li>
                                     <li>International funds</li>
                                 </ul>
                             </div>
-                            
-                            <div class="returns">
+                            <div class="returns-detail">
                                 <strong>Expected Returns:</strong> 12-15% annually
                             </div>
                         </div>
                         
-                        <div class="tech-analogy">
-                            <div class="analogy-icon">🤖</div>
-                            <div class="analogy-text">
-                                <strong>Tech Analogy:</strong> Like investing in AI/ML when it was just emerging - high conviction in long-term potential
+                        <div class="detail-section tech-analogy">
+                            <h4>🤖 Tech Analogy</h4>
+                            <div class="analogy-box">
+                                <div class="analogy-icon">🤖</div>
+                                <div class="analogy-content">
+                                    <p><strong>Like investing in AI/ML when it was just emerging</strong> - high conviction in long-term potential. Short-term volatility, but exponential long-term growth.</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="rationale">
-                            <h5>Why Aggressive?</h5>
+                        <div class="detail-section rationale">
+                            <h4>🤔 Why Aggressive?</h4>
                             <p>Long timeframes allow you to ride out market volatility and benefit from compound growth. It's like building a platform that might face short-term challenges but creates exponential value over time.</p>
                         </div>
                     </div>
@@ -170,12 +247,13 @@
     <div class="slide-notes">
         <h3>Speaker Notes:</h3>
         <ul>
+            <li>Start with the 3 time horizon overview to establish the framework</li>
+            <li>Let audience choose which timeframe to explore first based on their interest</li>
             <li>Emphasize the parallel between project planning and investment planning</li>
             <li>Use the tech analogies to make risk concepts relatable</li>
             <li>Highlight that this is about matching tools to objectives, not one-size-fits-all</li>
-            <li>Stress the importance of time horizon in determining risk tolerance</li>
             <li>Interactive: Ask audience to identify their current goals and categorize them</li>
-            <li>Time: 8-10 minutes with examples and interaction</li>
+            <li>Time: 8-10 minutes with layered exploration and interaction</li>
         </ul>
     </div>
 </div>
