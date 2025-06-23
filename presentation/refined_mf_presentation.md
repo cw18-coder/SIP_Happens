@@ -8,18 +8,16 @@
 
 *Subtitle: "From Debugging Code to Debugging Your Portfolio"*
 
-*Presented by: [Your Name]*
-
 ---
 
 ## Slide 2: Opening Hook
-**"Why This Presentation Won't Be Another Boring Finance Lecture"**
+**"Why This Workshop Won't Be Another Boring Finance Lecture"**
 
 Just like how we don't write code without understanding requirements, we shouldn't invest without understanding our financial goals. Today, we'll treat mutual funds like APIs - we'll understand their specifications, performance metrics, and how to integrate them into your wealth-building architecture.
 
 Think of this as your financial documentation - but actually useful! We'll cover everything from basic syntax to advanced optimization techniques, with real-world examples that actually make sense.
 
-*"Warning: This presentation may cause side effects including sudden urges to start SIPs and uncontrollable excitement about compound interest."*
+*"Warning: This workshop may cause side effects including sudden urges to start SIPs and uncontrollable excitement about compound interest."*
 
 ---
 
@@ -1669,4 +1667,4 @@ SIPs are like automated testing - they remove emotional decision-making and ensu
 - Guest expert sessions (fund managers, tax experts)
 - Advanced workshop modules
 
-This comprehensive presentation structure balances education with entertainment, using familiar analogies to make complex financial concepts accessible to your tech-savvy audience. The phased implementation approach ensures participants can start immediately while building sophistication over time.
+This comprehensive workshop structure balances education with entertainment, using familiar analogies to make complex financial concepts accessible to your tech-savvy audience. The phased implementation approach ensures participants can start immediately while building sophistication over time.

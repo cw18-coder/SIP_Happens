@@ -327,11 +327,11 @@ em, i {
 
 /* Title Slide Specific Styles */
 .title-slide {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
+  display: flex;
   align-items: center;
+  justify-content: center;
   min-height: 70vh;
+  padding: 2rem;
 }
 
 .title-container {
@@ -1818,7 +1818,128 @@ em, i {
     font-weight: 500;
 }
 
-/* Responsive Design */
+/* Framework Comparison Table */
+.comparison-section {
+  margin: var(--space-2xl) 0;
+}
+
+.comparison-section h3 {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  color: var(--primary-text);
+  font-size: 1.5rem;
+}
+
+.comparison-table-container {
+  margin: 0 auto;
+  max-width: 1000px;
+  overflow-x: auto;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.framework-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--secondary-bg);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  font-family: var(--font-primary);
+}
+
+.framework-comparison-table thead {
+  background: var(--tertiary-bg);
+}
+
+.framework-comparison-table th {
+  padding: var(--space-lg);
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border-bottom: 2px solid var(--primary-accent);
+}
+
+.aspect-header {
+  color: var(--primary-text);
+  background: var(--accent-bg);
+  width: 25%;
+}
+
+.traditional-header {
+  color: #ff6b6b;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 107, 107, 0.05));
+  width: 37.5%;
+}
+
+.investment-header {
+  color: var(--primary-accent);
+  background: linear-gradient(135deg, rgba(100, 255, 218, 0.1), rgba(100, 255, 218, 0.05));
+  width: 37.5%;
+}
+
+.framework-comparison-table tbody tr {
+  border-bottom: 1px solid var(--tertiary-bg);
+  transition: background-color 0.3s ease;
+}
+
+.framework-comparison-table tbody tr:hover {
+  background: rgba(100, 255, 218, 0.05);
+}
+
+.framework-comparison-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.framework-comparison-table td {
+  padding: var(--space-lg);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.aspect-cell {
+  background: var(--accent-bg);
+  color: var(--primary-text);
+  font-weight: 600;
+  border-right: 1px solid var(--tertiary-bg);
+}
+
+.traditional-cell {
+  color: var(--secondary-text);
+  background: rgba(255, 107, 107, 0.02);
+  border-right: 1px solid var(--tertiary-bg);
+}
+
+.investment-cell {
+  color: var(--secondary-text);
+  background: rgba(100, 255, 218, 0.02);
+}
+
+/* Table responsive design */
+@media (max-width: 768px) {
+  .comparison-table-container {
+    margin: 0 -var(--space-lg);
+  }
+  
+  .framework-comparison-table th,
+  .framework-comparison-table td {
+    padding: var(--space-md);
+    font-size: 0.9rem;
+  }
+  
+  .framework-comparison-table th {
+    font-size: 1rem;
+  }
+  
+  .aspect-header {
+    width: 30%;
+  }
+  
+  .traditional-header,
+  .investment-header {
+    width: 35%;
+  }
+}
+
 @media (max-width: 1024px) {
   .slide {
     padding: var(--space-2xl);
