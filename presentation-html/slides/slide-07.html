@@ -1,357 +1,260 @@
-<!-- Slide 7: Performance Evaluation Framework -->
-<div class="slide performance-evaluation-slide" data-slide="7">
+<!-- Slide 7: Fund Categories Deep Dive -->
+<div class="slide fund-categories-slide" data-slide="7">
     <div class="slide-content">
         <div class="slide-header">
-            <h1 class="slide-title">Performance Evaluation Framework</h1>
-            <h2 class="slide-subtitle">KPIs for Your Investment Dashboard</h2>
+            <h1 class="slide-title">Fund Categories Deep Dive</h1>
+            <h2 class="slide-subtitle">The Fund Taxonomy: Choosing Your Tech Stack</h2>
         </div>
         
         <div class="content-body">
             <div class="intro-text">
-                <p class="lead">Understanding fund performance is like analyzing your application's metrics - you need the right indicators to make informed decisions for both equity and debt investments.</p>
+                <p class="lead">Just like choosing the right technology stack for different project requirements, selecting the appropriate fund category depends on your investment goals, risk tolerance, and time horizon.</p>
             </div>
             
             <!-- Main Category Cards (Level 1) -->
-            <div class="performance-main-categories" id="performanceMainCategories">
-                <div class="category-card" data-category="equity-metrics">
+            <div class="fund-main-categories" id="mainCategories">
+                <div class="category-card" data-category="equity">
                     <div class="category-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4ca.svg" alt="Chart" class="emoji-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4bb.svg" alt="Server" class="emoji-icon">
                     </div>
-                    <h3>Equity Fund Metrics</h3>
+                    <h3>Equity Funds</h3>
+                    <p class="category-subtitle">The High-Performance Servers</p>
+                    <p class="category-description">Growth-oriented investments in company stocks</p>
                     <div class="category-stats">
-                        <span class="stat">Returns Analysis</span>
-                        <span class="stat">Risk Assessment</span>
+                        <span class="stat">High Growth Potential</span>
+                        <span class="stat">Moderate to High Risk</span>
                     </div>
                     <button class="explore-btn">Click to Explore →</button>
                 </div>
                 
-                <div class="category-card" data-category="debt-metrics">
+                <div class="category-card" data-category="debt">
                     <div class="category-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4b0.svg" alt="Money" class="emoji-icon">
-                    </div>
-                    <h3>Debt Fund Metrics</h3>
+                        <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f5c3.svg" alt="Database" class="emoji-icon">
+                    </div>                    <h3>Debt Funds</h3>
+                    <p class="category-subtitle">The Reliable Database Layer</p>
+                    <p class="category-description">Stable income through fixed income instruments</p>
                     <div class="category-stats">
-                        <span class="stat">Yield Analysis</span>
-                        <span class="stat">Duration Risk</span>
+                        <span class="stat">Steady Returns</span>
+                        <span class="stat">Low to Moderate Risk</span>
                     </div>
                     <button class="explore-btn">Click to Explore →</button>
                 </div>
                 
-                <div class="category-card" data-category="universal-metrics">
+                <div class="category-card" data-category="hybrid">
                     <div class="category-icon">
                         <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f6e0.svg" alt="Tools" class="emoji-icon">
                     </div>
-                    <h3>Universal Metrics</h3>
+                    <h3>Hybrid Funds</h3>
+                    <p class="category-subtitle">The Full-Stack Solution</p>
+                    <p class="category-description">Balanced mix of equity and debt investments</p>
                     <div class="category-stats">
-                        <span class="stat">Cost Efficiency</span>
-                        <span class="stat">Portfolio Quality</span>
+                        <span class="stat">Balanced Approach</span>
+                        <span class="stat">Moderate Risk</span>
                     </div>
                     <button class="explore-btn">Click to Explore →</button>
                 </div>
             </div>
             
             <!-- Detailed View (Level 2) -->
-            <div class="performance-detailed-view" id="performanceDetailedView" style="display: none;">
+            <div class="fund-detailed-view" id="detailedView" style="display: none;">
                 <div class="back-button">
-                    <button id="backToPerformanceMain">← Back to Metrics</button>
+                    <button id="backToMain">← Back to Categories</button>
                 </div>
                 
-                <!-- Equity Metrics Detail -->
-                <div class="detail-content" id="equity-metricsDetail" style="display: none;">
-                    <h3>Key Performance Metrics - Your Investment Dashboard</h3>
-                    <div class="performance-metrics-grid">
-                        <!-- Alpha -->
-                        <div class="metric-card">
-                            <div class="metric-header">
-                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3af.svg" alt="Target" class="emoji-icon">
-                                <h4>Alpha (α)</h4>
+                <!-- Equity Funds Detail -->
+                <div class="detail-content" id="equityDetail" style="display: none;">
+                    <h3>Equity Funds - The High-Performance Servers</h3>
+                    <div class="fund-subcategories">
+                        <div class="fund-subcard">
+                            <div class="subcard-header">
+                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3e2.svg" alt="Building" class="emoji-icon">
+                                <h4>Large Cap Funds</h4>
                             </div>
-                            <p class="metric-definition">Excess return over benchmark - fund manager's skill</p>
-                            <div class="metric-info">
+                            <p class="analogy">Like Google, Microsoft, Apple - established and reliable</p>
+                            <div class="fund-info">
                                 <div class="info-item">
-                                    <strong>Interpretation:</strong> 
-                                    <span>Positive Alpha = Outperforming market</span>
+                                    <strong>Market Cap:</strong> > ₹20,000 crores
                                 </div>
                                 <div class="info-item">
-                                    <strong>Example:</strong> 
-                                    <span>Nifty 50: 12%, Your fund: 15% = +3% Alpha</span>
+                                    <strong>Risk:</strong> <span class="risk-moderate">Moderate</span>
                                 </div>
                                 <div class="info-item">
-                                    <strong>Good Range:</strong> 
-                                    <span>1-3% for equity funds</span>
+                                    <strong>Best For:</strong> Conservative equity exposure
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Beta -->
-                        <div class="metric-card">
-                            <div class="metric-header">
-                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4c8.svg" alt="Chart" class="emoji-icon">
-                                <h4>Beta (β)</h4>
+                        
+                        <div class="fund-subcard">
+                            <div class="subcard-header">
+                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f680.svg" alt="Rocket" class="emoji-icon">
+                                <h4>Mid Cap Funds</h4>
                             </div>
-                            <p class="metric-definition">Measures fund's volatility relative to market</p>
-                            <div class="metric-info">
+                            <p class="analogy">Like Zomato, Paytm in growth phase - expanding rapidly</p>
+                            <div class="fund-info">
                                 <div class="info-item">
-                                    <strong>Interpretation:</strong> 
-                                    <span>Beta > 1 = More volatile than market</span>
+                                    <strong>Market Cap:</strong> ₹5,000-20,000 crores
                                 </div>
                                 <div class="info-item">
-                                    <strong>Example:</strong> 
-                                    <span>Beta 1.2 = 20% more volatile than Nifty</span>
+                                    <strong>Risk:</strong> <span class="risk-high">High</span>
                                 </div>
                                 <div class="info-item">
-                                    <strong>Typical Range:</strong> 
-                                    <span>0.8-1.5 for equity funds</span>
+                                    <strong>Best For:</strong> Aggressive investors, 5+ years
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Rolling Returns -->
-                        <div class="metric-card">
-                            <div class="metric-header">
-                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f501.svg" alt="Repeat" class="emoji-icon">
-                                <h4>Rolling Returns</h4>
+                        
+                        <div class="fund-subcard">
+                            <div class="subcard-header">
+                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f31f.svg" alt="Star" class="emoji-icon">
+                                <h4>Small Cap Funds</h4>
                             </div>
-                            <p class="metric-definition">Performance consistency across time periods</p>
-                            <div class="metric-info">
+                            <p class="analogy">That promising startup - high risk, high reward</p>
+                            <div class="fund-info">
                                 <div class="info-item">
-                                    <strong>Interpretation:</strong> 
-                                    <span>Consistent rolling returns = Reliable fund</span>
+                                    <strong>Market Cap:</strong> < ₹5,000 crores
                                 </div>
                                 <div class="info-item">
-                                    <strong>Example:</strong> 
-                                    <span>3-yr rolling: 12%, 15%, 12%, 14% (consistent)</span>
+                                    <strong>Risk:</strong> <span class="risk-very-high">Very High</span>
                                 </div>
                                 <div class="info-item">
-                                    <strong>Look For:</strong> 
-                                    <span>Low deviation in rolling returns</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Sharpe Ratio -->
-                        <div class="metric-card">
-                            <div class="metric-header">
-                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4d0.svg" alt="Books" class="emoji-icon">
-                                <h4>Sharpe Ratio</h4>
-                            </div>
-                            <p class="metric-definition">Risk-adjusted returns - efficiency measure</p>
-                            <div class="metric-info">
-                                <div class="info-item">
-                                    <strong>Interpretation:</strong> 
-                                    <span>Higher Sharpe = Better risk-reward balance</span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Example:</strong> 
-                                    <span>Fund A: Sharpe 1.5 vs Fund B: Sharpe 0.9</span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Good Range:</strong> 
-                                    <span>Above 1.0 for equity funds</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Sortino Ratio -->
-                        <div class="metric-card">
-                            <div class="metric-header">
-                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4b9.svg" alt="Chart with Upward Trend" class="emoji-icon">
-                                <h4>Sortino Ratio</h4>
-                            </div>
-                            <p class="metric-definition">Risk-adjusted returns considering only downside volatility</p>
-                            <div class="metric-info">
-                                <div class="info-item">
-                                    <strong>Interpretation:</strong> 
-                                    <span>Higher Sortino = Better downside risk management</span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Example:</strong> 
-                                    <span>Fund A: Sortino 1.8 vs Fund B: Sortino 1.2</span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Advantage:</strong> 
-                                    <span>More accurate than Sharpe for volatile markets</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Standard Deviation -->
-                        <div class="metric-card">
-                            <div class="metric-header">
-                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4ca.svg" alt="Bar Chart" class="emoji-icon">
-                                <h4>Standard Deviation</h4>
-                            </div>
-                            <p class="metric-definition">Measures fund's volatility - risk indicator</p>
-                            <div class="metric-info">
-                                <div class="info-item">
-                                    <strong>Interpretation:</strong> 
-                                    <span>Lower SD = More stable returns</span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Example:</strong> 
-                                    <span>Large-cap: 15%, Mid-cap: 25%, Small-cap: 35%</span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Use Case:</strong> 
-                                    <span>Compare risk levels across funds</span>
+                                    <strong>Best For:</strong> Very aggressive, 7+ years
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Debt Metrics Detail -->
-                <div class="detail-content" id="debt-metricsDetail" style="display: none;">
-                    <h3>Debt Fund Metrics - Stability Monitoring System</h3>
+                  <!-- Debt Funds Detail -->
+                <div class="detail-content" id="debtDetail" style="display: none;">
+                    <h3>Debt Funds - The Reliable Database Layer</h3>
                     <div class="fund-overview">
-                        <p class="overview-text">Debt fund analysis is like monitoring a well-architected system - more predictable patterns with measurable risk factors.</p>
+                        <p class="overview-text">Invest in fixed-income securities like government bonds, corporate bonds, treasury bills, commercial papers, and money market instruments with predetermined maturity and interest rates.</p>
                     </div>
                     <div class="fund-subcategories">
                         <div class="fund-subcard">
                             <div class="subcard-header">
-                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4b8.svg" alt="Money with Wings" class="emoji-icon">
-                                <h4>Yield to Maturity (YTM)</h4>
+                                <img src="https://logo.clearbit.com/redis.io" alt="Redis" class="tech-logo">
+                                <h4>Liquid Funds</h4>
                             </div>
-                            <p class="analogy">Expected annual return if held to maturity</p>
+                            <p class="analogy">Like Redis - instant access, predictable performance</p>
                             <div class="fund-info">
                                 <div class="info-item">
-                                    <strong>Current Range:</strong> 
-                                    <span>5-8% for most debt funds</span>
+                                    <strong>Duration:</strong> Up to 91 days
                                 </div>
                                 <div class="info-item">
-                                    <strong>Interpretation:</strong> 
-                                    <span class="risk-moderate">Higher YTM = Higher risk/longer duration</span>
+                                    <strong>Returns:</strong> 3-5% annually
                                 </div>
                                 <div class="info-item">
-                                    <strong>Use Case:</strong> 
-                                    <span>Compare similar-category funds</span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Example:</strong> 
-                                    <span>Corporate bond fund 7% YTM vs Govt bond fund 6% YTM</span>
+                                    <strong>Best For:</strong> Emergency funds, parking money
                                 </div>
                             </div>
                         </div>
                         
                         <div class="fund-subcard">
                             <div class="subcard-header">
-                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/23f3.svg" alt="Timer" class="emoji-icon">
-                                <h4>Modified Duration</h4>
+                                <img src="https://logo.clearbit.com/mysql.com" alt="MySQL" class="tech-logo">
+                                <h4>Short Duration</h4>
                             </div>
-                            <p class="analogy">Sensitivity to interest rate changes</p>
+                            <p class="analogy">Like MySQL - steady, reliable performance</p>
                             <div class="fund-info">
                                 <div class="info-item">
-                                    <strong>Rule of Thumb:</strong> 
-                                    <span>1% rate change = Modified Duration % NAV change</span>
+                                    <strong>Duration:</strong> 1-3 years
                                 </div>
                                 <div class="info-item">
-                                    <strong>Short Duration:</strong> 
-                                    <span class="risk-low">1-3 years (low rate risk)</span>
+                                    <strong>Returns:</strong> 5-7% annually
                                 </div>
                                 <div class="info-item">
-                                    <strong>Medium Duration:</strong> 
-                                    <span class="risk-moderate">3-4 years (moderate rate risk)</span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Long Duration:</strong> 
-                                    <span class="risk-high">7+ years (high rate risk)</span>
+                                    <strong>Best For:</strong> Medium-term stability
                                 </div>
                             </div>
                         </div>
                         
                         <div class="fund-subcard">
                             <div class="subcard-header">
-                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3c6.svg" alt="Trophy" class="emoji-icon">
-                                <h4>Credit Quality Analysis</h4>
+                                <img src="https://logo.clearbit.com/postgresql.org" alt="PostgreSQL" class="tech-logo">
+                                <h4>Medium Duration</h4>
                             </div>
-                            <p class="analogy">Reliability of underlying securities</p>
+                            <p class="analogy">Like PostgreSQL - more complex, higher performance</p>
                             <div class="fund-info">
                                 <div class="info-item">
-                                    <strong>AAA Rated:</strong> 
-                                    <span class="risk-low">Highest safety, lowest returns</span>
+                                    <strong>Duration:</strong> 3-4 years
                                 </div>
                                 <div class="info-item">
-                                    <strong>AA Rated:</strong> 
-                                    <span class="risk-moderate">High safety, slightly higher returns</span>
+                                    <strong>Returns:</strong> 6-8% annually
                                 </div>
                                 <div class="info-item">
-                                    <strong>A Rated & Below:</strong> 
-                                    <span class="risk-high">Higher risk, higher potential returns</span>
+                                    <strong>Best For:</strong> Moderate interest rate risk comfort
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Universal Metrics Detail -->
-                <div class="detail-content" id="universal-metricsDetail" style="display: none;">
-                    <h3>Universal Metrics - Cross-Platform Analytics</h3>
-                    <div class="fund-overview">
-                        <p class="overview-text">These metrics apply to all fund types and help evaluate cost efficiency and portfolio quality across your investment stack.</p>
-                    </div>
+                <!-- Hybrid Funds Detail -->
+                <div class="detail-content" id="hybridDetail" style="display: none;">
+                    <h3>Hybrid Funds - The Full-Stack Solution</h3>
                     <div class="fund-subcategories">
                         <div class="fund-subcard">
                             <div class="subcard-header">
-                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f501.svg" alt="Repeat" class="emoji-icon">
-                                <h4>Portfolio Turnover Ratio</h4>
+                                <div class="allocation-mini">
+                                    <div class="debt-bar" style="width: 80%"></div>
+                                    <div class="equity-bar" style="width: 20%"></div>
+                                </div>
+                                <h4>Conservative Hybrid</h4>
                             </div>
-                            <p class="analogy">How frequently holdings change - like deployment frequency</p>
+                            <p class="analogy">Backend stability with a touch of frontend innovation</p>
                             <div class="fund-info">
                                 <div class="info-item">
-                                    <strong>Typical Range:</strong> 
-                                    <span>25-75% annually for equity funds</span>
+                                    <strong>Allocation:</strong> 75-90% Debt, 10-25% Equity
                                 </div>
                                 <div class="info-item">
-                                    <strong>High Turnover:</strong> 
-                                    <span class="risk-moderate">Active management, higher costs</span>
+                                    <strong>Returns:</strong> 7-9% annually
                                 </div>
                                 <div class="info-item">
-                                    <strong>Low Turnover:</strong> 
-                                    <span class="risk-low">Buy-and-hold strategy, lower costs</span>
+                                    <strong>Best For:</strong> Conservative investors wanting slight equity exposure
                                 </div>
                             </div>
                         </div>
                         
                         <div class="fund-subcard">
                             <div class="subcard-header">
-                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4b3.svg" alt="Credit Card" class="emoji-icon">
-                                <h4>Expense Ratio</h4>
+                                <div class="allocation-mini">
+                                    <div class="debt-bar" style="width: 50%"></div>
+                                    <div class="equity-bar" style="width: 50%"></div>
+                                </div>
+                                <h4>Balanced Hybrid</h4>
                             </div>
-                            <p class="analogy">Total cost of ownership - like cloud computing costs</p>
+                            <p class="analogy">The perfect full-stack balance</p>
                             <div class="fund-info">
                                 <div class="info-item">
-                                    <strong>Direct Equity Plans:</strong> 
-                                    <span class="risk-low">0.5-1.5%</span>
+                                    <strong>Allocation:</strong> 40-60% each
                                 </div>
                                 <div class="info-item">
-                                    <strong>Direct Debt Plans:</strong> 
-                                    <span class="risk-low">0.2-0.8%</span>
+                                    <strong>Returns:</strong> 9-11% annually
                                 </div>
                                 <div class="info-item">
-                                    <strong>Impact:</strong> 
-                                    <span class="risk-high">1% higher expense = ₹10,000 less per ₹1L over 10 years</span>
+                                    <strong>Best For:</strong> One-fund solution seekers
                                 </div>
                             </div>
                         </div>
                         
                         <div class="fund-subcard">
                             <div class="subcard-header">
-                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4bc.svg" alt="Briefcase" class="emoji-icon">
-                                <h4>AUM Size & Fund Quality</h4>
+                                <div class="allocation-mini">
+                                    <div class="debt-bar" style="width: 30%"></div>
+                                    <div class="equity-bar" style="width: 70%"></div>
+                                </div>
+                                <h4>Aggressive Hybrid</h4>
                             </div>
-                            <p class="analogy">Fund size affects agility and market impact</p>
+                            <p class="analogy">Frontend-heavy with backend support</p>
                             <div class="fund-info">
                                 <div class="info-item">
-                                    <strong>Too Small:</strong> 
-                                    <span class="risk-moderate">< ₹100 cr (lack of diversification)</span>
+                                    <strong>Allocation:</strong> 65-80% Equity, 20-35% Debt
                                 </div>
                                 <div class="info-item">
-                                    <strong>Sweet Spot:</strong> 
-                                    <span class="risk-low">₹500-5,000 cr (optimal balance)</span>
+                                    <strong>Returns:</strong> 10-13% annually
                                 </div>
                                 <div class="info-item">
-                                    <strong>Too Large:</strong> 
-                                    <span class="risk-moderate">> ₹10,000 cr (reduced agility)</span>
+                                    <strong>Best For:</strong> Aggressive investors wanting some stability
                                 </div>
                             </div>
                         </div>

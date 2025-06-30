@@ -335,6 +335,16 @@ class SlideLoader {
             6: `
                 <h3>TL;DR</h3>
                 <ul>
+                    <li><strong>Time amplifies wealth exponentially:</strong> Starting 10 years earlier can result in 2-3x more wealth despite lower total investment</li>
+                    <li><strong>Early starter advantage:</strong> ₹10K/month from age 25 = ₹5.84Cr vs ₹20K/month from age 35 = ₹3.78Cr</li>
+                    <li><strong>Real-world proof:</strong> Infosys IPO (₹10K → ₹5+Cr), SIP in Sensex (₹14.4L → ₹1.2+Cr over 24 years)</li>
+                    <li><strong>Decade impact:</strong> Each 10-year delay reduces wealth creation potential exponentially (₹30L vs ₹1.6L for same ₹1L investment)</li>
+                    <li><strong>Behavioral keys:</strong> Start early, stay consistent, increase gradually, think 15+ years for true compounding magic</li>
+                </ul>
+            `,
+            7: `
+                <h3>TL;DR</h3>
+                <ul>
                     <li><strong>Three main fund types:</strong> Equity (high growth, high risk), Debt (steady income, low risk), Hybrid (balanced mix)</li>
                     <li><strong>Equity sub-categories:</strong> Large cap (stable like Google), Mid cap (growth phase like Zomato), Small cap (startup potential)</li>
                     <li><strong>Debt fund spectrum:</strong> Liquid funds (Redis-like instant access) up to medium duration (PostgreSQL-like complexity)</li>
@@ -342,7 +352,7 @@ class SlideLoader {
                     <li><strong>Tech stack analogy:</strong> Choose fund categories like selecting technologies - match complexity and risk to project requirements</li>
                 </ul>
             `,
-            7: `
+            8: `
                 <h3>TL;DR</h3>
                 <ul>
                     <li><strong>Performance metrics = investment KPIs:</strong> Like monitoring applications, use right indicators for informed decisions</li>
@@ -352,7 +362,7 @@ class SlideLoader {
                     <li><strong>Holistic evaluation:</strong> Combine quantitative metrics with qualitative factors for complete fund assessment</li>
                 </ul>
             `,
-            11: `
+            12: `
                 <h3>TL;DR</h3>
                 <ul>
                     <li><strong>SIP = Investment DevOps:</strong> Automation removes emotional decisions and human errors from investing</li>
@@ -362,7 +372,7 @@ class SlideLoader {
                     <li><strong>Compound amplification:</strong> Time multiplies small consistent investments into exponential wealth growth</li>
                 </ul>
             `,
-            19: `
+            20: `
                 <h3>TL;DR</h3>
                 <ul>
                     <li><strong>Action items:</strong> Download investment app, calculate emergency fund target, set first SIP amount, schedule start date</li>

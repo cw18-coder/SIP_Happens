@@ -85,7 +85,82 @@ Understanding this triangle is crucial because it determines your entire investm
 
 ---
 
-## Slide 6: Fund Categories Deep Dive
+## Slide 6: The Power of Compounding
+**"Exponential Growth: The Eighth Wonder of the World"**
+
+Compounding in investing is like exponential scaling in technology - starts slow, then becomes explosive.
+
+### The Mathematics of Wealth Creation
+
+**Starting Early vs Starting Late**:
+
+**Scenario A: Early Starter (Age 25)**
+- **SIP Amount**: ₹10,000/month
+- **Duration**: 35 years (till age 60)
+- **Total Investment**: ₹42 lakh
+- **Final Corpus**: ₹5.84 crore (at 12% CAGR)
+
+**Scenario B: Late Starter (Age 35)**
+- **SIP Amount**: ₹20,000/month
+- **Duration**: 25 years (till age 60)
+- **Total Investment**: ₹60 lakh
+- **Final Corpus**: ₹3.78 crore (at 12% CAGR)
+
+**Key Insight**: Early starter invests ₹18 lakh less but ends up with ₹2.06 crore more!
+
+### Real-World Compounding Examples
+
+**Case Study 1: Infosys IPO Investor (1993)**
+- **Initial Investment**: ₹10,000 in IPO
+- **Current Value** (2024): ₹5+ crore
+- **CAGR**: ~22% over 31 years
+- **Key Factor**: Holding through multiple market cycles
+
+**Case Study 2: SIP in Sensex (2000-2024)**
+- **Monthly SIP**: ₹5,000
+- **Total Investment**: ₹14.4 lakh
+- **Current Value**: ₹1.2+ crore
+- **CAGR**: ~14% over 24 years
+
+### The Time Value Demonstration
+
+**Power of Each Decade**:
+- **₹1 lakh invested at age 25**: Becomes ₹29.96 lakh by age 60
+- **₹1 lakh invested at age 35**: Becomes ₹9.65 lakh by age 60
+- **₹1 lakh invested at age 45**: Becomes ₹3.11 lakh by age 60
+- **₹1 lakh invested at age 55**: Becomes ₹1.58 lakh by age 60
+
+**The Lesson**: Each decade of delay reduces wealth creation potential exponentially.
+
+### Compound Interest vs Simple Interest
+
+**Simple Interest** (like linear scaling):
+- **₹1 lakh at 10% for 30 years**: ₹4 lakh
+- **Growth**: Linear progression
+
+**Compound Interest** (like exponential scaling):
+- **₹1 lakh at 10% for 30 years**: ₹17.45 lakh
+- **Growth**: Exponential progression
+
+**The Magic**: Interest earning interest creates exponential growth curves.
+
+### Behavioral Aspects of Compounding
+
+**Why People Fail to Harness Compounding**:
+1. **Impatience**: Want immediate results
+2. **Underestimation**: Don't believe in long-term power
+3. **Interruption**: Break the cycle during market downturns
+4. **Late Start**: Keep postponing the beginning
+
+**How to Succeed**:
+1. **Start Early**: Even small amounts matter
+2. **Stay Consistent**: Don't stop during bad times
+3. **Increase Gradually**: Step up SIPs annually
+4. **Think Long-term**: 15+ year investment horizon
+
+---
+
+## Slide 7: Fund Categories Deep Dive
 **"The Fund Taxonomy: Choosing Your Tech Stack"**
 
 ### Equity Funds - "The High-Performance Servers"
@@ -162,7 +237,7 @@ Understanding this triangle is crucial because it determines your entire investm
 
 ---
 
-## Slide 7: Performance Evaluation Framework
+## Slide 8: Performance Evaluation Framework
 **"KPIs for Your Investment Dashboard"**
 
 Understanding fund performance is like analyzing your application's metrics - you need the right indicators to make informed decisions for both equity and debt investments.
@@ -219,7 +294,7 @@ Understanding fund performance is like analyzing your application's metrics - yo
 
 ---
 
-## Slide 8: Risk Evaluation Framework
+## Slide 9: Risk Evaluation Framework
 **"Debugging Your Portfolio Risk Profile"**
 
 Risk management in investing is like implementing security protocols - boring but absolutely essential for long-term success.
@@ -283,7 +358,7 @@ Risk management in investing is like implementing security protocols - boring bu
 
 ---
 
-## Slide 9: Real Performance Data Examples
+## Slide 10: Real Performance Data Examples
 **"Show Me the Numbers: Actual Fund Performance Analysis"**
 
 Let me walk you through real examples to illustrate how these metrics work in practice.
@@ -326,7 +401,7 @@ Understanding these numbers helps you make informed decisions rather than chasin
 
 ---
 
-## Slide 10: Fund Selection Checklist
+## Slide 11: Fund Selection Checklist
 **"The Code Review Process for Mutual Funds"**
 
 Just like you wouldn't deploy code without proper review, don't invest without proper due diligence.
@@ -409,7 +484,7 @@ Choose 1-2 funds per category based on:
 
 ---
 
-## Slide 11: The SIP Strategy
+## Slide 12: The SIP Strategy
 **"Systematic Investment Plans: The DevOps of Investing"**
 
 SIP is the automation that removes human error from investing, just like CI/CD removes deployment errors from software development.
@@ -485,7 +560,7 @@ SIP is the automation that removes human error from investing, just like CI/CD r
 
 ---
 
-## Slide 12: Common Investment Mistakes
+## Slide 13: Common Investment Mistakes
 **"The Production Bugs of Mutual Fund Investing"**
 
 Learning from common mistakes is like learning from post-mortems - it prevents you from repeating expensive errors.
@@ -568,7 +643,7 @@ Learning from common mistakes is like learning from post-mortems - it prevents y
 
 ---
 
-## Slide 13: Building Your Investment Architecture
+## Slide 14: Building Your Investment Architecture
 **"Portfolio Construction: The Microservices Approach"**
 
 Just like designing scalable systems, building a portfolio requires thoughtful architecture that can grow and adapt over time.
@@ -657,7 +732,7 @@ Just like designing scalable systems, building a portfolio requires thoughtful a
 
 ---
 
-## Slide 14: Age-Based Investment Strategy
+## Slide 15: Age-Based Investment Strategy
 **"Lifecycle Management: From Startup to Enterprise"**
 
 Your investment strategy should evolve like your career - from aggressive growth in early stages to stability as you approach retirement.
@@ -724,7 +799,7 @@ Your investment strategy should evolve like your career - from aggressive growth
 
 ---
 
-## Slide 15: Emergency Fund Strategy
+## Slide 16: Emergency Fund Strategy
 **"Your Financial Disaster Recovery Plan"**
 
 Emergency funds are like backup systems - you hope you never need them, but you're grateful when you do.
@@ -785,7 +860,7 @@ Emergency funds are like backup systems - you hope you never need them, but you'
 
 ---
 
-## Slide 16: Tax Optimization Strategies
+## Slide 17: Tax Optimization Strategies
 **"Legal Hacks for Better Returns"**
 
 Tax optimization in investing is like code optimization - makes everything run more efficiently.
@@ -847,7 +922,7 @@ Tax optimization in investing is like code optimization - makes everything run m
 
 ---
 
-## Slide 17: Monitoring and Rebalancing
+## Slide 18: Monitoring and Rebalancing
 **"Your Investment DevOps Pipeline"**
 
 Portfolio monitoring is like application monitoring - regular health checks prevent major issues.
@@ -922,81 +997,6 @@ Portfolio monitoring is like application monitoring - regular health checks prev
 - **Automatic SIP**: Set and forget investing
 - **Rebalancing Alerts**: Notifications when portfolio drifts
 - **Goal Tracking**: Progress monitoring for specific objectives
-
----
-
-## Slide 18: The Power of Compounding
-**"Exponential Growth: The Eighth Wonder of the World"**
-
-Compounding in investing is like exponential scaling in technology - starts slow, then becomes explosive.
-
-### The Mathematics of Wealth Creation
-
-**Starting Early vs Starting Late**:
-
-**Scenario A: Early Starter (Age 25)**
-- **SIP Amount**: ₹10,000/month
-- **Duration**: 35 years (till age 60)
-- **Total Investment**: ₹42 lakh
-- **Final Corpus**: ₹5.84 crore (at 12% CAGR)
-
-**Scenario B: Late Starter (Age 35)**
-- **SIP Amount**: ₹20,000/month
-- **Duration**: 25 years (till age 60)
-- **Total Investment**: ₹60 lakh
-- **Final Corpus**: ₹3.78 crore (at 12% CAGR)
-
-**Key Insight**: Early starter invests ₹18 lakh less but ends up with ₹2.06 crore more!
-
-### Real-World Compounding Examples
-
-**Case Study 1: Infosys IPO Investor (1993)**
-- **Initial Investment**: ₹10,000 in IPO
-- **Current Value** (2024): ₹5+ crore
-- **CAGR**: ~22% over 31 years
-- **Key Factor**: Holding through multiple market cycles
-
-**Case Study 2: SIP in Sensex (2000-2024)**
-- **Monthly SIP**: ₹5,000
-- **Total Investment**: ₹14.4 lakh
-- **Current Value**: ₹1.2+ crore
-- **CAGR**: ~14% over 24 years
-
-### The Time Value Demonstration
-
-**Power of Each Decade**:
-- **₹1 lakh invested at age 25**: Becomes ₹29.96 lakh by age 60
-- **₹1 lakh invested at age 35**: Becomes ₹9.65 lakh by age 60
-- **₹1 lakh invested at age 45**: Becomes ₹3.11 lakh by age 60
-- **₹1 lakh invested at age 55**: Becomes ₹1.58 lakh by age 60
-
-**The Lesson**: Each decade of delay reduces wealth creation potential exponentially.
-
-### Compound Interest vs Simple Interest
-
-**Simple Interest** (like linear scaling):
-- **₹1 lakh at 10% for 30 years**: ₹4 lakh
-- **Growth**: Linear progression
-
-**Compound Interest** (like exponential scaling):
-- **₹1 lakh at 10% for 30 years**: ₹17.45 lakh
-- **Growth**: Exponential progression
-
-**The Magic**: Interest earning interest creates exponential growth curves.
-
-### Behavioral Aspects of Compounding
-
-**Why People Fail to Harness Compounding**:
-1. **Impatience**: Want immediate results
-2. **Underestimation**: Don't believe in long-term power
-3. **Interruption**: Break the cycle during market downturns
-4. **Late Start**: Keep postponing the beginning
-
-**How to Succeed**:
-1. **Start Early**: Even small amounts matter
-2. **Stay Consistent**: Don't stop during bad times
-3. **Increase Gradually**: Step up SIPs annually
-4. **Think Long-term**: 15+ year investment horizon
 
 ---
 

@@ -1,7 +1,7 @@
-// Minimal Fund Categories Controller - Direct initialization for slides 5 & 6
+// Minimal Fund Categories Controller - Direct initialization for slides 5, 6, 7 & 8
 console.log('fund-categories-simple.js loaded');
 
-// Function to initialize fund categories (slide 6)
+// Function to initialize fund categories (slide 7)
 function initFundCategories() {
     console.log('initFundCategories called');
     
@@ -9,7 +9,7 @@ function initFundCategories() {
     document.addEventListener('click', function(e) {
         console.log('Global click detected:', e.target.tagName, e.target.className);
         
-        // Handle Slide 6 - Fund Categories
+        // Handle Slide 7 - Fund Categories
         if (e.target.classList.contains('explore-btn')) {
             console.log('Explore button clicked!');
             
@@ -47,7 +47,7 @@ function initFundCategories() {
             }
         }
         
-        // Handle Slide 6 back button
+        // Handle Slide 7 back button
         if (e.target.id === 'backToMain') {
             console.log('Back button clicked!');
             
@@ -127,7 +127,7 @@ function initFundCategories() {
             e.preventDefault();
         }
         
-        // Handle Slide 7 - Performance Evaluation Framework
+        // Handle Slide 8 - Performance Evaluation Framework
         if (e.target.classList.contains('explore-btn')) {
             console.log('Performance explore button clicked!');
             
@@ -165,7 +165,7 @@ function initFundCategories() {
             }
         }
         
-        // Handle Slide 7 back button
+        // Handle Slide 8 back button
         if (e.target.id === 'backToPerformanceMain') {
             console.log('Performance back button clicked!');
             

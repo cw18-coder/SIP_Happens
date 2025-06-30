@@ -50,95 +50,100 @@
     },
     {
       "id": 6,
-      "title": "Fund Categories Deep Dive",
-      "subtitle": "The Fund Taxonomy: Choosing Your Tech Stack",
-      "type": "deep-dive",
-      "template": "deep-dive.html"
+      "title": "The Power of Compounding",
+      "subtitle": "Exponential Growth: The Eighth Wonder of the World",
+      "type": "concept",
+      "template": "concept.html",
+      "file": "slide-06.html",
+      "description": "Interactive exploration of compounding principles, early vs late investing scenarios, real-world examples, and behavioral aspects of long-term wealth creation"
     },
     {
       "id": 7,
+      "title": "Fund Categories Deep Dive",
+      "subtitle": "The Fund Taxonomy: Choosing Your Tech Stack",
+      "type": "deep-dive",
+      "template": "deep-dive.html",
+      "file": "slide-07.html"
+    },
+    {
+      "id": 8,
       "title": "Performance Evaluation Framework",
       "subtitle": "KPIs for Your Investment Dashboard",
       "type": "performance",
       "template": "performance.html",
+      "file": "slide-08.html",
       "description": "Comprehensive metrics for evaluating both equity and debt fund performance using familiar analytics concepts"
     },
     {
-      "id": 8,
+      "id": 9,
       "title": "Risk Evaluation Framework",
       "subtitle": "Debugging Your Portfolio Risk Profile",
       "type": "framework",
       "template": "framework.html"
     },
     {
-      "id": 9,
+      "id": 10,
       "title": "Real Performance Data Examples",
       "subtitle": "Show Me the Numbers: Actual Fund Performance Analysis",
       "type": "data",
       "template": "data.html"
     },
     {
-      "id": 10,
+      "id": 11,
       "title": "Fund Selection Checklist",
       "subtitle": "The Code Review Process for Mutual Funds",
       "type": "checklist",
       "template": "checklist.html"
     },
     {
-      "id": 11,
+      "id": 12,
       "title": "The SIP Strategy",
       "subtitle": "Systematic Investment Plans: The DevOps of Investing",
       "type": "strategy",
       "template": "strategy.html"
     },
     {
-      "id": 12,
+      "id": 13,
       "title": "Common Investment Mistakes",
       "subtitle": "The Production Bugs of Mutual Fund Investing",
       "type": "mistakes",
       "template": "mistakes.html"
     },
     {
-      "id": 13,
+      "id": 14,
       "title": "Building Your Investment Architecture",
       "subtitle": "Portfolio Construction: The Microservices Approach",
       "type": "architecture",
       "template": "architecture.html"
     },
     {
-      "id": 14,
+      "id": 15,
       "title": "Age-Based Investment Strategy",
       "subtitle": "Lifecycle Management: From Startup to Enterprise",
       "type": "lifecycle",
       "template": "lifecycle.html"
     },
     {
-      "id": 15,
+      "id": 16,
       "title": "Emergency Fund Strategy",
       "subtitle": "Your Financial Disaster Recovery Plan",
       "type": "strategy",
       "template": "strategy.html"
     },
     {
-      "id": 16,
+      "id": 17,
       "title": "Tax Optimization Strategies",
       "subtitle": "Legal Hacks for Better Returns",
       "type": "optimization",
-      "template": "optimization.html"
+      "template": "optimization.html",
+      "file": "slide-17.html"
     },
     {
-      "id": 17,
+      "id": 18,
       "title": "Monitoring and Rebalancing",
       "subtitle": "Your Investment DevOps Pipeline",
       "type": "monitoring",
       "template": "monitoring.html"
-    },
-    {
-      "id": 18,
-      "title": "The Power of Compounding",
-      "subtitle": "Exponential Growth: The Eighth Wonder of the World",
-      "type": "concept",
-      "template": "concept.html"
     },
     {
       "id": 19,
@@ -180,7 +185,8 @@
       "title": "Thank You & Stay Connected",
       "subtitle": "May Your Investments Compile Without Errors and Your Returns Always Be Positive!",
       "type": "thank-you",
-      "template": "thank-you.html"
+      "template": "thank-you.html",
+      "file": "slide-24.html"
     },
     {
       "id": 25,
