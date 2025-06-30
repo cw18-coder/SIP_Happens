@@ -60,29 +60,26 @@ class NavigationController {
             { number: 3, title: "The MF Stack", subtitle: "Understanding the Basics" },
             { number: 4, title: "Three Pillars Framework", subtitle: "Goal-Time-Risk Trinity" },
             { number: 5, title: "Goal-Time-Risk Matrix", subtitle: "Matching Funds to Life Stories" },
-            { number: 6, title: "Fund Categories", subtitle: "Choosing Your Tech Stack" },
-            { number: 7, title: "Cricket Analogy", subtitle: "Investment Strategies" },
-            { number: 8, title: "Bollywood Analogy", subtitle: "Fund Manager Performance" },
-            { number: 9, title: "Hollywood Analogy", subtitle: "Investment Approaches" },
-            { number: 10, title: "Performance Evaluation", subtitle: "Equity Funds KPIs" },
-            { number: 11, title: "Performance Evaluation", subtitle: "Debt Funds Monitoring" },
-            { number: 12, title: "Risk Evaluation", subtitle: "Portfolio Risk Debugging" },
-            { number: 13, title: "Real Performance Data", subtitle: "Show Me the Numbers" },
-            { number: 14, title: "Fund Selection", subtitle: "Code Review Process" },
-            { number: 15, title: "SIP Strategy", subtitle: "DevOps of Investing" },
-            { number: 16, title: "Common Mistakes", subtitle: "Production Bugs" },
-            { number: 17, title: "Investment Architecture", subtitle: "Microservices Approach" },
-            { number: 18, title: "Age-Based Strategy", subtitle: "Lifecycle Management" },
-            { number: 19, title: "Emergency Fund", subtitle: "Disaster Recovery Plan" },
-            { number: 20, title: "Tax Optimization", subtitle: "Legal Performance Hacks" },
-            { number: 21, title: "Monitoring & Rebalancing", subtitle: "DevOps Pipeline" },
-            { number: 22, title: "Power of Compounding", subtitle: "Exponential Growth" },
-            { number: 23, title: "Action Items", subtitle: "Deployment Plan" },
-            { number: 24, title: "Advanced Strategies", subtitle: "Level Up Techniques" },
-            { number: 25, title: "Q&A Session", subtitle: "Debug Session" },
-            { number: 26, title: "Resources & Tools", subtitle: "Learning Stack" },
-            { number: 27, title: "Closing Thoughts", subtitle: "Final Commit" },
-            { number: 28, title: "Thank You", subtitle: "Stay Connected" }
+            { number: 6, title: "The Power of Compounding", subtitle: "Exponential Growth" },
+            { number: 7, title: "Fund Categories Deep Dive", subtitle: "Choosing Your Tech Stack" },
+            { number: 8, title: "Performance Evaluation Framework", subtitle: "KPIs for Your Investment Dashboard" },
+            { number: 9, title: "Risk Evaluation Framework", subtitle: "Debugging Your Portfolio Risk Profile" },
+            { number: 10, title: "Real Performance Data Examples", subtitle: "Show Me the Numbers" },
+            { number: 11, title: "Fund Selection Checklist", subtitle: "Code Review Process for Mutual Funds" },
+            { number: 12, title: "The SIP Strategy", subtitle: "DevOps of Investing" },
+            { number: 13, title: "Common Investment Mistakes", subtitle: "Production Bugs" },
+            { number: 14, title: "Building Your Investment Architecture", subtitle: "Microservices Approach" },
+            { number: 15, title: "Age-Based Investment Strategy", subtitle: "Lifecycle Management" },
+            { number: 16, title: "Emergency Fund Strategy", subtitle: "Disaster Recovery Plan" },
+            { number: 17, title: "Tax Optimization Strategies", subtitle: "Legal Performance Hacks" },
+            { number: 18, title: "Monitoring and Rebalancing", subtitle: "DevOps Pipeline" },
+            { number: 19, title: "Action Items", subtitle: "Deployment Plan" },
+            { number: 20, title: "Advanced Strategies", subtitle: "Level Up Techniques" },
+            { number: 21, title: "Q&A Session", subtitle: "Debug Session" },
+            { number: 22, title: "Resources and Tools", subtitle: "Learning Stack" },
+            { number: 23, title: "Closing Thoughts", subtitle: "Final Commit" },
+            { number: 24, title: "Thank You & Stay Connected", subtitle: "Stay Connected" },
+            { number: 25, title: "Appendix: Investment Strategy Analogies", subtitle: "Cricket, Bollywood & Hollywood" }
         ];
         
         return slides.map(slide => `
@@ -255,11 +252,15 @@ class NavigationController {
             3: '<div class="preview-icon">🏗️</div><div class="preview-text">Microservices Architecture</div>',
             4: '<div class="preview-triangle">△</div><div class="preview-text">Goal-Time-Risk</div>',
             5: '<div class="preview-grid">⏰🎯🎲</div><div class="preview-text">Triage Matrix</div>',
+            6: '<div class="preview-icon">🚀</div><div class="preview-text">Exponential Growth</div>',
             7: '<div class="preview-icon">📊</div><div class="preview-text">Fund Categories</div>',
-            7: '<div class="preview-icon">🏏</div><div class="preview-text">Cricket Strategy</div>',
-            8: '<div class="preview-icon">🎬</div><div class="preview-text">Bollywood Directors</div>',
-            9: '<div class="preview-icon">🎭</div><div class="preview-text">Hollywood Strategies</div>',
-            10: '<div class="preview-icon">📈</div><div class="preview-text">Equity KPIs</div>'
+            8: '<div class="preview-icon">📈</div><div class="preview-text">Performance KPIs</div>',
+            9: '<div class="preview-icon">⚠️</div><div class="preview-text">Risk Analysis</div>',
+            10: '<div class="preview-icon">📊</div><div class="preview-text">Real Data</div>',
+            11: '<div class="preview-icon">✅</div><div class="preview-text">Fund Selection</div>',
+            12: '<div class="preview-icon">🔄</div><div class="preview-text">SIP Strategy</div>',
+            17: '<div class="preview-icon">�</div><div class="preview-text">Tax Optimization</div>',
+            24: '<div class="preview-icon">🙏</div><div class="preview-text">Thank You</div>'
         };
         
         return previews[slideNumber] || `<div class="preview-icon">📄</div><div class="preview-text">Slide ${slideNumber}</div>`;
@@ -268,10 +269,11 @@ class NavigationController {
     getSlideTitle(slideNumber) {
         const titles = {
             1: "Title Slide", 2: "Opening Hook", 3: "The MF Stack", 4: "Three Pillars", 5: "Goal-Time-Risk Matrix",
-            7: "Fund Categories", 8: "Cricket Analogy", 9: "Bollywood Analogy", 10: "Hollywood Analogy", 11: "Equity Performance",
-            11: "Debt Performance", 12: "Risk Evaluation", 13: "Real Data", 14: "Fund Selection", 15: "SIP Strategy",
-            16: "Common Mistakes", 17: "Investment Architecture", 18: "Age-Based Strategy", 19: "Emergency Fund", 20: "Tax Optimization",
-            21: "Monitoring", 22: "Compounding", 23: "Action Items", 24: "Advanced Strategies", 25: "Q&A", 26: "Resources", 27: "Closing", 28: "Thank You"
+            6: "The Power of Compounding", 7: "Fund Categories Deep Dive", 8: "Performance Evaluation", 9: "Risk Evaluation", 
+            10: "Real Data Examples", 11: "Fund Selection", 12: "SIP Strategy", 13: "Common Mistakes", 14: "Investment Architecture", 
+            15: "Age-Based Strategy", 16: "Emergency Fund", 17: "Tax Optimization", 18: "Monitoring & Rebalancing", 
+            19: "Action Items", 20: "Advanced Strategies", 21: "Q&A Session", 22: "Resources & Tools", 
+            23: "Closing Thoughts", 24: "Thank You", 25: "Appendix"
         };
         
         return titles[slideNumber] || `Slide ${slideNumber}`;

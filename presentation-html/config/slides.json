@@ -3,7 +3,7 @@
     "title": "Mutual Fund Workshop",
     "subtitle": "Decoding the Matrix: A Tech Professional's Guide to MF Investing",
     "author": "Workshop Presenter",
-    "totalSlides": 24
+    "totalSlides": 25
   },
   "slides": [
     {
@@ -50,6 +50,15 @@
       "template": "matrix.html",
       "file": "slide-05.html",
       "description": "Interactive decision matrix to help match appropriate mutual fund types to individual investment scenarios and life situations"
+    },
+    {
+      "id": 6,
+      "title": "The Power of Compounding",
+      "subtitle": "Exponential Growth: The Eighth Wonder of the World",
+      "type": "concept",
+      "template": "concept.html",
+      "file": "slide-06.html",
+      "description": "Interactive exploration of compounding principles, early vs late investing scenarios, real-world examples, and behavioral aspects of long-term wealth creation"
     },
     {
       "id": 7,

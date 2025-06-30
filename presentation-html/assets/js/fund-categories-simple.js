@@ -127,6 +127,65 @@ function initFundCategories() {
             e.preventDefault();
         }
         
+        // Handle Slide 6 - The Power of Compounding
+        if (e.target.classList.contains('explore-btn-compounding')) {
+            console.log('Compounding explore button clicked!');
+            
+            const topicCard = e.target.closest('.compounding-topic-card');
+            if (topicCard) {
+                const topic = topicCard.getAttribute('data-topic');
+                console.log('Compounding topic:', topic);
+                
+                // Hide main compounding categories
+                const compoundingMain = document.getElementById('compoundingMainCategories');
+                if (compoundingMain) {
+                    compoundingMain.style.display = 'none';
+                    console.log('Compounding main categories hidden');
+                }
+                
+                // Show detailed view
+                const compoundingDetailed = document.getElementById('compoundingDetailedView');
+                if (compoundingDetailed) {
+                    compoundingDetailed.style.display = 'block';
+                    console.log('Compounding detailed view shown');
+                }
+                
+                // Hide all detail content first
+                const allCompoundingDetails = document.querySelectorAll('#compoundingDetailedView .detail-content');
+                allCompoundingDetails.forEach(detail => detail.style.display = 'none');
+                
+                // Show specific topic detail
+                const topicDetail = document.getElementById(topic + 'Detail');
+                if (topicDetail) {
+                    topicDetail.style.display = 'block';
+                    console.log('Compounding topic detail shown:', topic);
+                }
+                
+                e.preventDefault();
+            }
+        }
+        
+        // Handle Slide 6 back button
+        if (e.target.id === 'backToCompoundingMain') {
+            console.log('Compounding back button clicked!');
+            
+            // Hide detailed view
+            const compoundingDetailed = document.getElementById('compoundingDetailedView');
+            if (compoundingDetailed) {
+                compoundingDetailed.style.display = 'none';
+                console.log('Compounding detailed view hidden');
+            }
+            
+            // Show main categories
+            const compoundingMain = document.getElementById('compoundingMainCategories');
+            if (compoundingMain) {
+                compoundingMain.style.display = 'grid';
+                console.log('Compounding main categories shown');
+            }
+            
+            e.preventDefault();
+        }
+        
         // Handle Slide 8 - Performance Evaluation Framework
         if (e.target.classList.contains('explore-btn')) {
             console.log('Performance explore button clicked!');
@@ -190,6 +249,58 @@ function initFundCategories() {
     console.log('Fund categories and triage click handlers attached');
 }
 
+// Compounding Slide Interaction (Slide 6)
+function initializeCompoundingSlide() {
+    const mainView = document.getElementById('compoundingMainView');
+    const detailedView = document.getElementById('compoundingDetailedView');
+    const backButton = document.getElementById('backToCompoundingMain');
+    const cards = document.querySelectorAll('.compounding-card');
+    
+    if (!mainView || !detailedView || !backButton) return;
+    
+    // Handle card clicks
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const topic = card.getAttribute('data-topic');
+            showCompoundingDetail(topic);
+        });
+    });
+    
+    // Handle back button
+    backButton.addEventListener('click', () => {
+        showCompoundingMain();
+    });
+    
+    function showCompoundingDetail(topic) {
+        // Hide main view
+        mainView.style.display = 'none';
+        detailedView.style.display = 'block';
+        
+        // Hide all detail contents
+        const allDetails = document.querySelectorAll('.detail-content');
+        allDetails.forEach(detail => {
+            detail.style.display = 'none';
+        });
+        
+        // Show specific detail
+        const targetDetail = document.getElementById(topic + 'Detail');
+        if (targetDetail) {
+            targetDetail.style.display = 'block';
+        }
+    }
+    
+    function showCompoundingMain() {
+        mainView.style.display = 'block';
+        detailedView.style.display = 'none';
+        
+        // Hide all detail contents
+        const allDetails = document.querySelectorAll('.detail-content');
+        allDetails.forEach(detail => {
+            detail.style.display = 'none';
+        });
+    }
+}
+
 // Try multiple initialization approaches
 console.log('Attempting initialization...');
 
@@ -211,6 +322,18 @@ if (document.readyState === 'loading') {
 window.addEventListener('load', function() {
     console.log('Window load fallback triggered');
     initFundCategories();
+});
+
+// Initialize when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    initializeCompoundingSlide();
+});
+
+// Also initialize when navigating to slide 6
+document.addEventListener('slideChanged', function(e) {
+    if (e.detail && e.detail.slideNumber === 6) {
+        initializeCompoundingSlide();
+    }
 });
 
 console.log('All initialization attempts registered');

@@ -8,7 +8,7 @@ class PresentationController {
     constructor() {
         console.log('PresentationController constructor called'); // Debug log
         this.currentSlide = 1;
-        this.totalSlides = 28;
+        this.totalSlides = 25;
         this.slides = document.querySelectorAll('.slide');
         this.isFullscreen = false;
         this.currentTheme = 'dark';
