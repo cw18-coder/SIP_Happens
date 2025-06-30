@@ -1716,19 +1716,19 @@ em, i {
 /* Card Stats and Previews */
 .category-stats {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-lg);
-  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin: var(--space-md) 0;
 }
 
-.stat {
-  background: var(--accent-bg);
-  color: var(--primary-text);
+.category-stats .stat {
+  background: rgba(100, 255, 218, 0.1);
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--border-radius);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--primary-accent);
   font-weight: 500;
+  text-align: center;
 }
 
 .card-preview {
@@ -2205,3 +2205,47 @@ em, i {
     min-height: auto;
   }
 }
+
+/* Compounding Slide Specific Styles */
+.compounding-main-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+  margin: var(--space-2xl) 0;
+  padding: var(--space-lg);
+}
+
+.content-slide .slide-content {
+  padding: var(--space-xl);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.content-slide .slide-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  padding-top: var(--space-xl);
+}
+
+.content-slide .content-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-slide .intro-text {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.content-slide .intro-text .lead {
+  font-size: 1.25rem;
+  color: var(--secondary-text);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+

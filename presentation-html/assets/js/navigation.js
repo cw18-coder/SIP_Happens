@@ -255,7 +255,7 @@ class NavigationController {
             3: '<div class="preview-icon">🏗️</div><div class="preview-text">Microservices Architecture</div>',
             4: '<div class="preview-triangle">△</div><div class="preview-text">Goal-Time-Risk</div>',
             5: '<div class="preview-grid">⏰🎯🎲</div><div class="preview-text">Triage Matrix</div>',
-            6: '<div class="preview-icon">📊</div><div class="preview-text">Fund Categories</div>',
+            7: '<div class="preview-icon">📊</div><div class="preview-text">Fund Categories</div>',
             7: '<div class="preview-icon">🏏</div><div class="preview-text">Cricket Strategy</div>',
             8: '<div class="preview-icon">🎬</div><div class="preview-text">Bollywood Directors</div>',
             9: '<div class="preview-icon">🎭</div><div class="preview-text">Hollywood Strategies</div>',
@@ -268,7 +268,7 @@ class NavigationController {
     getSlideTitle(slideNumber) {
         const titles = {
             1: "Title Slide", 2: "Opening Hook", 3: "The MF Stack", 4: "Three Pillars", 5: "Goal-Time-Risk Matrix",
-            6: "Fund Categories", 7: "Cricket Analogy", 8: "Bollywood Analogy", 9: "Hollywood Analogy", 10: "Equity Performance",
+            7: "Fund Categories", 8: "Cricket Analogy", 9: "Bollywood Analogy", 10: "Hollywood Analogy", 11: "Equity Performance",
             11: "Debt Performance", 12: "Risk Evaluation", 13: "Real Data", 14: "Fund Selection", 15: "SIP Strategy",
             16: "Common Mistakes", 17: "Investment Architecture", 18: "Age-Based Strategy", 19: "Emergency Fund", 20: "Tax Optimization",
             21: "Monitoring", 22: "Compounding", 23: "Action Items", 24: "Advanced Strategies", 25: "Q&A", 26: "Resources", 27: "Closing", 28: "Thank You"

@@ -1,11 +1,12 @@
 {
   "presentation": {
-    "title": "Mutual Fund Investing Workshop",
+    "title": "Mutual Fund Workshop",
     "subtitle": "Decoding the Matrix: A Tech Professional's Guide to MF Investing",
     "author": "Workshop Presenter",
-    "totalSlides": 25
+    "totalSlides": 24
   },
-  "slides": [    {
+  "slides": [
+    {
       "id": 1,
       "title": "Title Slide",
       "subtitle": "The Code to Wealth: Mutual Fund Investing for Tech Professionals",
@@ -13,7 +14,8 @@
       "template": "title.html",
       "file": "slide-01.html",
       "description": "Introduction and welcome to the mutual fund investing workshop designed specifically for technology professionals"
-    },    {
+    },
+    {
       "id": 2,
       "title": "Opening Hook",
       "subtitle": "Why This Workshop Won't Be Another Boring Finance Lecture",
@@ -30,7 +32,8 @@
       "template": "content.html",
       "file": "slide-03.html",
       "description": "Fundamental explanation of mutual funds using technology analogies and microservices concepts"
-    },    {
+    },
+    {
       "id": 4,
       "title": "The Three Pillars Framework",
       "subtitle": "Goal-Time-Risk: The Holy Trinity of Investment",
@@ -49,21 +52,13 @@
       "description": "Interactive decision matrix to help match appropriate mutual fund types to individual investment scenarios and life situations"
     },
     {
-      "id": 6,
-      "title": "The Power of Compounding",
-      "subtitle": "Exponential Growth: The Eighth Wonder of the World",
-      "type": "concept",
-      "template": "concept.html",
-      "file": "slide-06.html",
-      "description": "Interactive exploration of compounding principles, early vs late investing scenarios, real-world examples, and behavioral aspects of long-term wealth creation"
-    },
-    {
       "id": 7,
       "title": "Fund Categories Deep Dive",
       "subtitle": "The Fund Taxonomy: Choosing Your Tech Stack",
       "type": "deep-dive",
       "template": "deep-dive.html",
-      "file": "slide-07.html"
+      "file": "slide-07.html",
+      "description": "Detailed exploration of different fund categories and their characteristics"
     },
     {
       "id": 8,
@@ -79,56 +74,64 @@
       "title": "Risk Evaluation Framework",
       "subtitle": "Debugging Your Portfolio Risk Profile",
       "type": "framework",
-      "template": "framework.html"
+      "template": "framework.html",
+      "description": "Framework for assessing and managing investment risk"
     },
     {
       "id": 10,
       "title": "Real Performance Data Examples",
       "subtitle": "Show Me the Numbers: Actual Fund Performance Analysis",
       "type": "data",
-      "template": "data.html"
+      "template": "data.html",
+      "description": "Real-world examples of fund performance analysis"
     },
     {
       "id": 11,
       "title": "Fund Selection Checklist",
       "subtitle": "The Code Review Process for Mutual Funds",
       "type": "checklist",
-      "template": "checklist.html"
+      "template": "checklist.html",
+      "description": "Systematic approach to selecting the right mutual funds"
     },
     {
       "id": 12,
       "title": "The SIP Strategy",
       "subtitle": "Systematic Investment Plans: The DevOps of Investing",
       "type": "strategy",
-      "template": "strategy.html"
+      "template": "strategy.html",
+      "description": "Understanding and implementing systematic investment plans"
     },
     {
       "id": 13,
       "title": "Common Investment Mistakes",
       "subtitle": "The Production Bugs of Mutual Fund Investing",
       "type": "mistakes",
-      "template": "mistakes.html"
+      "template": "mistakes.html",
+      "description": "Common pitfalls to avoid in mutual fund investing"
     },
     {
       "id": 14,
       "title": "Building Your Investment Architecture",
       "subtitle": "Portfolio Construction: The Microservices Approach",
       "type": "architecture",
-      "template": "architecture.html"
+      "template": "architecture.html",
+      "description": "Strategic approach to building a diversified investment portfolio"
     },
     {
       "id": 15,
       "title": "Age-Based Investment Strategy",
       "subtitle": "Lifecycle Management: From Startup to Enterprise",
       "type": "lifecycle",
-      "template": "lifecycle.html"
+      "template": "lifecycle.html",
+      "description": "Adapting investment strategy based on life stage and age"
     },
     {
       "id": 16,
       "title": "Emergency Fund Strategy",
       "subtitle": "Your Financial Disaster Recovery Plan",
       "type": "strategy",
-      "template": "strategy.html"
+      "template": "strategy.html",
+      "description": "Building and maintaining an emergency fund strategy"
     },
     {
       "id": 17,
@@ -136,49 +139,56 @@
       "subtitle": "Legal Hacks for Better Returns",
       "type": "optimization",
       "template": "optimization.html",
-      "file": "slide-17.html"
+      "file": "slide-17.html",
+      "description": "Tax-efficient investment strategies and optimization techniques"
     },
     {
       "id": 18,
       "title": "Monitoring and Rebalancing",
       "subtitle": "Your Investment DevOps Pipeline",
       "type": "monitoring",
-      "template": "monitoring.html"
+      "template": "monitoring.html",
+      "description": "Ongoing portfolio monitoring and rebalancing strategies"
     },
     {
       "id": 19,
       "title": "Action Items",
       "subtitle": "Your Investment Deployment Plan - From Workshop to Wealth",
       "type": "action",
-      "template": "action.html"
+      "template": "action.html",
+      "description": "Concrete next steps to implement your investment strategy"
     },
     {
       "id": 20,
       "title": "Advanced Strategies",
       "subtitle": "Level Up: Advanced Investment Techniques",
       "type": "advanced",
-      "template": "advanced.html"
+      "template": "advanced.html",
+      "description": "Advanced investment strategies for experienced investors"
     },
     {
       "id": 21,
       "title": "Q&A Session",
       "subtitle": "Debug Session: Your Investment Queries",
       "type": "qa",
-      "template": "qa.html"
+      "template": "qa.html",
+      "description": "Interactive question and answer session"
     },
     {
       "id": 22,
       "title": "Resources and Tools",
       "subtitle": "Your Investment Learning Stack",
       "type": "resources",
-      "template": "resources.html"
+      "template": "resources.html",
+      "description": "Recommended tools and resources for continued learning"
     },
     {
       "id": 23,
       "title": "Closing Thoughts",
       "subtitle": "The Final Commit: Your Wealth Creation Journey Begins",
       "type": "closing",
-      "template": "closing.html"
+      "template": "closing.html",
+      "description": "Final thoughts and inspiration for your investment journey"
     },
     {
       "id": 24,
@@ -186,7 +196,8 @@
       "subtitle": "May Your Investments Compile Without Errors and Your Returns Always Be Positive!",
       "type": "thank-you",
       "template": "thank-you.html",
-      "file": "slide-24.html"
+      "file": "slide-24.html",
+      "description": "Thank you slide with contact information and final message"
     },
     {
       "id": 25,

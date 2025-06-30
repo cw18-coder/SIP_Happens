@@ -174,8 +174,8 @@ class PresentationController {
           // Analytics tracking
         this.trackSlideView(slideNumber);
         
-        // Reset fund categories if navigating away from slide 6
-        if (window.fundCategories && slideNumber !== 6) {
+        // Reset fund categories if navigating away from slide 7 (Fund Categories Deep Dive)
+        if (window.fundCategories && slideNumber !== 7) {
             window.fundCategories.reset();
         }
         

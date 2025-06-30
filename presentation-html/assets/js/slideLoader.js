@@ -332,16 +332,6 @@ class SlideLoader {
                     <li><strong>Triage system:</strong> Use time horizon as primary filter, then optimize for risk tolerance within that timeframe</li>
                 </ul>
             `,
-            6: `
-                <h3>TL;DR</h3>
-                <ul>
-                    <li><strong>Time amplifies wealth exponentially:</strong> Starting 10 years earlier can result in 2-3x more wealth despite lower total investment</li>
-                    <li><strong>Early starter advantage:</strong> ₹10K/month from age 25 = ₹5.84Cr vs ₹20K/month from age 35 = ₹3.78Cr</li>
-                    <li><strong>Real-world proof:</strong> Infosys IPO (₹10K → ₹5+Cr), SIP in Sensex (₹14.4L → ₹1.2+Cr over 24 years)</li>
-                    <li><strong>Decade impact:</strong> Each 10-year delay reduces wealth creation potential exponentially (₹30L vs ₹1.6L for same ₹1L investment)</li>
-                    <li><strong>Behavioral keys:</strong> Start early, stay consistent, increase gradually, think 15+ years for true compounding magic</li>
-                </ul>
-            `,
             7: `
                 <h3>TL;DR</h3>
                 <ul>
