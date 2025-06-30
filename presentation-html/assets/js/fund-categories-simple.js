@@ -126,6 +126,65 @@ function initFundCategories() {
             
             e.preventDefault();
         }
+        
+        // Handle Slide 7 - Performance Evaluation Framework
+        if (e.target.classList.contains('explore-btn')) {
+            console.log('Performance explore button clicked!');
+            
+            const categoryCard = e.target.closest('.category-card');
+            if (categoryCard) {
+                const category = categoryCard.getAttribute('data-category');
+                console.log('Performance category:', category);
+                
+                // Hide main categories
+                const performanceMain = document.getElementById('performanceMainCategories');
+                if (performanceMain) {
+                    performanceMain.style.display = 'none';
+                    console.log('Performance main categories hidden');
+                }
+                
+                // Show detailed view
+                const performanceDetailed = document.getElementById('performanceDetailedView');
+                if (performanceDetailed) {
+                    performanceDetailed.style.display = 'block';
+                    console.log('Performance detailed view shown');
+                }
+                
+                // Hide all detail content first
+                const allPerformanceDetails = document.querySelectorAll('#performanceDetailedView .detail-content');
+                allPerformanceDetails.forEach(detail => detail.style.display = 'none');
+                
+                // Show specific category detail
+                const categoryDetail = document.getElementById(category + 'Detail');
+                if (categoryDetail) {
+                    categoryDetail.style.display = 'block';
+                    console.log('Performance category detail shown:', category);
+                }
+                
+                e.preventDefault();
+            }
+        }
+        
+        // Handle Slide 7 back button
+        if (e.target.id === 'backToPerformanceMain') {
+            console.log('Performance back button clicked!');
+            
+            // Hide detailed view
+            const performanceDetailed = document.getElementById('performanceDetailedView');
+            if (performanceDetailed) {
+                performanceDetailed.style.display = 'none';
+                console.log('Performance detailed view hidden');
+            }
+            
+            // Show main categories
+            const performanceMain = document.getElementById('performanceMainCategories');
+            if (performanceMain) {
+                performanceMain.style.display = 'grid';
+                console.log('Performance main categories shown');
+            }
+            
+            e.preventDefault();
+        }
     });
     
     console.log('Fund categories and triage click handlers attached');

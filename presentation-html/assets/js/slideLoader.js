@@ -342,7 +342,17 @@ class SlideLoader {
                     <li><strong>Tech stack analogy:</strong> Choose fund categories like selecting technologies - match complexity and risk to project requirements</li>
                 </ul>
             `,
-            15: `
+            7: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Performance metrics = investment KPIs:</strong> Like monitoring applications, use right indicators for informed decisions</li>
+                    <li><strong>Equity fund analytics:</strong> Absolute returns vs benchmark, Sharpe ratio, consistency metrics (standard deviation, alpha/beta)</li>
+                    <li><strong>Debt fund monitoring:</strong> YTM (expected returns), modified duration (rate sensitivity), credit quality analysis</li>
+                    <li><strong>Universal factors:</strong> Portfolio turnover (trading frequency), expense ratios (cost optimization), AUM size (scalability)</li>
+                    <li><strong>Holistic evaluation:</strong> Combine quantitative metrics with qualitative factors for complete fund assessment</li>
+                </ul>
+            `,
+            11: `
                 <h3>TL;DR</h3>
                 <ul>
                     <li><strong>SIP = Investment DevOps:</strong> Automation removes emotional decisions and human errors from investing</li>
@@ -352,7 +362,7 @@ class SlideLoader {
                     <li><strong>Compound amplification:</strong> Time multiplies small consistent investments into exponential wealth growth</li>
                 </ul>
             `,
-            28: `
+            19: `
                 <h3>TL;DR</h3>
                 <ul>
                     <li><strong>Action items:</strong> Download investment app, calculate emergency fund target, set first SIP amount, schedule start date</li>

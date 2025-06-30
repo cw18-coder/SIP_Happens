@@ -3,7 +3,7 @@
     "title": "Mutual Fund Investing Workshop",
     "subtitle": "Decoding the Matrix: A Tech Professional's Guide to MF Investing",
     "author": "Workshop Presenter",
-    "totalSlides": 28
+    "totalSlides": 25
   },
   "slides": [    {
       "id": 1,
@@ -57,157 +57,138 @@
     },
     {
       "id": 7,
-      "title": "Cricket Analogy",
-      "subtitle": "Investment Strategies - The Art of Building a Championship Team",
-      "type": "analogy",
-      "template": "analogy.html"
+      "title": "Performance Evaluation Framework",
+      "subtitle": "KPIs for Your Investment Dashboard",
+      "type": "performance",
+      "template": "performance.html",
+      "description": "Comprehensive metrics for evaluating both equity and debt fund performance using familiar analytics concepts"
     },
     {
       "id": 8,
-      "title": "Bollywood Analogy",
-      "subtitle": "Fund Manager Performance - The Directors of Your Financial Blockbuster",
-      "type": "analogy",
-      "template": "analogy.html"
-    },
-    {
-      "id": 9,
-      "title": "Hollywood Analogy",
-      "subtitle": "Investment Strategies - From Blockbusters to Indie Films",
-      "type": "analogy",
-      "template": "analogy.html"
-    },
-    {
-      "id": 10,
-      "title": "Performance Evaluation - Equity Funds",
-      "subtitle": "KPIs for Your Investment Dashboard",
-      "type": "performance",
-      "template": "performance.html"
-    },
-    {
-      "id": 11,
-      "title": "Performance Evaluation - Debt Funds",
-      "subtitle": "Monitoring Your Fixed Income Infrastructure",
-      "type": "performance",
-      "template": "performance.html"
-    },
-    {
-      "id": 12,
       "title": "Risk Evaluation Framework",
       "subtitle": "Debugging Your Portfolio Risk Profile",
       "type": "framework",
       "template": "framework.html"
     },
     {
-      "id": 13,
+      "id": 9,
       "title": "Real Performance Data Examples",
       "subtitle": "Show Me the Numbers: Actual Fund Performance Analysis",
       "type": "data",
       "template": "data.html"
     },
     {
-      "id": 14,
+      "id": 10,
       "title": "Fund Selection Checklist",
       "subtitle": "The Code Review Process for Mutual Funds",
       "type": "checklist",
       "template": "checklist.html"
     },
     {
-      "id": 15,
+      "id": 11,
       "title": "The SIP Strategy",
       "subtitle": "Systematic Investment Plans: The DevOps of Investing",
       "type": "strategy",
       "template": "strategy.html"
     },
     {
-      "id": 16,
+      "id": 12,
       "title": "Common Investment Mistakes",
       "subtitle": "The Production Bugs of Mutual Fund Investing",
       "type": "mistakes",
       "template": "mistakes.html"
     },
     {
-      "id": 17,
+      "id": 13,
       "title": "Building Your Investment Architecture",
       "subtitle": "Portfolio Construction: The Microservices Approach",
       "type": "architecture",
       "template": "architecture.html"
     },
     {
-      "id": 18,
+      "id": 14,
       "title": "Age-Based Investment Strategy",
       "subtitle": "Lifecycle Management: From Startup to Enterprise",
       "type": "lifecycle",
       "template": "lifecycle.html"
     },
     {
-      "id": 19,
+      "id": 15,
       "title": "Emergency Fund Strategy",
       "subtitle": "Your Financial Disaster Recovery Plan",
       "type": "strategy",
       "template": "strategy.html"
     },
     {
-      "id": 20,
+      "id": 16,
       "title": "Tax Optimization Strategies",
       "subtitle": "Legal Hacks for Better Returns",
       "type": "optimization",
       "template": "optimization.html"
     },
     {
-      "id": 21,
+      "id": 17,
       "title": "Monitoring and Rebalancing",
       "subtitle": "Your Investment DevOps Pipeline",
       "type": "monitoring",
       "template": "monitoring.html"
     },
     {
-      "id": 22,
+      "id": 18,
       "title": "The Power of Compounding",
       "subtitle": "Exponential Growth: The Eighth Wonder of the World",
       "type": "concept",
       "template": "concept.html"
     },
     {
-      "id": 23,
+      "id": 19,
       "title": "Action Items",
       "subtitle": "Your Investment Deployment Plan - From Workshop to Wealth",
       "type": "action",
       "template": "action.html"
     },
     {
-      "id": 24,
+      "id": 20,
       "title": "Advanced Strategies",
       "subtitle": "Level Up: Advanced Investment Techniques",
       "type": "advanced",
       "template": "advanced.html"
     },
     {
-      "id": 25,
+      "id": 21,
       "title": "Q&A Session",
       "subtitle": "Debug Session: Your Investment Queries",
       "type": "qa",
       "template": "qa.html"
     },
     {
-      "id": 26,
+      "id": 22,
       "title": "Resources and Tools",
       "subtitle": "Your Investment Learning Stack",
       "type": "resources",
       "template": "resources.html"
     },
     {
-      "id": 27,
+      "id": 23,
       "title": "Closing Thoughts",
       "subtitle": "The Final Commit: Your Wealth Creation Journey Begins",
       "type": "closing",
       "template": "closing.html"
     },
     {
-      "id": 28,
+      "id": 24,
       "title": "Thank You & Stay Connected",
       "subtitle": "May Your Investments Compile Without Errors and Your Returns Always Be Positive!",
       "type": "thank-you",
       "template": "thank-you.html"
+    },
+    {
+      "id": 25,
+      "title": "Appendix: Investment Strategy Analogies",
+      "subtitle": "Cricket, Bollywood & Hollywood Investment Analogies",
+      "type": "appendix",
+      "template": "appendix.html",
+      "description": "Additional analogy slides moved to appendix for reference: Cricket team building, Bollywood directors, and Hollywood strategies"
     }
   ]
 }
