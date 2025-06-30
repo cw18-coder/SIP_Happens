@@ -727,6 +727,9 @@
     padding: 1rem;
   }
   
+/* TEMPORARILY DISABLED: Slide preview overlay styles
+   Issue: Preview functionality disabled due to rendering issues
+   
   .slide-preview-container {
     width: 95vw;
     height: 90vh;
@@ -758,6 +761,7 @@
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
   }
+*/
 }
 
 @media (max-width: 480px) {
@@ -771,12 +775,17 @@
     justify-content: space-between;
   }
   
+/* TEMPORARILY DISABLED: Mobile preview button styles
+   
   .preview-btn {
     width: 28px;
     height: 28px;
     font-size: 0.8rem;
   }
+*/
   
+/* TEMPORARILY DISABLED: Mobile slide preview styles
+   
   .slide-preview-container {
     height: 95vh;
   }
@@ -784,4 +793,5 @@
   .preview-slide-content {
     transform: scale(0.5);
   }
+*/
 }

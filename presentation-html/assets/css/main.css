@@ -1631,6 +1631,9 @@ em, i {
     font-weight: 800;
 }
 
+/* TEMPORARILY DISABLED: Preview button styles
+   Issue: Preview functionality disabled due to rendering issues
+
 .preview-btn {
     background: var(--tertiary-bg);
     border: 1px solid var(--border-color);
@@ -1656,6 +1659,7 @@ em, i {
 .overview-slide:hover .preview-btn {
     opacity: 1;
 }
+*/
 
 .overview-slide-description {
     font-size: 0.9rem;

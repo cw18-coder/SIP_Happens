@@ -710,7 +710,9 @@ class SlideLoader {
         });
 
         // Slide preview functionality
-        this.setupSlidePreview(modal);
+        // TEMPORARILY DISABLED: Preview system not rendering correctly
+        // TODO: Fix slide preview rendering issues and re-enable
+        // this.setupSlidePreview(modal);
     }    generateOverviewGrid() {
         return this.slidesConfig.slides.map((slide, index) => {
             const slideNumber = index + 1;
@@ -723,9 +725,10 @@ class SlideLoader {
                      data-preview-id="${previewId}">
                     <div class="overview-slide-header">
                         <div class="overview-slide-number">${slideNumber}</div>
-                        <button class="preview-btn" data-slide="${slideNumber}" title="Preview slide">
+                        <!-- TEMPORARILY DISABLED: Preview functionality -->
+                        <!-- <button class="preview-btn" data-slide="${slideNumber}" title="Preview slide">
                             👁️
-                        </button>
+                        </button> -->
                     </div>
                     <div class="overview-slide-title">${slide.title}</div>
                     <div class="overview-slide-type">${slide.type}</div>
@@ -800,6 +803,10 @@ class SlideLoader {
         window.history.replaceState({ slide: this.currentSlide }, '', window.location);
     }
 
+    // TEMPORARILY DISABLED: Slide preview functionality
+    // Issue: Preview content not rendering correctly - content scaling and layout issues
+    // TODO: Fix preview rendering, CSS scaling, and re-enable this feature
+    /*
     setupSlidePreview(modal) {
         // Create preview overlay
         const previewOverlay = document.createElement('div');
@@ -935,6 +942,7 @@ class SlideLoader {
             originalRemove.call(this);
         };
     }
+    */
 
     async loadSlideContent(slideFile) {
         const response = await fetch(`slides/${slideFile}`);
