@@ -3120,7 +3120,7 @@ em, i {
     }
 }
 
-/* ===== SLIDES 5, 7, 8 DETAILED VIEW ENHANCEMENTS ===== */
+/* ===== SLIDE 5, 7, 8 DETAILED VIEW ENHANCEMENTS ===== */
 
 /* ===== SLIDE 5 - TRIAGE MATRIX DETAILED VIEWS ===== */
 
@@ -3281,20 +3281,6 @@ em, i {
 .slide[data-slide="5"] .analogy-box:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(186, 104, 200, 0.2);
-}
-
-.slide[data-slide="5"] .analogy-icon {
-    background: linear-gradient(135deg, #e1bee7 0%, #ba68c8 100%);
-    padding: 1rem;
-    border-radius: 12px;
-    font-size: 1.5rem;
-    min-width: 60px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.slide[data-slide="5"] .analogy-box:hover .analogy-icon {
-    transform: scale(1.1) rotate(5deg);
 }
 
 /* ===== SLIDE 7 - FUND CATEGORIES DETAILED VIEWS ===== */
@@ -3484,6 +3470,377 @@ em, i {
         font-size: 0.8rem;
         min-height: auto;
     }
+}
+
+/* ===== SLIDE 8: PERFORMANCE EVALUATION FRAMEWORK - ADVANCED VISUAL FEATURES ===== */
+
+/* Performance Metrics Grid - Equity Metrics Detail */
+.slide[data-slide="8"] .performance-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slide[data-slide="8"] .metric-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fcff 100%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+}
+
+/* Top accent bars for different metrics - Color psychology */
+.slide[data-slide="8"] .metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+    z-index: 1;
+}
+
+/* Specific color coding for different metric types */
+.slide[data-slide="8"] .metric-card:nth-child(1)::before,
+.slide[data-slide="8"] .metric-card:nth-child(3)::before {
+    /* Alpha and Rolling Returns - Performance indicators (blue) */
+    background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+}
+
+.slide[data-slide="8"] .metric-card:nth-child(2)::before,
+.slide[data-slide="8"] .metric-card:nth-child(6)::before {
+    /* Beta and Standard Deviation - Risk indicators (orange) */
+    background: linear-gradient(90deg, #ea580c, #f97316, #fb923c);
+}
+
+.slide[data-slide="8"] .metric-card:nth-child(4)::before,
+.slide[data-slide="8"] .metric-card:nth-child(5)::before {
+    /* Sharpe and Sortino - Efficiency indicators (green) */
+    background: linear-gradient(90deg, #059669, #10b981, #34d399);
+}
+
+.slide[data-slide="8"] .metric-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.slide[data-slide="8"] .metric-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.slide[data-slide="8"] .metric-header h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.slide[data-slide="8"] .metric-definition {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 1.2rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.slide[data-slide="8"] .metric-info .info-item {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-radius: 8px;
+    padding: 0.8rem;
+    margin-bottom: 0.7rem;
+    border-left: 3px solid #3b82f6;
+    transition: all 0.3s ease;
+}
+
+.slide[data-slide="8"] .metric-info .info-item:hover {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border-left-color: #2563eb;
+    transform: translateX(4px);
+}
+
+.slide[data-slide="8"] .metric-info .info-item strong {
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.slide[data-slide="8"] .metric-info .info-item span {
+    color: #475569;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Debt Metrics and Universal Metrics Detail Styling */
+.slide[data-slide="8"] .fund-subcategories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slide[data-slide="8"] .fund-subcard {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fcff 100%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+}
+
+.slide[data-slide="8"] .fund-subcard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+    z-index: 1;
+}
+
+.slide[data-slide="8"] .fund-subcard:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* Color coding for debt metrics */
+.slide[data-slide="8"] #debt-metricsDetail .fund-subcard:nth-child(1)::before {
+    /* YTM - Yield indicator (green) */
+    background: linear-gradient(90deg, #059669, #10b981, #34d399);
+}
+
+.slide[data-slide="8"] #debt-metricsDetail .fund-subcard:nth-child(2)::before {
+    /* Duration - Time risk indicator (orange) */
+    background: linear-gradient(90deg, #ea580c, #f97316, #fb923c);
+}
+
+.slide[data-slide="8"] #debt-metricsDetail .fund-subcard:nth-child(3)::before {
+    /* Credit Quality - Safety indicator (blue) */
+    background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+}
+
+/* Color coding for universal metrics */
+.slide[data-slide="8"] #universal-metricsDetail .fund-subcard:nth-child(1)::before {
+    /* Portfolio Turnover - Activity indicator (purple) */
+    background: linear-gradient(90deg, #7c3aed, #8b5cf6, #a78bfa);
+}
+
+.slide[data-slide="8"] #universal-metricsDetail .fund-subcard:nth-child(2)::before {
+    /* Expense Ratio - Cost indicator (red) */
+    background: linear-gradient(90deg, #dc2626, #ef4444, #f87171);
+}
+
+.slide[data-slide="8"] #universal-metricsDetail .fund-subcard:nth-child(3)::before {
+    /* AUM Size - Scale indicator (teal) */
+    background: linear-gradient(90deg, #0d9488, #14b8a6, #5eead4);
+}
+
+.slide[data-slide="8"] .subcard-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.slide[data-slide="8"] .subcard-header h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.slide[data-slide="8"] .analogy {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 1.2rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.slide[data-slide="8"] .fund-info .info-item {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-radius: 8px;
+    padding: 0.8rem;
+    margin-bottom: 0.7rem;
+    border-left: 3px solid #3b82f6;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.slide[data-slide="8"] .fund-info .info-item:hover {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border-left-color: #2563eb;
+    transform: translateX(4px);
+}
+
+.slide[data-slide="8"] .fund-info .info-item strong {
+    color: #1e293b;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.85rem;
+}
+
+/* Risk level color coding */
+.slide[data-slide="8"] .risk-low {
+    color: #059669;
+    font-weight: 600;
+}
+
+.slide[data-slide="8"] .risk-moderate {
+    color: #ea580c;
+    font-weight: 600;
+}
+
+.slide[data-slide="8"] .risk-high {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+/* Overview text styling */
+.slide[data-slide="8"] .fund-overview {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.slide[data-slide="8"] .overview-text {
+    font-size: 1.1rem;
+    color: #64748b;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Animation delays for staggered entrance */
+.slide[data-slide="8"] .metric-card:nth-child(1) { animation-delay: 0.1s; }
+.slide[data-slide="8"] .metric-card:nth-child(2) { animation-delay: 0.2s; }
+.slide[data-slide="8"] .metric-card:nth-child(3) { animation-delay: 0.3s; }
+.slide[data-slide="8"] .metric-card:nth-child(4) { animation-delay: 0.4s; }
+.slide[data-slide="8"] .metric-card:nth-child(5) { animation-delay: 0.5s; }
+.slide[data-slide="8"] .metric-card:nth-child(6) { animation-delay: 0.6s; }
+
+.slide[data-slide="8"] .fund-subcard:nth-child(1) { animation-delay: 0.1s; }
+.slide[data-slide="8"] .fund-subcard:nth-child(2) { animation-delay: 0.2s; }
+.slide[data-slide="8"] .fund-subcard:nth-child(3) { animation-delay: 0.3s; }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .slide[data-slide="8"] .performance-metrics-grid,
+    .slide[data-slide="8"] .fund-subcategories {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.2rem;
+    }
+    
+    .slide[data-slide="8"] .metric-card,
+    .slide[data-slide="8"] .fund-subcard {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide[data-slide="8"] .performance-metrics-grid,
+    .slide[data-slide="8"] .fund-subcategories {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    
+    .slide[data-slide="8"] .metric-card,
+    .slide[data-slide="8"] .fund-subcard {
+        padding: 1rem;
+        margin: 0 0.5rem;
+    }
+    
+    .slide[data-slide="8"] .metric-header h4,
+    .slide[data-slide="8"] .subcard-header h4 {
+        font-size: 1.1rem;
+    }
+    
+    .slide[data-slide="8"] .metric-definition,
+    .slide[data-slide="8"] .analogy {
+        font-size: 0.9rem;
+    }
+    
+    .slide[data-slide="8"] .fund-info .info-item {
+        font-size: 0.8rem;
+        padding: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide[data-slide="8"] .metric-card,
+    .slide[data-slide="8"] .fund-subcard {
+        margin: 0;
+        border-radius: 12px;
+    }
+    
+    .slide[data-slide="8"] .metric-header,
+    .slide[data-slide="8"] .subcard-header {
+        gap: 0.5rem;
+    }
+    
+    .slide[data-slide="8"] .fund-info .info-item {
+        padding: 0.6rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Enhanced icon styling */
+.slide[data-slide="8"] .metric-header .emoji-icon,
+.slide[data-slide="8"] .subcard-header .emoji-icon {
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.slide[data-slide="8"] .metric-card:hover .emoji-icon,
+.slide[data-slide="8"] .fund-subcard:hover .emoji-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Micro-interactions for better UX */
+.slide[data-slide="8"] .metric-card,
+.slide[data-slide="8"] .fund-subcard {
+    cursor: pointer;
+}
+
+.slide[data-slide="8"] .metric-card:active,
+.slide[data-slide="8"] .fund-subcard:active {
+    transform: translateY(-4px) scale(0.98);
+}
+
+.slide[data-slide="8"] .fund-info .info-item:active {
+    transform: translateX(2px) scale(0.98);
 }
 
 
