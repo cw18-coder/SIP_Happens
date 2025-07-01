@@ -128,19 +128,19 @@ function initFundCategories() {
         }
         
         // Handle Slide 6 - The Power of Compounding
-        if (e.target.classList.contains('explore-btn-compounding')) {
+        if (e.target.classList.contains('explore-btn') && e.target.closest('.compounding-card')) {
             console.log('Compounding explore button clicked!');
             
-            const topicCard = e.target.closest('.compounding-topic-card');
+            const topicCard = e.target.closest('.compounding-card');
             if (topicCard) {
                 const topic = topicCard.getAttribute('data-topic');
                 console.log('Compounding topic:', topic);
                 
-                // Hide main compounding categories
-                const compoundingMain = document.getElementById('compoundingMainCategories');
+                // Hide main compounding view
+                const compoundingMain = document.getElementById('compoundingMainView');
                 if (compoundingMain) {
                     compoundingMain.style.display = 'none';
-                    console.log('Compounding main categories hidden');
+                    console.log('Compounding main view hidden');
                 }
                 
                 // Show detailed view
@@ -176,11 +176,11 @@ function initFundCategories() {
                 console.log('Compounding detailed view hidden');
             }
             
-            // Show main categories
-            const compoundingMain = document.getElementById('compoundingMainCategories');
+            // Show main view
+            const compoundingMain = document.getElementById('compoundingMainView');
             if (compoundingMain) {
-                compoundingMain.style.display = 'grid';
-                console.log('Compounding main categories shown');
+                compoundingMain.style.display = 'block';
+                console.log('Compounding main view shown');
             }
             
             e.preventDefault();

@@ -37,6 +37,7 @@
                     <button class="explore-btn">Click to Explore</button>
                 </div>
             </div>
+        </div>
         
         <!-- Detailed Views (Hidden by default) -->
         <div class="compounding-detailed-view" id="compoundingDetailedView" style="display: none;">
@@ -124,11 +125,17 @@
                 <div class="detail-grid">
                     <h4>₹1 lakh invested at different ages (12% CAGR till age 60):</h4>
                     <ul>
-                        <li><strong>₹1 lakh invested at age 25</strong>: Becomes ₹29.96 lakh by age 60</li>
-                        <li><strong>₹1 lakh invested at age 35</strong>: Becomes ₹9.65 lakh by age 60</li>
-                        <li><strong>₹1 lakh invested at age 45</strong>: Becomes ₹3.11 lakh by age 60</li>
-                        <li><strong>₹1 lakh invested at age 55</strong>: Becomes ₹1.58 lakh by age 60</li>
+                        <li><strong>₹1 lakh invested at age 25</strong>: Becomes ₹52.80 lakh by age 60</li>
+                        <li><strong>₹1 lakh invested at age 35</strong>: Becomes ₹17.00 lakh by age 60 <span style="color: red; font-weight: bold;">(67.8% loss)</span></li>
+                        <li><strong>₹1 lakh invested at age 45</strong>: Becomes ₹5.47 lakh by age 60 <span style="color: red; font-weight: bold;">(89.6% loss)</span></li>
+                        <li><strong>₹1 lakh invested at age 55</strong>: Becomes ₹1.76 lakh by age 60 <span style="color: red; font-weight: bold;">(96.7% loss)</span></li>
                     </ul>
+                    
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #6c757d;">
+                        <strong>Formulae:</strong><br>
+                        <em>Compound Interest:</em> Future Value = Present Value × (1 + rate)^years<br>
+                        <em>Potential Earning Loss:</em> (52.80 - actual_return) / 52.80 × 100
+                    </div>
                     
                     <div class="key-lesson">
                         <h4>The Lesson</h4>
