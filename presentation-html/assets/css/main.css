@@ -2073,29 +2073,229 @@ em, i {
     line-height: 1.5;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .compounding-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+/* Behavioral Cards - Enhanced Visual Features */
+.behavioral-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.behavioral-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Color Psychology - Red for Failure Cards */
+.behavioral-card.failure-card {
+    background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+    border-color: #fecaca;
+}
+
+.behavioral-card.failure-card:hover {
+    border-color: #ef4444;
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.15);
+    transform: translateY(-5px);
+}
+
+.behavioral-card.failure-card .behavioral-header h5 {
+    color: #dc2626;
+}
+
+.behavioral-card.failure-card .behavioral-icon {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    color: #dc2626;
+}
+
+/* Color Psychology - Green for Success Cards */
+.behavioral-card.success-card {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+    border-color: #bbf7d0;
+}
+
+.behavioral-card.success-card:hover {
+    border-color: #22c55e;
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.15);
+    transform: translateY(-5px);
+}
+
+.behavioral-card.success-card .behavioral-header h5 {
+    color: #16a34a;
+}
+
+.behavioral-card.success-card .behavioral-icon {
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+    color: #16a34a;
+}
+
+/* Behavioral Card Header */
+.behavioral-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.behavioral-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.behavioral-header h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* Behavioral Card Content */
+.behavioral-description {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.behavioral-example {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #e5e7eb;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-top: auto;
+}
+
+.behavioral-card.failure-card .behavioral-example {
+    background: #fef7f7;
+    border-left-color: #f87171;
+}
+
+.behavioral-card.success-card .behavioral-example {
+    background: #f7fef7;
+    border-left-color: #4ade80;
+}
+
+.behavioral-example strong {
+    color: #374151;
+    font-weight: 600;
+}
+
+.behavioral-example small {
+    color: #6b7280;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Enhanced Hover Effects */
+.behavioral-card:hover .behavioral-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.behavioral-card:hover .behavioral-header h5 {
+    transform: translateX(3px);
+}
+
+/* Theme Integration - Consistent with existing slide styling */
+.behavioral-card:active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Accessibility and Focus States */
+.behavioral-card:focus {
+    outline: 2px solid var(--primary-accent);
+    outline-offset: 2px;
+}
+
+.behavioral-card:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Animation for Loading */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    
-    .scenario-comparison {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.behavioral-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.behavioral-card:nth-child(1) { animation-delay: 0.1s; }
+.behavioral-card:nth-child(2) { animation-delay: 0.2s; }
+.behavioral-card:nth-child(3) { animation-delay: 0.3s; }
+.behavioral-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive Grid - Stacks on Mobile */
+@media (max-width: 768px) {
+    .behavioral-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
     
-    .compounding-card {
-        padding: 1.5rem;
-        min-height: 180px;
+    .behavioral-card {
+        padding: 1.25rem;
+        min-height: 160px;
     }
     
-    .compounding-card h3 {
-        font-size: 1.2rem;
+    .behavioral-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
     }
     
-    .detail-header h3 {
-        font-size: 1.6rem;
+    .behavioral-header h5 {
+        font-size: 1rem;
+    }
+    
+    .behavioral-description {
+        font-size: 0.85rem;
+    }
+    
+    .behavioral-example {
+        font-size: 0.8rem;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .behavioral-header {
+        gap: 0.75rem;
+    }
+    
+    .behavioral-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+    
+    .behavioral-card {
+        padding: 1rem;
     }
 }
 
