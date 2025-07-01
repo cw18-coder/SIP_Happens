@@ -3597,6 +3597,17 @@ em, i {
     margin: 0 auto;
 }
 
+/* 1x3 Layout for Debt and Universal Metrics Detailed Views */
+.slide[data-slide="8"] #debt-metricsDetail .fund-subcategories,
+.slide[data-slide="8"] #universal-metricsDetail .fund-subcategories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .slide[data-slide="8"] .fund-subcard {
     background: linear-gradient(135deg, #ffffff 0%, #f8fcff 100%);
     border-radius: 16px;
@@ -3761,6 +3772,29 @@ em, i {
         gap: 1.2rem;
     }
     
+    /* Keep 1x3 layout for debt and universal metrics on medium screens */
+    .slide[data-slide="8"] #debt-metricsDetail .fund-subcategories,
+    .slide[data-slide="8"] #universal-metricsDetail .fund-subcategories {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.2rem;
+        max-width: 1200px;
+    }
+}
+
+/* Tablet breakpoint for better 1x3 layout control */
+@media (max-width: 900px) {
+    .slide[data-slide="8"] #debt-metricsDetail .fund-subcategories,
+    .slide[data-slide="8"] #universal-metricsDetail .fund-subcategories {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        max-width: 100%;
+    }
+    
+    .slide[data-slide="8"] #debt-metricsDetail .fund-subcard,
+    .slide[data-slide="8"] #universal-metricsDetail .fund-subcard {
+        padding: 1rem;
+    }
+    
     .slide[data-slide="8"] .metric-card,
     .slide[data-slide="8"] .fund-subcard {
         padding: 1.2rem;
@@ -3770,6 +3804,14 @@ em, i {
 @media (max-width: 768px) {
     .slide[data-slide="8"] .performance-metrics-grid,
     .slide[data-slide="8"] .fund-subcategories {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    
+    /* Stack debt and universal metrics vertically on mobile */
+    .slide[data-slide="8"] #debt-metricsDetail .fund-subcategories,
+    .slide[data-slide="8"] #universal-metricsDetail .fund-subcategories {
         grid-template-columns: 1fr;
         gap: 1rem;
         padding: 1rem 0;
@@ -3841,6 +3883,78 @@ em, i {
 
 .slide[data-slide="8"] .fund-info .info-item:active {
     transform: translateX(2px) scale(0.98);
+}
+
+/* ===== UNIVERSAL BACK BUTTON STYLING FOR ALL SLIDES ===== */
+/* Consistent back button styling across the entire presentation */
+
+.back-button {
+    margin-bottom: 2rem;
+}
+
+.back-button button {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-button button:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.back-button button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode support for back buttons */
+@media (prefers-color-scheme: dark) {
+    .back-button button {
+        background: #4a5568;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .back-button button:hover {
+        background: #2d3748;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* Legacy slide-specific styles (keeping for backward compatibility) */
+.slide[data-slide="5"] .back-button,
+.slide[data-slide="7"] .back-button,
+.slide[data-slide="8"] .back-button {
+    margin-bottom: 2rem;
+}
+
+.slide[data-slide="5"] .back-button button,
+.slide[data-slide="7"] .back-button button,
+.slide[data-slide="8"] .back-button button {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.slide[data-slide="5"] .back-button button:hover,
+.slide[data-slide="7"] .back-button button:hover,
+.slide[data-slide="8"] .back-button button:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
 }
 
 
