@@ -352,6 +352,96 @@ When ready to re-enable preview functionality:
 
 ---
 
+## Bug #004: Dark Mode Text Visibility Issues
+
+**Date Reported**: July 3, 2025  
+**Date Resolved**: *(temporarily resolved via dark mode disable)*  
+**Status**: 🟡 **TEMPORARILY RESOLVED**  
+**Priority**: Low  
+**Reporter**: User
+
+### Problem Description
+When dark mode is enabled, text content becomes invisible or extremely difficult to read on several slides due to insufficient color contrast. The dark mode implementation applies dark backgrounds but doesn't properly handle text color adjustments, resulting in:
+- White or light-colored text on white/light backgrounds becoming invisible
+- Card content text vanishing completely in detailed view sections
+- Navigation elements becoming unreadable
+- General poor user experience in dark mode
+
+### Expected Behavior
+In dark mode:
+1. All text should have sufficient contrast against dark backgrounds
+2. Card content should remain fully readable with appropriate text colors
+3. Navigation elements should maintain visibility and readability
+4. All interactive elements should provide clear visual feedback
+5. The overall presentation should maintain professional appearance and usability
+
+### Files Impacted
+- `presentation-html/assets/css/main.css` - Dark mode CSS variables and text color definitions
+- `presentation-html/assets/js/slideLoader.js` - Theme management logic
+- `presentation-html/assets/js/presentation.js` - Theme toggle functionality
+- `presentation-html/assets/js/minimal-loader.js` - Fallback theme handling
+- `presentation-html/index.html` - Theme toggle button and initial state
+- All slide HTML files - Content that becomes invisible in dark mode
+
+### Attempted Solutions
+#### Attempt #1: CSS Variable Approach
+- **Changes**: Tried to define comprehensive dark mode CSS variables for text colors
+- **Result**: Partial success - Some text became visible but cards and detailed views still had issues
+- **Reason**: Complex nested styles and inheritance issues made it difficult to catch all text elements
+
+#### Attempt #2: Specific Selector Targeting
+- **Changes**: Added specific CSS selectors for card content, navigation, and problematic elements
+- **Result**: Limited success - Fixed some elements but new issues appeared in other areas
+- **Reason**: The presentation has many different text contexts that each needed individual attention
+
+### ✅ TEMPORARY RESOLUTION APPLIED
+
+**Resolution Date**: July 3, 2025  
+**Resolution Method**: Dark mode disabled, light mode enforced  
+
+#### Temporary Solution:
+To ensure immediate usability and prevent user frustration:
+
+1. **Commented out all dark mode code**: Preserved all dark mode CSS, JavaScript, and HTML code in comments for future restoration
+2. **Disabled theme toggle**: Commented out the theme toggle button in the UI
+3. **Enforced light mode**: Added `setLightModeOnly()` function to ensure only light mode is active
+4. **Updated CSS variables**: Added light mode variables as fallbacks
+5. **Maintained code structure**: All dark mode code remains in place but commented out
+
+#### Files Modified:
+- `presentation-html/assets/css/main.css` - All dark mode CSS commented out, light mode variables added
+- `presentation-html/index.html` - Theme toggle button commented out
+- `presentation-html/assets/js/slideLoader.js` - Theme logic commented out, setLightModeOnly added
+- `presentation-html/assets/js/presentation.js` - Theme toggle logic commented out
+- `presentation-html/assets/js/minimal-loader.js` - Theme handling commented out
+
+#### Testing Results:
+- ✅ All text is now visible and readable in light mode
+- ✅ Card content displays properly across all slides
+- ✅ Navigation elements remain fully functional
+- ✅ No user-facing dark mode option (prevents accidental activation)
+- ✅ All dark mode code preserved for future implementation
+
+### Current Status
+The dark mode functionality has been temporarily disabled to resolve immediate usability issues. The presentation now operates exclusively in light mode, ensuring all content remains visible and readable. All dark mode code has been preserved in comments and can be restored when a proper solution is implemented.
+
+### Next Steps
+1. **Comprehensive dark mode audit**: Review all slides and components to identify every text element that needs dark mode support
+2. **Create dark mode design system**: Establish consistent color variables and contrast ratios for all content types
+3. **Implement systematic approach**: Apply dark mode styles methodically, testing each slide individually
+4. **Add contrast validation**: Ensure all text meets accessibility contrast requirements
+5. **Test thoroughly**: Validate dark mode across all slides, navigation states, and interactive elements
+6. **Re-enable toggle**: Restore the theme toggle button once dark mode is fully functional
+
+### Notes
+- This is a low-priority issue since the presentation works perfectly in light mode
+- The temporary solution maintains all functionality while preventing user confusion
+- Future dark mode implementation should follow accessibility guidelines for color contrast
+- Consider using CSS custom properties more systematically for easier theme management
+- The issue highlights the importance of comprehensive testing across all theme states during development
+
+---
+
 ## Bug Template (for future issues)
 
 ## Bug #XXX: [Bug Title]
@@ -389,4 +479,4 @@ When ready to re-enable preview functionality:
 
 ---
 
-*Last Updated: June 30, 2025*
+*Last Updated: July 3, 2025*
