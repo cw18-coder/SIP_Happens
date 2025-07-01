@@ -10,8 +10,8 @@ class SlideLoader {
         this.init();
     }    async init() {
         try {
-            // Load preferred theme first
-            this.loadPreferredTheme();
+            // Force light mode only - DARK MODE DISABLED
+            this.setLightModeOnly();
             
             await this.loadSlidesConfig();
             this.totalSlides = this.slidesConfig.slides.length;
@@ -393,7 +393,8 @@ class SlideLoader {
                 <li>📚 Reference the full workshop materials for details</li>
             </ul>
         `;
-    }toggleTheme() {
+    }/* COMMENTED OUT - DARK MODE DISABLED
+    toggleTheme() {
         const themes = ['light', 'dark'];
         const body = document.body;
         const presentationContainer = document.querySelector('.presentation-container');
@@ -479,6 +480,27 @@ class SlideLoader {
         // Update icon and tooltip to show current theme
         this.updateThemeIcon(theme);
         this.updateThemeTooltip(theme);
+    }
+    */ // END COMMENTED OUT - DARK MODE DISABLED
+
+    // Force light mode only - replacement for theme system
+    setLightModeOnly() {
+        const body = document.body;
+        const presentationContainer = document.querySelector('.presentation-container');
+        
+        // Force light theme
+        body.setAttribute('data-theme', 'light');
+        if (presentationContainer) {
+            presentationContainer.setAttribute('data-theme', 'light');
+        }
+        
+        // Remove any dark mode classes that might exist
+        body.classList.remove('dark-theme', 'theme-dark');
+        if (presentationContainer) {
+            presentationContainer.classList.remove('dark-theme', 'theme-dark');
+        }
+        
+        console.log('🌞 Light mode forced - dark mode disabled');
     }
 
     async nextSlide() {
@@ -597,10 +619,12 @@ class SlideLoader {
                 speakerNotesPanel.classList.remove('active');
             }
         });        // Theme toggle functionality
+        /* COMMENTED OUT - DARK MODE DISABLED
         const themeToggle = document.getElementById('theme-toggle');
         if (themeToggle) {
             themeToggle.addEventListener('click', () => this.toggleTheme());
-        }        // Fullscreen toggle functionality
+        }
+        */ // END COMMENTED OUT - DARK MODE DISABLED        // Fullscreen toggle functionality
         const fullscreenToggle = document.getElementById('fullscreen-toggle');
         if (fullscreenToggle) {
             fullscreenToggle.addEventListener('click', () => this.toggleFullscreen());

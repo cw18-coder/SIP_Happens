@@ -76,6 +76,7 @@ function setupBasicControls() {
     }
 
     // Theme toggle
+    /* COMMENTED OUT - DARK MODE DISABLED
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
@@ -83,6 +84,7 @@ function setupBasicControls() {
             alert('🌙 Theme toggle activated!\n\nFor full theme support, use the complete modular system.');
         });
     }
+    */ // END COMMENTED OUT - DARK MODE DISABLED
 
     // Fullscreen toggle
     const fullscreenToggle = document.getElementById('fullscreen-toggle');

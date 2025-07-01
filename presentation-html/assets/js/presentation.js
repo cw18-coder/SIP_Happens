@@ -34,7 +34,8 @@ class PresentationController {
         // Tool buttons
         document.getElementById('notes-btn').addEventListener('click', () => this.toggleSpeakerNotes());
         document.getElementById('fullscreen-btn').addEventListener('click', () => this.toggleFullscreen());
-        document.getElementById('theme-btn').addEventListener('click', () => this.toggleTheme());
+        // COMMENTED OUT - DARK MODE DISABLED
+        // document.getElementById('theme-btn').addEventListener('click', () => this.toggleTheme());
         
         // Keyboard navigation
         document.addEventListener('keydown', (e) => this.handleKeyPress(e));
@@ -85,7 +86,8 @@ class PresentationController {
             case 't':
             case 'T':
                 e.preventDefault();
-                this.toggleTheme();
+                // COMMENTED OUT - DARK MODE DISABLED
+                // this.toggleTheme();
                 break;
             case 'Escape':
                 if (this.isFullscreen) {
@@ -392,6 +394,7 @@ class PresentationController {
         }
     }
     
+    /* COMMENTED OUT - DARK MODE DISABLED
     toggleTheme() {
         const themes = ['dark', 'light', 'high-contrast'];
         const currentIndex = themes.indexOf(this.currentTheme);
@@ -407,6 +410,7 @@ class PresentationController {
             document.body.classList.remove('theme-transition');
         }, 500);
     }
+    */ // END COMMENTED OUT - DARK MODE DISABLED
     
     handleResize() {
         // Adjust layout for different screen sizes
