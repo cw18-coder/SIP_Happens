@@ -1966,111 +1966,409 @@ em, i {
 }
 
 .scenario {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #4a90e2;
+    background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 2px solid #e1e8ed;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.scenario::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4a90e2 0%, #64ffda 100%);
+    border-radius: 16px 16px 0 0;
+}
+
+.scenario:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(74, 144, 226, 0.15);
+    border-color: #4a90e2;
 }
 
 .scenario h4 {
     color: #2c3e50;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.scenario h4::before {
+    content: '💰';
+    font-size: 1.5rem;
 }
 
 .scenario ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .scenario li {
-    margin-bottom: 0.5rem;
-    padding-left: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    background: rgba(74, 144, 226, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid #4a90e2;
+    transition: all 0.3s ease;
     position: relative;
 }
 
-.scenario li:before {
-    content: '•';
-    color: #4a90e2;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
+.scenario li:hover {
+    background: rgba(74, 144, 226, 0.1);
+    transform: translateX(5px);
 }
 
-.key-insight, .key-lesson {
+.scenario li strong {
+    color: #2c3e50;
+    display: inline-block;
+    min-width: 140px;
+    font-weight: 600;
+}
+
+.key-insight {
     background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #28a745;
+    padding: 3rem 2rem 2rem 2rem;
+    border-radius: 16px;
+    border: 2px solid #64ffda;
+    text-align: center;
+    position: relative;
     margin-top: 2rem;
+    box-shadow: 0 8px 25px rgba(100, 255, 218, 0.15);
 }
 
-.key-insight h4, .key-lesson h4 {
-    color: #155724;
-    margin-bottom: 0.5rem;
+.key-insight::before {
+    content: '💡';
+    font-size: 1.5rem;
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0.4rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.key-insight p, .key-lesson p {
-    color: #155724;
+.key-insight h4 {
+    color: #0d7377;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.key-insight p {
+    color: #2c3e50;
+    font-size: 1.1rem;
     font-weight: 600;
     margin: 0;
 }
 
+/* Real World Examples Enhancements */
 .case-study {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+    border: 2px solid #4ade80;
+    border-radius: 16px;
+    padding: 2rem;
     margin-bottom: 2rem;
-    border-left: 4px solid #17a2b8;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.case-study::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4ade80 0%, #22c55e 100%);
+    border-radius: 16px 16px 0 0;
+}
+
+.case-study:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(74, 222, 128, 0.2);
+    border-color: #22c55e;
 }
 
 .case-study h4 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
+    color: #16a34a;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.case-study:nth-child(1) h4::before {
+    content: '🏢';
+    font-size: 1.5rem;
+}
+
+.case-study:nth-child(2) h4::before {
+    content: '📊';
+    font-size: 1.5rem;
 }
 
 .case-study ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .case-study li {
-    margin-bottom: 0.5rem;
-    padding-left: 1rem;
-    position: relative;
-}
-
-.case-study li:before {
-    content: '▸';
-    color: #17a2b8;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-}
-
-.failure-reasons, .success-factors {
-    background: #f8f9fa;
-    padding: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    background: rgba(74, 222, 128, 0.1);
     border-radius: 8px;
+    border-left: 4px solid #4ade80;
+    transition: all 0.3s ease;
+}
+
+.case-study li:hover {
+    background: rgba(74, 222, 128, 0.15);
+    transform: translateX(5px);
+}
+
+.case-study li strong {
+    color: #16a34a;
+    display: inline-block;
+    min-width: 130px;
+    font-weight: 600;
+}
+
+/* Time Value Impact Enhancements */
+#timevalueDetail .detail-grid h4 {
+    background: linear-gradient(135deg, #fff0f5 0%, #ffffff 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid #ff6b9d;
+    color: #c2185b;
+    text-align: center;
     margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
-.failure-reasons h4 {
-    color: #dc3545;
-    margin-bottom: 1rem;
+#timevalueDetail ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1rem;
 }
 
-.success-factors h4 {
-    color: #28a745;
-    margin-bottom: 1rem;
+#timevalueDetail li {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid #ffcccb;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-.failure-reasons ol, .success-factors ol {
-    padding-left: 1.5rem;
+#timevalueDetail li:nth-child(1) {
+    border-color: #4caf50;
+    background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 100%);
 }
 
-.failure-reasons li, .success-factors li {
-    margin-bottom: 0.8rem;
-    line-height: 1.5;
+#timevalueDetail li:nth-child(1)::before {
+    content: '🏆';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+}
+
+#timevalueDetail li:nth-child(2),
+#timevalueDetail li:nth-child(3),
+#timevalueDetail li:nth-child(4) {
+    border-color: #f44336;
+}
+
+#timevalueDetail li:nth-child(2)::before {
+    content: '⚠️';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+}
+
+#timevalueDetail li:nth-child(3)::before {
+    content: '❌';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+}
+
+#timevalueDetail li:nth-child(4)::before {
+    content: '💔';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+}
+
+#timevalueDetail li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+#timevalueDetail li strong {
+    color: #2c3e50;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+#timevalueDetail li span {
+    display: inline-block;
+    margin-left: 1rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    background: rgba(244, 67, 54, 0.1);
+    font-size: 0.9rem;
+}
+
+/* Formula Box Enhancement */
+#timevalueDetail .detail-grid > div[style*="background: #f8f9fa"] {
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%) !important;
+    border: 2px solid #6c757d !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    margin: 2rem 0 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+}
+
+#timevalueDetail .detail-grid > div[style*="background: #f8f9fa"]::before {
+    content: '📐';
+    position: absolute;
+    top: -1rem;
+    left: 1.5rem;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.key-lesson {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+    padding: 3rem 2rem 2rem 2rem;
+    border-radius: 16px;
+    border: 2px solid #4ade80;
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(74, 222, 128, 0.15);
+}
+
+.key-lesson::before {
+    content: '🎯';
+    font-size: 2rem;
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.key-lesson h4 {
+    color: #16a34a;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.key-lesson p {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Animation for all detailed view elements */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detail-content .scenario,
+.detail-content .case-study,
+.detail-content .key-insight,
+.detail-content .key-lesson {
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+.detail-content .scenario:nth-child(1) { animation-delay: 0.1s; }
+.detail-content .scenario:nth-child(2) { animation-delay: 0.2s; }
+.detail-content .case-study:nth-child(1) { animation-delay: 0.1s; }
+.detail-content .case-study:nth-child(2) { animation-delay: 0.2s; }
+
+#timevalueDetail li:nth-child(1) { animation-delay: 0.1s; }
+#timevalueDetail li:nth-child(2) { animation-delay: 0.2s; }
+#timevalueDetail li:nth-child(3) { animation-delay: 0.3s; }
+#timevalueDetail li:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive Design for Enhanced Views */
+@media (max-width: 768px) {
+    .scenario-comparison {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .scenario,
+    .case-study {
+        padding: 1.5rem;
+    }
+    
+    .scenario h4,
+    .case-study h4 {
+        font-size: 1.1rem;
+    }
+    
+    .scenario li strong,
+    .case-study li strong {
+        min-width: 100px;
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+    
+    .key-insight,
+    .key-lesson {
+        padding: 1.5rem;
+    }
+    
+    .key-insight h4,
+    .key-lesson h4 {
+        font-size: 1.2rem;
+    }
+    
+    #timevalueDetail li {
+        padding: 1.25rem;
+    }
 }
 
 /* Behavioral Cards - Enhanced Visual Features */
