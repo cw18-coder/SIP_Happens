@@ -2529,10 +2529,10 @@ em, i {
 }
 
 /* Animation for Loading */
-@keyframes fadeInUp {
+@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
@@ -2541,7 +2541,7 @@ em, i {
 }
 
 .behavioral-card {
-    animation: fadeInUp 0.6s ease-out forwards;
+    animation: fadeIn 0.6s ease-out forwards;
 }
 
 .behavioral-card:nth-child(1) { animation-delay: 0.1s; }
@@ -2578,22 +2578,6 @@ em, i {
     .behavioral-example {
         font-size: 0.8rem;
         padding: 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .behavioral-header {
-        gap: 0.75rem;
-    }
-    
-    .behavioral-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 1.1rem;
-    }
-    
-    .behavioral-card {
-        padding: 1rem;
     }
 }
 
@@ -3023,7 +3007,7 @@ em, i {
 }
 
 .slide[data-slide="3"] .component-details .detail-list li {
-    background: rgba(0,0,0,0.05);
+    background: rgba(0, 0, 0, 0.05);
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     font-size: 0.85rem;
@@ -3101,17 +3085,6 @@ em, i {
     transform: scale(1.1) rotate(5deg);
 }
 
-.slide[data-slide="3"] .highlight-content {
-    color: #00695c;
-    font-size: 1.1rem;
-    font-weight: 600;
-    line-height: 1.5;
-}
-
-.slide[data-slide="3"] .highlight-content strong {
-    color: #004d40;
-}
-
 /* Responsive Design for Slides 2 & 3 */
 @media (max-width: 768px) {
     .slide[data-slide="2"] .comparison-box,
@@ -3147,38 +3120,370 @@ em, i {
     }
 }
 
-/* Animation for all enhanced elements */
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* ===== SLIDES 5, 7, 8 DETAILED VIEW ENHANCEMENTS ===== */
+
+/* ===== SLIDE 5 - TRIAGE MATRIX DETAILED VIEWS ===== */
+
+/* Detail Grid Layout */
+.slide[data-slide="5"] .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
-.slide[data-slide="2"] .hook-statement,
-.slide[data-slide="2"] .comparison-item,
-.slide[data-slide="2"] .analogy-item,
-.slide[data-slide="2"] .warning-box,
-.slide[data-slide="3"] .intro-text,
-.slide[data-slide="3"] .component-item,
-.slide[data-slide="3"] .highlight-box {
-    animation: slideInUp 0.6s ease-out forwards;
+/* Detail Section Cards */
+.slide[data-slide="5"] .detail-section {
+    background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+    border: 2px solid #e1e8ed;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.slide[data-slide="2"] .comparison-item:nth-child(1) { animation-delay: 0.1s; }
-.slide[data-slide="2"] .comparison-item:nth-child(2) { animation-delay: 0.2s; }
-.slide[data-slide="2"] .analogy-item:nth-child(1) { animation-delay: 0.1s; }
-.slide[data-slide="2"] .analogy-item:nth-child(2) { animation-delay: 0.2s; }
-.slide[data-slide="2"] .analogy-item:nth-child(3) { animation-delay: 0.3s; }
-.slide[data-slide="2"] .analogy-item:nth-child(4) { animation-delay: 0.4s; }
+.slide[data-slide="5"] .detail-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4a90e2 0%, #64ffda 100%);
+    border-radius: 16px 16px 0 0;
+}
 
-.slide[data-slide="3"] .component-item:nth-child(1) { animation-delay: 0.1s; }
-.slide[data-slide="3"] .component-item:nth-child(2) { animation-delay: 0.2s; }
-.slide[data-slide="3"] .component-item:nth-child(3) { animation-delay: 0.3s; }
-.slide[data-slide="3"] .component-item:nth-child(4) { animation-delay: 0.4s; }
+.slide[data-slide="5"] .detail-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(74, 144, 226, 0.15);
+    border-color: #4a90e2;
+}
+
+/* Color-coded sections based on content type */
+.slide[data-slide="5"] .detail-section.goals {
+    background: linear-gradient(135deg, #e8f5e8 0%, #ffffff 100%);
+    border-color: #4caf50;
+}
+
+.slide[data-slide="5"] .detail-section.goals::before {
+    background: linear-gradient(90deg, #4caf50 0%, #66bb6a 100%);
+}
+
+.slide[data-slide="5"] .detail-section.strategy {
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+    border-color: #2196f3;
+}
+
+.slide[data-slide="5"] .detail-section.strategy::before {
+    background: linear-gradient(90deg, #2196f3 0%, #42a5f5 100%);
+}
+
+.slide[data-slide="5"] .detail-section.tech-analogy {
+    background: linear-gradient(135deg, #f3e5f5 0%, #ffffff 100%);
+    border-color: #9c27b0;
+}
+
+.slide[data-slide="5"] .detail-section.tech-analogy::before {
+    background: linear-gradient(90deg, #9c27b0 0%, #ba68c8 100%);
+}
+
+.slide[data-slide="5"] .detail-section.rationale {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffffff 100%);
+    border-color: #ff9800;
+}
+
+.slide[data-slide="5"] .detail-section.rationale::before {
+    background: linear-gradient(90deg, #ff9800 0%, #ffb74d 100%);
+}
+
+/* Section Headers */
+.slide[data-slide="5"] .detail-section h4 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Lists in detail sections */
+.slide[data-slide="5"] .detail-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slide[data-slide="5"] .detail-section li {
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    background: rgba(74, 144, 226, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid #4a90e2;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.slide[data-slide="5"] .detail-section.goals li {
+    background: rgba(76, 175, 80, 0.1);
+    border-left-color: #4caf50;
+}
+
+.slide[data-slide="5"] .detail-section.strategy li {
+    background: rgba(33, 150, 243, 0.1);
+    border-left-color: #2196f3;
+}
+
+.slide[data-slide="5"] .detail-section li:hover {
+    background: rgba(74, 144, 226, 0.1);
+    transform: translateX(5px);
+}
+
+.slide[data-slide="5"] .detail-section.goals li:hover {
+    background: rgba(76, 175, 80, 0.15);
+}
+
+.slide[data-slide="5"] .detail-section.strategy li:hover {
+    background: rgba(33, 150, 243, 0.15);
+}
+
+/* Risk Profile Details */
+.slide[data-slide="5"] .risk-profile-detail {
+    background: rgba(100, 255, 218, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #64ffda;
+}
+
+.slide[data-slide="5"] .fund-recommendations,
+.slide[data-slide="5"] .returns-detail {
+    background: rgba(74, 144, 226, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Analogy Box Enhancement */
+.slide[data-slide="5"] .analogy-box {
+    background: linear-gradient(135deg, #f3e5f5 0%, #ffffff 100%);
+    border: 2px solid #ba68c8;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.slide[data-slide="5"] .analogy-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(186, 104, 200, 0.2);
+}
+
+.slide[data-slide="5"] .analogy-icon {
+    background: linear-gradient(135deg, #e1bee7 0%, #ba68c8 100%);
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    min-width: 60px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.slide[data-slide="5"] .analogy-box:hover .analogy-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ===== SLIDE 7 - FUND CATEGORIES DETAILED VIEWS ===== */
+
+/* Fund Subcategories Grid */
+.slide[data-slide="7"] .fund-subcategories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Special layout for hybrid funds - 1x3 grid */
+.slide[data-slide="7"] #hybridDetail .fund-subcategories {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.slide[data-slide="7"] .fund-subcard {
+    background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+    border: 2px solid #e1e8ed;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.slide[data-slide="7"] .fund-subcard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 16px 16px 0 0;
+}
+
+.slide[data-slide="7"] .fund-subcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+/* Equity Fund Subcards - Green/Blue Alternating (now 4 cards) */
+.slide[data-slide="7"] #equityDetail .fund-subcard:nth-child(1),
+.slide[data-slide="7"] #equityDetail .fund-subcard:nth-child(3) {
+    background: linear-gradient(135deg, #e8f5e8 0%, #ffffff 100%);
+    border-color: #4caf50;
+}
+
+.slide[data-slide="7"] #equityDetail .fund-subcard:nth-child(1)::before,
+.slide[data-slide="7"] #equityDetail .fund-subcard:nth-child(3)::before {
+    background: linear-gradient(90deg, #4caf50 0%, #66bb6a 100%);
+}
+
+.slide[data-slide="7"] #equityDetail .fund-subcard:nth-child(2),
+.slide[data-slide="7"] #equityDetail .fund-subcard:nth-child(4) {
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+    border-color: #2196f3;
+}
+
+.slide[data-slide="7"] #equityDetail .fund-subcard:nth-child(2)::before,
+.slide[data-slide="7"] #equityDetail .fund-subcard:nth-child(4)::before {
+    background: linear-gradient(90deg, #2196f3 0%, #42a5f5 100%);
+}
+
+/* Debt Fund Subcards - Blue/Teal Alternating (now 4 cards) */
+.slide[data-slide="7"] #debtDetail .fund-subcard:nth-child(1),
+.slide[data-slide="7"] #debtDetail .fund-subcard:nth-child(3) {
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+    border-color: #2196f3;
+}
+
+.slide[data-slide="7"] #debtDetail .fund-subcard:nth-child(1)::before,
+.slide[data-slide="7"] #debtDetail .fund-subcard:nth-child(3)::before {
+    background: linear-gradient(90deg, #2196f3 0%, #42a5f5 100%);
+}
+
+.slide[data-slide="7"] #debtDetail .fund-subcard:nth-child(2),
+.slide[data-slide="7"] #debtDetail .fund-subcard:nth-child(4) {
+    background: linear-gradient(135deg, #e0f2f1 0%, #ffffff 100%);
+    border-color: #26a69a;
+}
+
+.slide[data-slide="7"] #debtDetail .fund-subcard:nth-child(2)::before,
+.slide[data-slide="7"] #debtDetail .fund-subcard:nth-child(4)::before {
+    background: linear-gradient(90deg, #26a69a 0%, #4db6ac 100%);
+}
+
+/* Hybrid Fund Subcards - Purple/Orange/Green for 1x3 layout */
+.slide[data-slide="7"] #hybridDetail .fund-subcard:nth-child(1) {
+    background: linear-gradient(135deg, #f3e5f5 0%, #ffffff 100%);
+    border-color: #9c27b0;
+}
+
+.slide[data-slide="7"] #hybridDetail .fund-subcard:nth-child(1)::before {
+    background: linear-gradient(90deg, #9c27b0 0%, #ba68c8 100%);
+}
+
+.slide[data-slide="7"] #hybridDetail .fund-subcard:nth-child(2) {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffffff 100%);
+    border-color: #ff9800;
+}
+
+.slide[data-slide="7"] #hybridDetail .fund-subcard:nth-child(2)::before {
+    background: linear-gradient(90deg, #ff9800 0%, #ffb74d 100%);
+}
+
+.slide[data-slide="7"] #hybridDetail .fund-subcard:nth-child(3) {
+    background: linear-gradient(135deg, #e8f5e8 0%, #ffffff 100%);
+    border-color: #4caf50;
+}
+
+.slide[data-slide="7"] #hybridDetail .fund-subcard:nth-child(3)::before {
+    background: linear-gradient(90deg, #4caf50 0%, #66bb6a 100%);
+}
+
+/* Subcard Headers for Slide 7 */
+.slide[data-slide="7"] .subcard-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.slide[data-slide="7"] .subcard-header h4 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Special font size adjustments for hybrid funds 1x3 layout */
+.slide[data-slide="7"] #hybridDetail .subcard-header h4 {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.slide[data-slide="7"] #hybridDetail .fund-subcard {
+    padding: 1.8rem;
+}
+
+.slide[data-slide="7"] #hybridDetail .analogy {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.slide[data-slide="7"] #hybridDetail .info-item {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 0.6rem;
+}
+
+.slide[data-slide="7"] #hybridDetail .info-item strong {
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Specific adjustments for different info items in hybrid funds */
+.slide[data-slide="7"] #hybridDetail .info-item:nth-child(1) {
+    /* Allocation - should be 2 lines */
+    min-height: 2.8rem;
+}
+
+.slide[data-slide="7"] #hybridDetail .info-item:nth-child(2) {
+    /* Returns - should be 1 line */
+    min-height: 1.8rem;
+}
+
+.slide[data-slide="7"] #hybridDetail .info-item:nth-child(3) {
+    /* Best For - should be 2 lines */
+    min-height: 2.8rem;
+}
+
+/* Responsive adjustment for hybrid funds on mobile */
+@media (max-width: 768px) {
+    .slide[data-slide="7"] #hybridDetail .subcard-header h4 {
+        font-size: 1rem;
+    }
+    
+    .slide[data-slide="7"] #hybridDetail .info-item {
+        font-size: 0.8rem;
+        min-height: auto;
+    }
+}
 
 
