@@ -1,0 +1,130 @@
+<!-- Slide 10: Real Performance Data Examples -->
+<div class="slide real-performance-slide" data-slide="10">
+    <div class="slide-content">
+        <div class="slide-header">
+            <h1 class="slide-title">Real Performance Data Examples</h1>
+            <h2 class="slide-subtitle">Show Me the Numbers: Actual Fund Performance Analysis</h2>
+        </div>
+        <div class="content-body">
+            <div class="intro-text">
+                <p class="lead">Let me walk you through real examples to illustrate how these metrics work in practice.</p>
+            </div>
+            <!-- Main Category Cards (Level 1) -->
+            <div class="performance-main-categories" id="performanceMainCategories">
+                <div class="category-card" data-category="large-cap">
+                    <div class="category-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4b0.svg" alt="Large Cap" class="emoji-icon">
+                    </div>
+                    <h3>Large Cap Fund</h3>
+                    <div class="category-stats">
+                        <span class="stat">HDFC Top 100 Fund</span>
+                        <span class="stat">5-Year Analysis</span>
+                    </div>
+                    <button class="explore-btn">Click to Explore →</button>
+                </div>
+                <div class="category-card" data-category="mid-cap">
+                    <div class="category-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4b8.svg" alt="Mid Cap" class="emoji-icon">
+                    </div>
+                    <h3>Mid Cap Fund</h3>
+                    <div class="category-stats">
+                        <span class="stat">DSP Midcap Fund</span>
+                        <span class="stat">5-Year Analysis</span>
+                    </div>
+                    <button class="explore-btn">Click to Explore →</button>
+                </div>
+                <div class="category-card" data-category="debt-fund">
+                    <div class="category-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4b5.svg" alt="Debt Fund" class="emoji-icon">
+                    </div>
+                    <h3>Debt Fund</h3>
+                    <div class="category-stats">
+                        <span class="stat">ICICI Prudential Corporate Bond</span>
+                        <span class="stat">3-Year Analysis</span>
+                    </div>
+                    <button class="explore-btn">Click to Explore →</button>
+                </div>
+                <div class="category-card" data-category="key-takeaways">
+                    <div class="category-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4a1.svg" alt="Key Takeaways" class="emoji-icon">
+                    </div>
+                    <h3>Key Takeaways</h3>
+                    <div class="category-stats">
+                        <span class="stat">Risk-Return Tradeoff</span>
+                        <span class="stat">Informed Decisions</span>
+                    </div>
+                    <button class="explore-btn">Click to Explore →</button>
+                </div>
+            </div>
+            <!-- Detailed View (Level 2) -->
+            <div class="performance-detailed-view" id="performanceDetailedView" style="display: none; animation: fadeIn 0.3s;">
+                <div class="back-button">
+                    <button id="backToPerformanceMain">← Back to Performance Examples</button>
+                </div>
+                <!-- Large Cap Detail -->
+                <div class="detail-content" id="large-capDetail" style="display: none;">
+                    <h3>Large Cap Fund Example: HDFC Top 100 Fund</h3>
+                    <ul class="performance-list">
+                        <li><strong>Absolute Returns:</strong> 12.8% CAGR vs Nifty 100 at 11.2% CAGR</li>
+                        <li><strong>Alpha:</strong> +1.6% (consistent outperformance)</li>
+                        <li><strong>Beta:</strong> 0.95 (slightly less volatile than market)</li>
+                        <li><strong>Sharpe Ratio:</strong> 0.87 (good risk-adjusted returns)</li>
+                        <li><strong>Standard Deviation:</strong> 16.2% (moderate volatility)</li>
+                        <li><strong>Maximum Drawdown:</strong> -32% (during March 2020 crash)</li>
+                    </ul>
+                    <div class="performance-interpretation">
+                        <strong>Interpretation:</strong> Solid, consistent performer with lower volatility than market. Good choice for conservative equity investors.
+                    </div>
+                </div>
+                <!-- Mid Cap Detail -->
+                <div class="detail-content" id="mid-capDetail" style="display: none;">
+                    <h3>Mid Cap Fund Example: DSP Midcap Fund</h3>
+                    <ul class="performance-list">
+                        <li><strong>Absolute Returns:</strong> 16.4% CAGR vs Nifty Midcap 150 at 14.8% CAGR</li>
+                        <li><strong>Alpha:</strong> +1.6% (consistent outperformance)</li>
+                        <li><strong>Beta:</strong> 1.12 (more volatile than market)</li>
+                        <li><strong>Sharpe Ratio:</strong> 0.82 (good risk-adjusted returns despite higher volatility)</li>
+                        <li><strong>Standard Deviation:</strong> 22.4% (high volatility)</li>
+                        <li><strong>Maximum Drawdown:</strong> -45% (during March 2020 crash)</li>
+                    </ul>
+                    <div class="performance-interpretation">
+                        <strong>Interpretation:</strong> Higher returns but with significantly higher volatility. Suitable for aggressive investors with long-term horizon.
+                    </div>
+                </div>
+                <!-- Debt Fund Detail -->
+                <div class="detail-content" id="debt-fundDetail" style="display: none;">
+                    <h3>Debt Fund Example: ICICI Prudential Corporate Bond Fund</h3>
+                    <ul class="performance-list">
+                        <li><strong>Absolute Returns:</strong> 6.8% CAGR</li>
+                        <li><strong>YTM:</strong> 7.2% (current portfolio yield)</li>
+                        <li><strong>Modified Duration:</strong> 3.2 years</li>
+                        <li><strong>Average Credit Rating:</strong> AA+</li>
+                        <li><strong>Standard Deviation:</strong> 1.8% (low volatility)</li>
+                        <li><strong>Maximum Drawdown:</strong> -2.1% (during rate hike cycle)</li>
+                    </ul>
+                    <div class="performance-interpretation">
+                        <strong>Interpretation:</strong> Stable returns with low volatility. Good for conservative investors seeking steady income.
+                    </div>
+                </div>
+                <!-- Key Takeaways Detail -->
+                <div class="detail-content" id="key-takeawaysDetail" style="display: none;">
+                    <h3>Key Takeaways from Real Data</h3>
+                    <ul class="performance-list">
+                        <li>Understanding these numbers helps you make informed decisions rather than chasing last year's winners.</li>
+                        <li>Notice how mid-cap funds offer higher returns but with much higher volatility – this is the risk-return tradeoff in action.</li>
+                        <li>Always weigh risk vs return, not just past performance.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-notes">
+        <h3>Speaker Notes:</h3>
+        <ul>
+            <li><strong>Real fund data shows how metrics translate to actual outcomes.</strong></li>
+            <li>Large cap: steady, lower risk; mid cap: higher return, higher risk; debt: stability.</li>
+            <li>Always weigh risk vs return, not just past performance.</li>
+        </ul>
+    </div>
+</div>
+<script src="../assets/js/fund-categories-simple.js"></script>
