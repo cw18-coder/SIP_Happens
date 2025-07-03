@@ -188,42 +188,44 @@ function initFundCategories() {
         
         // Handle Slide 8 - Performance Evaluation Framework
         if (e.target.classList.contains('explore-btn')) {
-            console.log('Performance explore button clicked!');
-            
+            // Slide 8 logic
             const categoryCard = e.target.closest('.category-card');
-            if (categoryCard) {
+            if (categoryCard && document.getElementById('performanceMainCategories')) {
                 const category = categoryCard.getAttribute('data-category');
-                console.log('Performance category:', category);
-                
                 // Hide main categories
                 const performanceMain = document.getElementById('performanceMainCategories');
-                if (performanceMain) {
-                    performanceMain.style.display = 'none';
-                    console.log('Performance main categories hidden');
-                }
-                
+                if (performanceMain) performanceMain.style.display = 'none';
                 // Show detailed view
                 const performanceDetailed = document.getElementById('performanceDetailedView');
-                if (performanceDetailed) {
-                    performanceDetailed.style.display = 'block';
-                    console.log('Performance detailed view shown');
-                }
-                
+                if (performanceDetailed) performanceDetailed.style.display = 'block';
                 // Hide all detail content first
                 const allPerformanceDetails = document.querySelectorAll('#performanceDetailedView .detail-content');
                 allPerformanceDetails.forEach(detail => detail.style.display = 'none');
-                
                 // Show specific category detail
                 const categoryDetail = document.getElementById(category + 'Detail');
-                if (categoryDetail) {
-                    categoryDetail.style.display = 'block';
-                    console.log('Performance category detail shown:', category);
-                }
-                
+                if (categoryDetail) categoryDetail.style.display = 'block';
                 e.preventDefault();
+                return;
+            }
+            // Slide 9 logic
+            if (categoryCard && document.getElementById('riskMainCategories')) {
+                const category = categoryCard.getAttribute('data-category');
+                // Hide main categories
+                const riskMain = document.getElementById('riskMainCategories');
+                if (riskMain) riskMain.style.display = 'none';
+                // Show detailed view
+                const riskDetailed = document.getElementById('riskDetailedView');
+                if (riskDetailed) riskDetailed.style.display = '';
+                // Hide all detail content first
+                const allRiskDetails = document.querySelectorAll('#riskDetailedView .detail-content');
+                allRiskDetails.forEach(detail => detail.style.display = 'none');
+                // Show specific category detail
+                const categoryDetail = document.getElementById(category + 'Detail');
+                if (categoryDetail) categoryDetail.style.display = '';
+                e.preventDefault();
+                return;
             }
         }
-        
         // Handle Slide 8 back button
         if (e.target.id === 'backToPerformanceMain') {
             console.log('Performance back button clicked!');
@@ -243,6 +245,20 @@ function initFundCategories() {
             }
             
             e.preventDefault();
+        }
+        // Handle Slide 9 back button
+        if (e.target.id === 'backToRiskMain') {
+            // Hide detailed view
+            const riskDetailed = document.getElementById('riskDetailedView');
+            if (riskDetailed) riskDetailed.style.display = 'none';
+            // Show main categories
+            const riskMain = document.getElementById('riskMainCategories');
+            if (riskMain) riskMain.style.display = '';
+            // Hide all detail content
+            const allRiskDetails = document.querySelectorAll('#riskDetailedView .detail-content');
+            allRiskDetails.forEach(detail => detail.style.display = 'none');
+            e.preventDefault();
+            return;
         }
     });
     
@@ -300,6 +316,9 @@ function initializeCompoundingSlide() {
         });
     }
 }
+
+// === Slide 9: Risk Evaluation Framework (drill-down navigation) ===
+// [REMOVED: Slide 9-specific DOMContentLoaded handler and related code. Slide 9 navigation is now handled by the global click handler for consistency.]
 
 // Try multiple initialization approaches
 console.log('Attempting initialization...');
