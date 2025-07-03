@@ -2803,25 +2803,6 @@ em, i {
     box-shadow: 0 8px 25px rgba(255, 152, 0, 0.2);
 }
 
-.slide[data-slide="2"] .warning-header {
-    background: linear-gradient(135deg, #ffe0b2 0%, #ffcc02 100%);
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    color: #ef6c00;
-    font-weight: 700;
-    font-size: 1.1rem;
-    min-width: 200px;
-    text-align: center;
-}
-
-.slide[data-slide="2"] .warning-box p {
-    color: #ef6c00;
-    font-weight: 600;
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
 /* ===== SLIDE 3 ENHANCEMENTS ===== */
 
 /* Intro Text Enhancement */
@@ -3074,20 +3055,6 @@ em, i {
 .slide[data-slide="3"] .highlight-box:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(38, 166, 154, 0.2);
-}
-
-.slide[data-slide="3"] .highlight-icon {
-    background: linear-gradient(135deg, #b2dfdb 0%, #26a69a 100%);
-    padding: 1rem;
-    border-radius: 12px;
-    font-size: 2rem;
-    min-width: 70px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.slide[data-slide="3"] .highlight-box:hover .highlight-icon {
-    transform: scale(1.1) rotate(5deg);
 }
 
 /* Responsive Design for Slides 2 & 3 */
@@ -3500,7 +3467,6 @@ em, i {
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateY(0);
 }
 
 /* Top accent bars for different metrics - Color psychology */
@@ -3586,12 +3552,6 @@ em, i {
     font-size: 0.9rem;
 }
 
-.slide[data-slide="8"] .metric-info .info-item span {
-    color: #475569;
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
 /* Debt Metrics and Universal Metrics Detail Styling */
 .slide[data-slide="8"] .fund-subcategories {
     display: grid;
@@ -3624,7 +3584,6 @@ em, i {
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateY(0);
 }
 
 .slide[data-slide="8"] .fund-subcard::before {
@@ -3708,8 +3667,6 @@ em, i {
     margin-bottom: 0.7rem;
     border-left: 3px solid #3b82f6;
     transition: all 0.3s ease;
-    font-size: 0.9rem;
-    line-height: 1.4;
 }
 
 .slide[data-slide="8"] .fund-info .info-item:hover {
@@ -3886,17 +3843,374 @@ em, i {
     transform: translateY(-4px) scale(0.98);
 }
 
-.slide[data-slide="8"] .fund-info .info-item:active {
-    transform: translateX(2px) scale(0.98);
+/* ===== SLIDE 9: RISK EVALUATION FRAMEWORK - ADVANCED VISUAL FEATURES ===== */
+
+.slide[data-slide="9"] .risk-main-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-/* ===== UNIVERSAL BACK BUTTON STYLING FOR ALL SLIDES ===== */
-/* Consistent back button styling across the entire presentation */
+.slide[data-slide="9"] .category-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fcff 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+    overflow: hidden;
+}
 
-.back-button {
+.slide[data-slide="9"] .category-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #dc2626, #ef4444, #f87171);
+    z-index: 1;
+}
+.slide[data-slide="9"] .category-card[data-category="measurement-tools"]::before {
+    background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+}
+.slide[data-slide="9"] .category-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1);
+    border-color: rgba(37,99,235,0.3);
+}
+.slide[data-slide="9"] .category-icon {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.slide[data-slide="9"] .category-icon .emoji-icon {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+.slide[data-slide="9"] .category-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+}
+.slide[data-slide="9"] .category-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.slide[data-slide="9"] .category-stats .stat {
+    background: rgba(37,99,235,0.1);
+    color: #1e40af;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.slide[data-slide="9"] .explore-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+}
+.slide[data-slide="9"] .explore-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37,99,235,0.4);
+}
+
+/* Drill-down Detail View */
+.slide[data-slide="9"] .risk-detailed-view {
+    animation: fadeInUp 0.6s ease-out;
+}
+.slide[data-slide="9"] .detail-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(59,130,246,0.05));
+    border-radius: 12px;
+    border: 2px solid rgba(37,99,235,0.1);
+}
+.slide[data-slide="9"] .back-button {
+    text-align: center;
     margin-bottom: 2rem;
 }
+.slide[data-slide="9"] .back-button button {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.slide[data-slide="9"] .back-button button:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
 
+/* Risk Types Grid */
+.slide[data-slide="9"] .risk-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.slide[data-slide="9"] .risk-type-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.05);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+    overflow: hidden;
+}
+.slide[data-slide="9"] .risk-type-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    z-index: 1;
+}
+.slide[data-slide="9"] .market-risk::before {
+    background: linear-gradient(90deg, #dc2626, #ef4444, #f87171);
+}
+.slide[data-slide="9"] .credit-risk::before {
+    background: linear-gradient(90deg, #ea580c, #f97316, #fb923c);
+}
+.slide[data-slide="9"] .liquidity-risk::before {
+    background: linear-gradient(90deg, #d97706, #f59e0b, #fbbf24);
+}
+.slide[data-slide="9"] .concentration-risk::before {
+    background: linear-gradient(90deg, #059669, #10b981, #34d399);
+}
+.slide[data-slide="9"] .interest-rate-risk::before {
+    background: linear-gradient(90deg, #7c3aed, #8b5cf6, #a78bfa);
+}
+.slide[data-slide="9"] .risk-type-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 8px 16px rgba(0,0,0,0.1);
+    border-color: rgba(37,99,235,0.2);
+}
+.slide[data-slide="9"] .risk-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.slide[data-slide="9"] .risk-header .emoji-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+.slide[data-slide="9"] .risk-header h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    flex: 1;
+    min-width: 150px;
+}
+.slide[data-slide="9"] .risk-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+.slide[data-slide="9"] .risk-badge.critical {
+    background: rgba(220,38,38,0.1);
+    color: #dc2626;
+    border: 1px solid rgba(220,38,38,0.2);
+}
+.slide[data-slide="9"] .risk-badge.high {
+    background: rgba(234,88,12,0.1);
+    color: #ea580c;
+    border: 1px solid rgba(234,88,12,0.2);
+}
+.slide[data-slide="9"] .risk-badge.medium {
+    background: rgba(217,119,6,0.1);
+    color: #d97706;
+    border: 1px solid rgba(217,119,6,0.2);
+}
+.slide[data-slide="9"] .risk-analogy {
+    font-style: italic;
+    color: #475569;
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    background: rgba(241,245,249,0.8);
+    padding: 0.8rem;
+    border-radius: 8px;
+    border-left: 4px solid #cbd5e1;
+}
+.slide[data-slide="9"] .risk-info .info-item {
+    margin-bottom: 0.8rem;
+    padding: 0.6rem;
+    background: rgba(248,250,252,0.8);
+    border-radius: 6px;
+    border-left: 3px solid #e2e8f0;
+}
+.slide[data-slide="9"] .risk-info .info-item:last-child {
+    margin-bottom: 0;
+}
+.slide[data-slide="9"] .risk-info .info-item strong {
+    color: #334155;
+    display: inline-block;
+    margin-right: 0.5rem;
+    min-width: 80px;
+}
+
+/* Measurement Tools Grid */
+.slide[data-slide="9"] .measurement-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    padding: 1.5rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.slide[data-slide="9"] .tool-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fcff 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 2px solid transparent;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.05);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+    overflow: hidden;
+}
+.slide[data-slide="9"] .tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+    z-index: 1;
+}
+.slide[data-slide="9"] .tool-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 8px 16px rgba(0,0,0,0.1);
+    border-color: rgba(37,99,235,0.2);
+}
+.slide[data-slide="9"] .tool-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.slide[data-slide="9"] .tool-header .emoji-icon {
+    width: 48px;
+    height: 48px;
+}
+.slide[data-slide="9"] .tool-header h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+.slide[data-slide="9"] .tool-definition {
+    font-style: italic;
+    color: #475569;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    background: rgba(241,245,249,0.8);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+}
+.slide[data-slide="9"] .range-item {
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+.slide[data-slide="9"] .range-item.low {
+    background: rgba(34,197,94,0.1);
+    color: #059669;
+    border-left: 4px solid #10b981;
+}
+.slide[data-slide="9"] .range-item.medium {
+    background: rgba(245,158,11,0.1);
+    color: #d97706;
+    border-left: 4px solid #f59e0b;
+}
+.slide[data-slide="9"] .range-item.high {
+    background: rgba(239,68,68,0.1);
+    color: #dc2626;
+    border-left: 4px solid #ef4444;
+}
+.slide[data-slide="9"] .tool-info .info-item {
+    margin-bottom: 0.8rem;
+    padding: 0.8rem;
+    background: rgba(248,250,252,0.8);
+    border-radius: 6px;
+    border-left: 3px solid #e2e8f0;
+}
+.slide[data-slide="9"] .tool-info .info-item:last-child {
+    margin-bottom: 0;
+}
+.slide[data-slide="9"] .tool-info .info-item strong {
+    color: #334155;
+    display: inline-block;
+    margin-right: 0.5rem;
+    min-width: 80px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slide[data-slide="9"] .risk-main-categories {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+    .slide[data-slide="9"] .category-card {
+        padding: 1.5rem;
+    }
+    .slide[data-slide="9"] .risk-types-grid,
+    .slide[data-slide="9"] .measurement-tools-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    .slide[data-slide="9"] .risk-type-card,
+    .slide[data-slide="9"] .tool-card {
+        padding: 1.5rem;
+    }
+    .slide[data-slide="9"] .risk-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .slide[data-slide="9"] .risk-badge {
+        align-self: flex-start;
+    }
+}
+
+/* Universal Back Button Styling (applies to all slides) */
 .back-button button {
     background: #6c757d;
     color: white;
@@ -3906,60 +4220,8 @@ em, i {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    font-family: var(--font-primary);
-    font-size: 0.95rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .back-button button:hover {
-    background: #5a6268;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.back-button button:active {
-    transform: translateY(0);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Dark mode support for back buttons */
-/* COMMENTED OUT - DARK MODE DISABLED 
-@media (prefers-color-scheme: dark) {
-    .back-button button {
-        background: #4a5568;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    }
-    
-    .back-button button:hover {
-        background: #2d3748;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    }
-}
-*/
-
-/* Legacy slide-specific styles (keeping for backward compatibility) */
-.slide[data-slide="5"] .back-button,
-.slide[data-slide="7"] .back-button,
-.slide[data-slide="8"] .back-button {
-    margin-bottom: 2rem;
-}
-
-.slide[data-slide="5"] .back-button button,
-.slide[data-slide="7"] .back-button button,
-.slide[data-slide="8"] .back-button button {
-    background: #6c757d;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.slide[data-slide="5"] .back-button button:hover,
-.slide[data-slide="7"] .back-button button:hover,
-.slide[data-slide="8"] .back-button button:hover {
     background: #5a6268;
     transform: translateY(-2px);
 }

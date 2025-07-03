@@ -1,0 +1,167 @@
+<!-- Slide 9: Risk Evaluation Framework -->
+<div class="slide risk-evaluation-slide" data-slide="9">
+    <div class="slide-content">
+        <div class="slide-header">
+            <h1 class="slide-title">Risk Evaluation Framework</h1>
+            <h2 class="slide-subtitle">Debugging Your Portfolio Risk Profile</h2>
+        </div>
+        <div class="content-body">
+            <div class="intro-text">
+                <p class="lead">Risk management in investing is like implementing security protocols – boring but absolutely essential for long-term success.</p>
+            </div>
+            <!-- Main Category Cards (Level 1) -->
+            <div class="risk-main-categories" id="riskMainCategories">
+                <div class="category-card" data-category="risk-types">
+                    <div class="category-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/26a0.svg" alt="Warning" class="emoji-icon">
+                    </div>
+                    <h3>Risk Types</h3>
+                    <div class="category-stats">
+                        <span class="stat">5 Major Risk Categories</span>
+                        <span class="stat">Systematic & Unsystematic</span>
+                    </div>
+                    <button class="explore-btn">Click to Explore →</button>
+                </div>
+                <div class="category-card" data-category="measurement-tools">
+                    <div class="category-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4ca.svg" alt="Chart" class="emoji-icon">
+                    </div>
+                    <h3>Measurement Tools</h3>
+                    <div class="category-stats">
+                        <span class="stat">3 Key Metrics</span>
+                        <span class="stat">Statistical Analysis</span>
+                    </div>
+                    <button class="explore-btn">Click to Explore →</button>
+                </div>
+            </div>
+            <!-- Detailed View (Level 2) -->
+            <div class="risk-detailed-view" id="riskDetailedView" style="display: none;">
+                <div class="back-button">
+                    <button id="backToRiskMain">← Back to Risk Categories</button>
+                </div>
+                <!-- Risk Types Detail -->
+                <div class="detail-content" id="risk-typesDetail" style="display: none;">
+                    <h3>Types of Investment Risk – Common Vulnerabilities</h3>
+                    <div class="risk-types-grid">
+                        <div class="risk-type-card market-risk">
+                            <div class="risk-header">
+                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f30d.svg" alt="Globe" class="emoji-icon">
+                                <h4>Market Risk (Systematic)</h4>
+                                <span class="risk-badge critical">Cannot be diversified</span>
+                            </div>
+                            <p class="risk-analogy">The entire market crashes – like a major cloud provider going down</p>
+                            <div class="risk-info">
+                                <div class="info-item"><strong>Impact:</strong> Affects all investments</div>
+                                <div class="info-item"><strong>Examples:</strong> 2008 financial crisis, COVID-19 market crash</div>
+                                <div class="info-item"><strong>Mitigation:</strong> Asset allocation, time diversification</div>
+                            </div>
+                        </div>
+                        <div class="risk-type-card credit-risk">
+                            <div class="risk-header">
+                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3e2.svg" alt="Building" class="emoji-icon">
+                                <h4>Credit Risk (Default)</h4>
+                                <span class="risk-badge high">Company-specific</span>
+                            </div>
+                            <p class="risk-analogy">Company/issuer defaults – like a major vendor going bankrupt</p>
+                            <div class="risk-info">
+                                <div class="info-item"><strong>Primary Effect:</strong> Debt funds</div>
+                                <div class="info-item"><strong>Examples:</strong> IL&FS crisis, DHFL default</div>
+                                <div class="info-item"><strong>Mitigation:</strong> High-rated papers, diversify issuers</div>
+                            </div>
+                        </div>
+                        <div class="risk-type-card liquidity-risk">
+                            <div class="risk-header">
+                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f512.svg" alt="Lock" class="emoji-icon">
+                                <h4>Liquidity Risk</h4>
+                                <span class="risk-badge medium">Exit constraints</span>
+                            </div>
+                            <p class="risk-analogy">Cannot exit when needed – like being locked into a bad contract</p>
+                            <div class="risk-info">
+                                <div class="info-item"><strong>Affects:</strong> Small-cap funds, some debt funds</div>
+                                <div class="info-item"><strong>Examples:</strong> Franklin Templeton fund closures</div>
+                                <div class="info-item"><strong>Mitigation:</strong> Emergency funds in liquid investments</div>
+                            </div>
+                        </div>
+                        <div class="risk-type-card concentration-risk">
+                            <div class="risk-header">
+                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f95a.svg" alt="Egg" class="emoji-icon">
+                                <h4>Concentration Risk</h4>
+                                <span class="risk-badge medium">Portfolio focus</span>
+                            </div>
+                            <p class="risk-analogy">Too many eggs in one basket – like having only one major client</p>
+                            <div class="risk-info">
+                                <div class="info-item"><strong>Types:</strong> Stock/sector/geographic concentration</div>
+                                <div class="info-item"><strong>Examples:</strong> Only tech stocks, only Indian markets</div>
+                                <div class="info-item"><strong>Mitigation:</strong> Diversify across assets, sectors, regions</div>
+                            </div>
+                        </div>
+                        <div class="risk-type-card interest-rate-risk">
+                            <div class="risk-header">
+                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4c8.svg" alt="Chart" class="emoji-icon">
+                                <h4>Interest Rate Risk</h4>
+                                <span class="risk-badge medium">Bond price impact</span>
+                            </div>
+                            <p class="risk-analogy">Bond prices fall when rates rise – like server costs increasing</p>
+                            <div class="risk-info">
+                                <div class="info-item"><strong>Primary Effect:</strong> Debt funds</div>
+                                <div class="info-item"><strong>Examples:</strong> RBI rate hikes affecting bond NAVs</div>
+                                <div class="info-item"><strong>Mitigation:</strong> Choose appropriate duration</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Measurement Tools Detail -->
+                <div class="detail-content" id="measurement-toolsDetail" style="display: none;">
+                    <h3>Risk Measurement Tools – Your Risk Analytics Dashboard</h3>
+                    <div class="measurement-tools-grid">
+                        <div class="tool-card standard-deviation">
+                            <div class="tool-header">
+                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4ca.svg" alt="Chart" class="emoji-icon">
+                                <h4>Standard Deviation</h4>
+                            </div>
+                            <p class="tool-definition">Measures volatility – like API response time variance</p>
+                            <div class="tool-info">
+                                <div class="range-item low"><strong>Low (&lt; 10%):</strong> Conservative funds</div>
+                                <div class="range-item medium"><strong>Medium (10-20%):</strong> Moderate risk funds</div>
+                                <div class="range-item high"><strong>High (&gt; 20%):</strong> Aggressive funds</div>
+                            </div>
+                        </div>
+                        <div class="tool-card maximum-drawdown">
+                            <div class="tool-header">
+                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4c9.svg" alt="Chart Down" class="emoji-icon">
+                                <h4>Maximum Drawdown</h4>
+                            </div>
+                            <p class="tool-definition">Worst-case scenario loss from peak to trough</p>
+                            <div class="tool-info">
+                                <div class="info-item"><strong>Purpose:</strong> Shows downside risk</div>
+                                <div class="info-item"><strong>Benefit:</strong> Understand worst-case scenarios</div>
+                                <div class="info-item"><strong>Example:</strong> "This fund fell 35% during 2008 crisis"</div>
+                            </div>
+                        </div>
+                        <div class="tool-card value-at-risk">
+                            <div class="tool-header">
+                                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2696.svg" alt="Balance" class="emoji-icon">
+                                <h4>Value at Risk (VaR)</h4>
+                            </div>
+                            <p class="tool-definition">Potential loss with given confidence level</p>
+                            <div class="tool-info">
+                                <div class="info-item"><strong>Example:</strong> "95% confidence monthly loss won't exceed 8%"</div>
+                                <div class="info-item"><strong>Use Case:</strong> Position sizing</div>
+                                <div class="info-item"><strong>Benefit:</strong> Risk budgeting</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-notes">
+        <h3>Speaker Notes:</h3>
+        <ul>
+            <li><strong>Risk Assessment:</strong> Understanding different types of investment risks is crucial for portfolio protection</li>
+            <li><strong>Measurement Tools:</strong> Use quantitative metrics like standard deviation and drawdown to evaluate fund risk</li>
+            <li><strong>Diversification:</strong> Most risks can be mitigated through proper asset allocation and diversification</li>
+            <li><strong>Time Horizon:</strong> Longer investment periods help weather market volatility and systematic risks</li>
+        </ul>
+    </div>
+</div>
