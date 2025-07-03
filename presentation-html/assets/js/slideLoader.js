@@ -362,6 +362,36 @@ class SlideLoader {
                     <li><strong>Holistic evaluation:</strong> Combine quantitative metrics with qualitative factors for complete fund assessment</li>
                 </ul>
             `,
+            9: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Risk evaluation = identify & measure:</strong> Know the types of risk (systematic, credit, liquidity, concentration, interest rate) and how to measure them (standard deviation, drawdown, VaR)</li>
+                    <li><strong>Systematic risk:</strong> Affects all investments and cannot be diversified away</li>
+                    <li><strong>Other risks:</strong> Can be managed with diversification and careful fund selection</li>
+                    <li><strong>Quantitative tools:</strong> Use metrics to gauge volatility and potential losses</li>
+                    <li><strong>Match risk to goals:</strong> Always align risk level with your investment goals and time horizon</li>
+                </ul>
+            `,
+            10: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Tax efficiency = maximize after-tax returns:</strong> Understand capital gains tax, dividend tax, and how to use them to your advantage</li>
+                    <li><strong>Tax-saving investments:</strong> Utilize ELSS, PPF, and other instruments to reduce taxable income</li>
+                    <li><strong>Long-term holding benefits:</strong> Lower tax rates on long-term capital gains; avoid frequent buying/selling</li>
+                    <li><strong>Tax-loss harvesting:</strong> Offset gains with losses to reduce tax liability</li>
+                    <li><strong>Consult a tax advisor:</strong> For personalized strategies and to navigate complex tax regulations</li>
+                </ul>
+            `,
+            11: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Behavioral biases = emotional decision traps:</strong> Be aware of biases like overconfidence, loss aversion, and herd mentality</li>
+                    <li><strong>Systematic investing = bias buffer:</strong> Automate investments (SIPs) to reduce emotional interference</li>
+                    <li><strong>Stay informed, but not overwhelmed:</strong> Filter information to avoid analysis paralysis</li>
+                    <li><strong>Review and adjust:</strong> Regularly check portfolio and strategy; adjust for life changes and goals</li>
+                    <li><strong>Seek professional help:</strong> Consider a financial advisor for objective guidance</li>
+                </ul>
+            `,
             12: `
                 <h3>TL;DR</h3>
                 <ul>
