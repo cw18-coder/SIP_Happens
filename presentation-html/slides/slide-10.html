@@ -57,63 +57,134 @@
                 </div>
             </div>
             <!-- Detailed View (Level 2) -->
-            <div class="performance-detailed-view" id="performanceDetailedView" style="display: none; animation: fadeIn 0.3s;">
+            <div class="detailed-view" id="performanceDetailedView" style="display: none;">
                 <div class="back-button">
                     <button id="backToPerformanceMain">← Back to Performance Examples</button>
                 </div>
                 <!-- Large Cap Detail -->
                 <div class="detail-content" id="large-capDetail" style="display: none;">
                     <h3>Large Cap Fund Example: HDFC Top 100 Fund</h3>
-                    <ul class="performance-list">
-                        <li><strong>Absolute Returns:</strong> 12.8% CAGR vs Nifty 100 at 11.2% CAGR</li>
-                        <li><strong>Alpha:</strong> +1.6% (consistent outperformance)</li>
-                        <li><strong>Beta:</strong> 0.95 (slightly less volatile than market)</li>
-                        <li><strong>Sharpe Ratio:</strong> 0.87 (good risk-adjusted returns)</li>
-                        <li><strong>Standard Deviation:</strong> 16.2% (moderate volatility)</li>
-                        <li><strong>Maximum Drawdown:</strong> -32% (during March 2020 crash)</li>
-                    </ul>
-                    <div class="performance-interpretation">
-                        <strong>Interpretation:</strong> Solid, consistent performer with lower volatility than market. Good choice for conservative equity investors.
+                    <div class="detailed-grid">
+                        <div class="performance-analysis-card">
+                            <h3>Returns Analysis</h3>
+                            <div class="detailed-content">
+                                <p><strong>Absolute Returns:</strong> <span class="metric-value">12.8% CAGR</span></p>
+                                <p><strong>Benchmark:</strong> Nifty 100 at 11.2% CAGR</p>
+                                <p><strong>Alpha:</strong> <span class="metric-value positive">+1.6%</span> (consistent outperformance)</p>
+                            </div>
+                        </div>
+                        <div class="performance-analysis-card">
+                            <h3>Risk Metrics</h3>
+                            <div class="detailed-content">
+                                <p><strong>Beta:</strong> <span class="metric-value">0.95</span> (slightly less volatile than market)</p>
+                                <p><strong>Standard Deviation:</strong> <span class="metric-value">16.2%</span> (moderate volatility)</p>
+                                <p><strong>Maximum Drawdown:</strong> <span class="metric-value negative">-32%</span> (during March 2020 crash)</p>
+                            </div>
+                        </div>
+                        <div class="performance-analysis-card">
+                            <h3>Risk-Adjusted Returns</h3>
+                            <div class="detailed-content">
+                                <p><strong>Sharpe Ratio:</strong> <span class="metric-value">0.87</span> (good risk-adjusted returns)</p>
+                            </div>
+                        </div>
+                        <div class="performance-analysis-card">
+                            <h3>Interpretation</h3>
+                            <div class="detailed-content">
+                                <p>Solid, consistent performer with lower volatility than market. Good choice for conservative equity investors.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Mid Cap Detail -->
                 <div class="detail-content" id="mid-capDetail" style="display: none;">
                     <h3>Mid Cap Fund Example: DSP Midcap Fund</h3>
-                    <ul class="performance-list">
-                        <li><strong>Absolute Returns:</strong> 16.4% CAGR vs Nifty Midcap 150 at 14.8% CAGR</li>
-                        <li><strong>Alpha:</strong> +1.6% (consistent outperformance)</li>
-                        <li><strong>Beta:</strong> 1.12 (more volatile than market)</li>
-                        <li><strong>Sharpe Ratio:</strong> 0.82 (good risk-adjusted returns despite higher volatility)</li>
-                        <li><strong>Standard Deviation:</strong> 22.4% (high volatility)</li>
-                        <li><strong>Maximum Drawdown:</strong> -45% (during March 2020 crash)</li>
-                    </ul>
-                    <div class="performance-interpretation">
-                        <strong>Interpretation:</strong> Higher returns but with significantly higher volatility. Suitable for aggressive investors with long-term horizon.
+                    <div class="detailed-grid">
+                        <div class="performance-analysis-card">
+                            <h3>Returns Analysis</h3>
+                            <div class="detailed-content">
+                                <p><strong>Absolute Returns:</strong> <span class="metric-value">16.4% CAGR</span></p>
+                                <p><strong>Benchmark:</strong> Nifty Midcap 150 at 14.8% CAGR</p>
+                                <p><strong>Alpha:</strong> <span class="metric-value positive">+1.6%</span> (consistent outperformance)</p>
+                            </div>
+                        </div>
+                        <div class="performance-analysis-card">
+                            <h3>Risk Metrics</h3>
+                            <div class="detailed-content">
+                                <p><strong>Beta:</strong> <span class="metric-value">1.12</span> (more volatile than market)</p>
+                                <p><strong>Standard Deviation:</strong> <span class="metric-value">22.4%</span> (high volatility)</p>
+                                <p><strong>Maximum Drawdown:</strong> <span class="metric-value negative">-45%</span> (during March 2020 crash)</p>
+                            </div>
+                        </div>
+                        <div class="performance-analysis-card">
+                            <h3>Risk-Adjusted Returns</h3>
+                            <div class="detailed-content">
+                                <p><strong>Sharpe Ratio:</strong> <span class="metric-value">0.82</span> (good risk-adjusted returns despite higher volatility)</p>
+                            </div>
+                        </div>
+                        <div class="performance-analysis-card">
+                            <h3>Interpretation</h3>
+                            <div class="detailed-content">
+                                <p>Higher returns but with significantly higher volatility. Suitable for aggressive investors with long-term horizon.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Debt Fund Detail -->
                 <div class="detail-content" id="debt-fundDetail" style="display: none;">
                     <h3>Debt Fund Example: ICICI Prudential Corporate Bond Fund</h3>
-                    <ul class="performance-list">
-                        <li><strong>Absolute Returns:</strong> 6.8% CAGR</li>
-                        <li><strong>YTM:</strong> 7.2% (current portfolio yield)</li>
-                        <li><strong>Modified Duration:</strong> 3.2 years</li>
-                        <li><strong>Average Credit Rating:</strong> AA+</li>
-                        <li><strong>Standard Deviation:</strong> 1.8% (low volatility)</li>
-                        <li><strong>Maximum Drawdown:</strong> -2.1% (during rate hike cycle)</li>
-                    </ul>
-                    <div class="performance-interpretation">
-                        <strong>Interpretation:</strong> Stable returns with low volatility. Good for conservative investors seeking steady income.
+                    <div class="detailed-grid">
+                        <div class="performance-analysis-card">
+                            <h3>Returns Analysis</h3>
+                            <div class="detailed-content">
+                                <p><strong>Absolute Returns:</strong> <span class="metric-value">6.8% CAGR</span></p>
+                                <p><strong>YTM:</strong> <span class="metric-value">7.2%</span> (current portfolio yield)</p>
+                            </div>
+                        </div>
+                        <div class="performance-analysis-card">
+                            <h3>Risk Metrics</h3>
+                            <div class="detailed-content">
+                                <p><strong>Modified Duration:</strong> <span class="metric-value">3.2 years</span></p>
+                                <p><strong>Standard Deviation:</strong> <span class="metric-value">1.8%</span> (low volatility)</p>
+                                <p><strong>Maximum Drawdown:</strong> <span class="metric-value negative">-2.1%</span> (during rate hike cycle)</p>
+                            </div>
+                        </div>
+                        <div class="performance-analysis-card">
+                            <h3>Credit Quality</h3>
+                            <div class="detailed-content">
+                                <p><strong>Average Credit Rating:</strong> <span class="metric-value">AA+</span></p>
+                            </div>
+                        </div>
+                        <div class="performance-analysis-card">
+                            <h3>Interpretation</h3>
+                            <div class="detailed-content">
+                                <p>Stable returns with low volatility. Good for conservative investors seeking steady income.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Key Takeaways Detail -->
                 <div class="detail-content" id="key-takeawaysDetail" style="display: none;">
                     <h3>Key Takeaways from Real Data</h3>
-                    <ul class="performance-list">
-                        <li>Understanding these numbers helps you make informed decisions rather than chasing last year's winners.</li>
-                        <li>Notice how mid-cap funds offer higher returns but with much higher volatility – this is the risk-return tradeoff in action.</li>
-                        <li>Always weigh risk vs return, not just past performance.</li>
-                    </ul>
+                    <div class="detailed-grid">
+                        <div class="performance-analysis-card">
+                            <h3>Informed Decisions</h3>
+                            <div class="detailed-content">
+                                <p>Understanding these numbers helps you make informed decisions rather than chasing last year's winners.</p>
+                            </div>
+                        </div>
+                        <div class="performance-analysis-card">
+                            <h3>Risk-Return Tradeoff</h3>
+                            <div class="detailed-content">
+                                <p>Notice how mid-cap funds offer higher returns but with much higher volatility – this is the risk-return tradeoff in action.</p>
+                            </div>
+                        </div>
+                        <div class="performance-analysis-card">
+                            <h3>Golden Rule</h3>
+                            <div class="detailed-content">
+                                <p>Always weigh risk vs return, not just past performance.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

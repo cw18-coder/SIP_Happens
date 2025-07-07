@@ -1,271 +1,7 @@
-// Minimal Fund Categories Controller - Direct initialization for slides 5, 6, 7 & 8
+// Minimal Fund Categories Controller - Using Slide 6 Pattern for All Slides
 console.log('fund-categories-simple.js loaded');
 
-// Function to initialize fund categories (slide 7)
-function initFundCategories() {
-    console.log('initFundCategories called');
-    
-    // Simple click handler for the entire document
-    document.addEventListener('click', function(e) {
-        console.log('Global click detected:', e.target.tagName, e.target.className);
-        
-        // Handle Slide 7 - Fund Categories
-        if (e.target.classList.contains('explore-btn')) {
-            console.log('Explore button clicked!');
-            
-            const categoryCard = e.target.closest('.category-card');
-            if (categoryCard) {
-                const category = categoryCard.getAttribute('data-category');
-                console.log('Category:', category);
-                
-                // Hide main categories
-                const mainCategories = document.getElementById('mainCategories');
-                if (mainCategories) {
-                    mainCategories.style.display = 'none';
-                    console.log('Main categories hidden');
-                }
-                
-                // Show detailed view
-                const detailedView = document.getElementById('detailedView');
-                if (detailedView) {
-                    detailedView.style.display = 'block';
-                    console.log('Detailed view shown');
-                }
-                
-                // Hide all detail content first
-                const allDetails = document.querySelectorAll('.detail-content');
-                allDetails.forEach(detail => detail.style.display = 'none');
-                
-                // Show specific category detail
-                const categoryDetail = document.getElementById(category + 'Detail');
-                if (categoryDetail) {
-                    categoryDetail.style.display = 'block';
-                    console.log('Category detail shown:', category);
-                }
-                
-                e.preventDefault();
-            }
-        }
-        
-        // Handle Slide 7 back button
-        if (e.target.id === 'backToMain') {
-            console.log('Back button clicked!');
-            
-            // Hide detailed view
-            const detailedView = document.getElementById('detailedView');
-            if (detailedView) {
-                detailedView.style.display = 'none';
-                console.log('Detailed view hidden');
-            }
-            
-            // Show main categories
-            const mainCategories = document.getElementById('mainCategories');
-            if (mainCategories) {
-                mainCategories.style.display = 'grid';
-                console.log('Main categories shown');
-            }
-            
-            e.preventDefault();
-        }
-        
-        // Handle Slide 5 - Triage Matrix
-        if (e.target.classList.contains('explore-btn-triage')) {
-            console.log('Triage explore button clicked!');
-            
-            const timeCard = e.target.closest('.time-horizon-card');
-            if (timeCard) {
-                const timeframe = timeCard.getAttribute('data-timeframe');
-                console.log('Timeframe:', timeframe);
-                
-                // Hide main triage categories
-                const triageMain = document.getElementById('triageMainCategories');
-                if (triageMain) {
-                    triageMain.style.display = 'none';
-                    console.log('Triage main categories hidden');
-                }
-                
-                // Show detailed view
-                const triageDetailed = document.getElementById('triageDetailedView');
-                if (triageDetailed) {
-                    triageDetailed.style.display = 'block';
-                    console.log('Triage detailed view shown');
-                }
-                
-                // Hide all detail content first
-                const allTriageDetails = document.querySelectorAll('#triageDetailedView .detail-content');
-                allTriageDetails.forEach(detail => detail.style.display = 'none');
-                
-                // Show specific timeframe detail
-                const timeframeDetail = document.getElementById(timeframe + 'Detail');
-                if (timeframeDetail) {
-                    timeframeDetail.style.display = 'block';
-                    console.log('Timeframe detail shown:', timeframe);
-                }
-                
-                e.preventDefault();
-            }
-        }
-        
-        // Handle Slide 5 back button
-        if (e.target.id === 'backToTriageMain') {
-            console.log('Triage back button clicked!');
-            
-            // Hide detailed view
-            const triageDetailed = document.getElementById('triageDetailedView');
-            if (triageDetailed) {
-                triageDetailed.style.display = 'none';
-                console.log('Triage detailed view hidden');
-            }
-            
-            // Show main categories
-            const triageMain = document.getElementById('triageMainCategories');
-            if (triageMain) {
-                triageMain.style.display = 'grid';
-                console.log('Triage main categories shown');
-            }
-            
-            e.preventDefault();
-        }
-        
-        // Handle Slide 6 - The Power of Compounding
-        if (e.target.classList.contains('explore-btn') && e.target.closest('.compounding-card')) {
-            console.log('Compounding explore button clicked!');
-            
-            const topicCard = e.target.closest('.compounding-card');
-            if (topicCard) {
-                const topic = topicCard.getAttribute('data-topic');
-                console.log('Compounding topic:', topic);
-                
-                // Hide main compounding view
-                const compoundingMain = document.getElementById('compoundingMainView');
-                if (compoundingMain) {
-                    compoundingMain.style.display = 'none';
-                    console.log('Compounding main view hidden');
-                }
-                
-                // Show detailed view
-                const compoundingDetailed = document.getElementById('compoundingDetailedView');
-                if (compoundingDetailed) {
-                    compoundingDetailed.style.display = 'block';
-                    console.log('Compounding detailed view shown');
-                }
-                
-                // Hide all detail content first
-                const allCompoundingDetails = document.querySelectorAll('#compoundingDetailedView .detail-content');
-                allCompoundingDetails.forEach(detail => detail.style.display = 'none');
-                
-                // Show specific topic detail
-                const topicDetail = document.getElementById(topic + 'Detail');
-                if (topicDetail) {
-                    topicDetail.style.display = 'block';
-                    console.log('Compounding topic detail shown:', topic);
-                }
-                
-                e.preventDefault();
-            }
-        }
-        
-        // Handle Slide 6 back button
-        if (e.target.id === 'backToCompoundingMain') {
-            console.log('Compounding back button clicked!');
-            
-            // Hide detailed view
-            const compoundingDetailed = document.getElementById('compoundingDetailedView');
-            if (compoundingDetailed) {
-                compoundingDetailed.style.display = 'none';
-                console.log('Compounding detailed view hidden');
-            }
-            
-            // Show main view
-            const compoundingMain = document.getElementById('compoundingMainView');
-            if (compoundingMain) {
-                compoundingMain.style.display = 'block';
-                console.log('Compounding main view shown');
-            }
-            
-            e.preventDefault();
-        }
-        
-        // Handle Slide 8 - Performance Evaluation Framework
-        if (e.target.classList.contains('explore-btn')) {
-            // Slide 8 logic
-            const categoryCard = e.target.closest('.category-card');
-            if (categoryCard && document.getElementById('performanceMainCategories')) {
-                const category = categoryCard.getAttribute('data-category');
-                // Hide main categories
-                const performanceMain = document.getElementById('performanceMainCategories');
-                if (performanceMain) performanceMain.style.display = 'none';
-                // Show detailed view
-                const performanceDetailed = document.getElementById('performanceDetailedView');
-                if (performanceDetailed) performanceDetailed.style.display = 'block';
-                // Hide all detail content first
-                const allPerformanceDetails = document.querySelectorAll('#performanceDetailedView .detail-content');
-                allPerformanceDetails.forEach(detail => detail.style.display = 'none');
-                // Show specific category detail
-                const categoryDetail = document.getElementById(category + 'Detail');
-                if (categoryDetail) categoryDetail.style.display = 'block';
-                e.preventDefault();
-                return;
-            }
-            // Slide 9 logic
-            if (categoryCard && document.getElementById('riskMainCategories')) {
-                const category = categoryCard.getAttribute('data-category');
-                // Hide main categories
-                const riskMain = document.getElementById('riskMainCategories');
-                if (riskMain) riskMain.style.display = 'none';
-                // Show detailed view
-                const riskDetailed = document.getElementById('riskDetailedView');
-                if (riskDetailed) riskDetailed.style.display = '';
-                // Hide all detail content first
-                const allRiskDetails = document.querySelectorAll('#riskDetailedView .detail-content');
-                allRiskDetails.forEach(detail => detail.style.display = 'none');
-                // Show specific category detail
-                const categoryDetail = document.getElementById(category + 'Detail');
-                if (categoryDetail) categoryDetail.style.display = '';
-                e.preventDefault();
-                return;
-            }
-        }
-        // Handle Slide 8 back button
-        if (e.target.id === 'backToPerformanceMain') {
-            console.log('Performance back button clicked!');
-            
-            // Hide detailed view
-            const performanceDetailed = document.getElementById('performanceDetailedView');
-            if (performanceDetailed) {
-                performanceDetailed.style.display = 'none';
-                console.log('Performance detailed view hidden');
-            }
-            
-            // Show main categories
-            const performanceMain = document.getElementById('performanceMainCategories');
-            if (performanceMain) {
-                performanceMain.style.display = 'grid';
-                console.log('Performance main categories shown');
-            }
-            
-            e.preventDefault();
-        }
-        // Handle Slide 9 back button
-        if (e.target.id === 'backToRiskMain') {
-            // Hide detailed view
-            const riskDetailed = document.getElementById('riskDetailedView');
-            if (riskDetailed) riskDetailed.style.display = 'none';
-            // Show main categories
-            const riskMain = document.getElementById('riskMainCategories');
-            if (riskMain) riskMain.style.display = '';
-            // Hide all detail content
-            const allRiskDetails = document.querySelectorAll('#riskDetailedView .detail-content');
-            allRiskDetails.forEach(detail => detail.style.display = 'none');
-            e.preventDefault();
-            return;
-        }
-    });
-    
-    console.log('Fund categories and triage click handlers attached');
-}
-
-// Compounding Slide Interaction (Slide 6)
+// Compounding Slide Interaction (Slide 6) - THE GOLDEN STANDARD
 function initializeCompoundingSlide() {
     const mainView = document.getElementById('compoundingMainView');
     const detailedView = document.getElementById('compoundingDetailedView');
@@ -317,41 +53,289 @@ function initializeCompoundingSlide() {
     }
 }
 
-// === Slide 9: Risk Evaluation Framework (drill-down navigation) ===
-// [REMOVED: Slide 9-specific DOMContentLoaded handler and related code. Slide 9 navigation is now handled by the global click handler for consistency.]
+// === SLIDE-SPECIFIC INITIALIZATION FUNCTIONS (Following Slide 6 Pattern) ===
 
-// Try multiple initialization approaches
-console.log('Attempting initialization...');
-
-// Approach 1: Immediate initialization
-initFundCategories();
-
-// Approach 2: DOM ready fallback
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOM ready fallback triggered');
-        initFundCategories();
+// Slide 5 Initialization (Triage Matrix)
+function initializeSlide5() {
+    const mainView = document.getElementById('triageMainCategories');
+    const detailedView = document.getElementById('triageDetailedView');
+    const backButton = document.getElementById('backToTriageMain');
+    const cards = document.querySelectorAll('.time-horizon-card .explore-btn-triage');
+    
+    if (!mainView || !detailedView || !backButton) return;
+    
+    console.log('Initializing Slide 5 with', cards.length, 'buttons');
+    
+    // Handle explore button clicks
+    cards.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const timeCard = button.closest('.time-horizon-card');
+            if (timeCard) {
+                const timeframe = timeCard.getAttribute('data-timeframe');
+                showTriageDetail(timeframe);
+            }
+        });
     });
-} else {
-    console.log('DOM already ready, initializing immediately');
-    initFundCategories();
+    
+    // Handle back button
+    backButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        showTriageMain();
+    });
+    
+    function showTriageDetail(timeframe) {
+        mainView.style.display = 'none';
+        detailedView.style.display = 'block';
+        
+        // Hide all detail contents
+        const allDetails = document.querySelectorAll('#triageDetailedView .detail-content');
+        allDetails.forEach(detail => detail.style.display = 'none');
+        
+        // Show specific detail
+        const targetDetail = document.getElementById(timeframe + 'Detail');
+        if (targetDetail) targetDetail.style.display = 'block';
+        
+        console.log('Slide 5: Showing detail for', timeframe);
+    }
+    
+    function showTriageMain() {
+        mainView.style.display = 'grid';
+        detailedView.style.display = 'none';
+        console.log('Slide 5: Back to main view');
+    }
 }
 
-// Approach 3: Window load fallback
-window.addEventListener('load', function() {
-    console.log('Window load fallback triggered');
-    initFundCategories();
-});
+// Slide 7 Initialization (Fund Categories)
+function initializeSlide7() {
+    const mainView = document.getElementById('mainCategories');
+    const detailedView = document.getElementById('detailedView');
+    const backButton = document.getElementById('backToMain');
+    const cards = document.querySelectorAll('.category-card .explore-btn');
+    
+    if (!mainView || !detailedView || !backButton) return;
+    
+    console.log('Initializing Slide 7 with', cards.length, 'buttons');
+    
+    // Handle explore button clicks
+    cards.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const categoryCard = button.closest('.category-card');
+            if (categoryCard) {
+                const category = categoryCard.getAttribute('data-category');
+                showCategoryDetail(category);
+            }
+        });
+    });
+    
+    // Handle back button
+    backButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        showCategoryMain();
+    });
+    
+    function showCategoryDetail(category) {
+        mainView.style.display = 'none';
+        detailedView.style.display = 'block';
+        
+        // Hide all detail contents
+        const allDetails = document.querySelectorAll('#detailedView .detail-content');
+        allDetails.forEach(detail => detail.style.display = 'none');
+        
+        // Show specific detail
+        const targetDetail = document.getElementById(category + 'Detail');
+        if (targetDetail) targetDetail.style.display = 'block';
+        
+        console.log('Slide 7: Showing detail for', category);
+    }
+    
+    function showCategoryMain() {
+        mainView.style.display = 'grid';
+        detailedView.style.display = 'none';
+        console.log('Slide 7: Back to main view');
+    }
+}
+
+// Slide 8 Initialization (Performance Evaluation Framework)
+function initializeSlide8() {
+    const mainView = document.getElementById('performanceMainCategories');
+    const detailedView = document.getElementById('performanceDetailedView');
+    const backButton = document.getElementById('backToPerformanceMain');
+    const cards = document.querySelectorAll('#performanceMainCategories .category-card .explore-btn');
+    
+    if (!mainView || !detailedView || !backButton) return;
+    
+    console.log('Initializing Slide 8 with', cards.length, 'buttons');
+    
+    // Handle explore button clicks
+    cards.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const categoryCard = button.closest('.category-card');
+            if (categoryCard) {
+                const category = categoryCard.getAttribute('data-category');
+                showPerformanceDetail(category);
+            }
+        });
+    });
+    
+    // Handle back button
+    backButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        showPerformanceMain();
+    });
+    
+    function showPerformanceDetail(category) {
+        mainView.style.display = 'none';
+        detailedView.style.display = 'block';
+        
+        // Hide all detail contents
+        const allDetails = document.querySelectorAll('#performanceDetailedView .detail-content');
+        allDetails.forEach(detail => detail.style.display = 'none');
+        
+        // Show specific detail
+        const targetDetail = document.getElementById(category + 'Detail');
+        if (targetDetail) targetDetail.style.display = 'block';
+        
+        console.log('Slide 8: Showing detail for', category);
+    }
+    
+    function showPerformanceMain() {
+        mainView.style.display = 'grid';
+        detailedView.style.display = 'none';
+        console.log('Slide 8: Back to main view');
+    }
+}
+
+// Slide 9 Initialization (Risk Evaluation Framework)
+function initializeSlide9() {
+    const mainView = document.getElementById('riskMainCategories');
+    const detailedView = document.getElementById('riskDetailedView');
+    const backButton = document.getElementById('backToRiskMain');
+    const cards = document.querySelectorAll('#riskMainCategories .category-card .explore-btn');
+    
+    if (!mainView || !detailedView || !backButton) return;
+    
+    console.log('Initializing Slide 9 with', cards.length, 'buttons');
+    
+    // Handle explore button clicks
+    cards.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const categoryCard = button.closest('.category-card');
+            if (categoryCard) {
+                const category = categoryCard.getAttribute('data-category');
+                showRiskDetail(category);
+            }
+        });
+    });
+    
+    // Handle back button
+    backButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        showRiskMain();
+    });
+    
+    function showRiskDetail(category) {
+        mainView.style.display = 'none';
+        detailedView.style.display = 'block';
+        
+        // Hide all detail contents
+        const allDetails = document.querySelectorAll('#riskDetailedView .detail-content');
+        allDetails.forEach(detail => detail.style.display = 'none');
+        
+        // Show specific detail
+        const targetDetail = document.getElementById(category + 'Detail');
+        if (targetDetail) targetDetail.style.display = 'block';
+        
+        console.log('Slide 9: Showing detail for', category);
+    }
+    
+    function showRiskMain() {
+        mainView.style.display = 'grid';
+        detailedView.style.display = 'none';
+        console.log('Slide 9: Back to main view');
+    }
+}
+
+// Slide 10 Initialization (Real Performance Data Examples)
+function initializeSlide10() {
+    const mainView = document.getElementById('performanceMainCategories');
+    const detailedView = document.getElementById('performanceDetailedView');
+    const backButton = document.getElementById('backToPerformanceMain');
+    const cards = document.querySelectorAll('#performanceMainCategories .category-card .explore-btn');
+    
+    if (!mainView || !detailedView || !backButton) return;
+    
+    console.log('Initializing Slide 10 with', cards.length, 'buttons');
+    
+    // Handle explore button clicks
+    cards.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const categoryCard = button.closest('.category-card');
+            if (categoryCard) {
+                const category = categoryCard.getAttribute('data-category');
+                showSlide10Detail(category);
+            }
+        });
+    });
+    
+    // Handle back button
+    backButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSlide10Main();
+    });
+    
+    function showSlide10Detail(category) {
+        mainView.style.display = 'none';
+        detailedView.style.display = 'block';
+        
+        // Hide all detail contents
+        const allDetails = document.querySelectorAll('#performanceDetailedView .detail-content');
+        allDetails.forEach(detail => detail.style.display = 'none');
+        
+        // Show specific detail
+        const targetDetail = document.getElementById(category + 'Detail');
+        if (targetDetail) targetDetail.style.display = 'block';
+        
+        console.log('Slide 10: Showing detail for', category);
+    }
+    
+    function showSlide10Main() {
+        mainView.style.display = 'grid';
+        detailedView.style.display = 'none';
+        console.log('Slide 10: Back to main view');
+    }
+}
 
 // Initialize when the page loads
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing all slides using slide 6 pattern');
+    // Initialize slide 6 (the golden standard)
     initializeCompoundingSlide();
+    // Initialize all other slides using the same pattern
+    initializeSlide5();
+    initializeSlide7();
+    initializeSlide8();
+    initializeSlide9();
+    initializeSlide10();
 });
 
-// Also initialize when navigating to slide 6
-document.addEventListener('slideChanged', function(e) {
-    if (e.detail && e.detail.slideNumber === 6) {
-        initializeCompoundingSlide();
+// Also initialize when navigating to specific slides
+document.addEventListener('slideChange', function(e) {
+    if (e.detail && e.detail.slideNumber) {
+        const slideNum = e.detail.slideNumber;
+        console.log('Slide changed to:', slideNum);
+        
+        // Re-initialize the specific slide that was loaded
+        if (slideNum === 5) initializeSlide5();
+        if (slideNum === 6) initializeCompoundingSlide();
+        if (slideNum === 7) initializeSlide7();
+        if (slideNum === 8) initializeSlide8();
+        if (slideNum === 9) initializeSlide9();
+        if (slideNum === 10) initializeSlide10();
     }
 });
 

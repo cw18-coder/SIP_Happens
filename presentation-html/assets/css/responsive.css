@@ -795,3 +795,67 @@
   }
 */
 }
+
+/* === SLIDE 10 RESPONSIVE STYLES === */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+    /* Slide 10 Performance Analysis Cards */
+    .slide[data-slide="10"] .performance-analysis-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .slide[data-slide="10"] .performance-analysis-card {
+        padding: 1rem;
+    }
+    
+    .slide[data-slide="10"] .detailed-view {
+        padding: 1rem;
+    }
+    
+    .slide[data-slide="10"] .detailed-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .slide[data-slide="10"] .detailed-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .slide[data-slide="10"] .detailed-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    /* Slide 10 Performance Analysis Cards */
+    .slide[data-slide="10"] .performance-analysis-card {
+        padding: 0.8rem;
+    }
+    
+    .slide[data-slide="10"] .performance-analysis-card h3 {
+        font-size: 1rem;
+    }
+    
+    .slide[data-slide="10"] .performance-analysis-card p {
+        font-size: 0.85rem;
+    }
+    
+    .slide[data-slide="10"] .detailed-content {
+        padding: 0.8rem;
+    }
+    
+    .slide[data-slide="10"] .detailed-content h3 {
+        font-size: 1rem;
+    }
+    
+    .slide[data-slide="10"] .detailed-content p {
+        font-size: 0.8rem;
+    }
+    
+    .slide[data-slide="10"] .detailed-content .metric-value {
+        font-size: 1.5rem;
+    }
+}
