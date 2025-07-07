@@ -106,3 +106,13 @@ public
 # Temporary folders
 tmp/
 temp/
+
+# Sphinx documentation build output and related files
+/docs/_build/
+/docs/.doctrees/
+/docs/.DS_Store
+/docs/Thumbs.db
+/docs/.pytest_cache/
+/docs/.mypy_cache/
+/docs/_static/
+/docs/_templates/
