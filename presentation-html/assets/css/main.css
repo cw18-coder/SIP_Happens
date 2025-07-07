@@ -3808,54 +3808,54 @@ em, i {
 
 /* Color coding for different fund types */
 
-/* Large Cap Fund - Blue theme */
+/* Large Cap Fund - Green theme */
 .slide[data-slide="10"] #large-capDetail .performance-analysis-card::before {
-    background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+    background: linear-gradient(90deg, #059669, #10b981, #34d399);
 }
 
 .slide[data-slide="10"] #large-capDetail .performance-analysis-card:nth-child(1) {
-    background: linear-gradient(135deg, #dbeafe 0%, #ffffff 100%);
-    border-color: #3b82f6;
+    background: linear-gradient(135deg, #d1fae5 0%, #ffffff 100%);
+    border-color: #10b981;
 }
 
 .slide[data-slide="10"] #large-capDetail .performance-analysis-card:nth-child(2) {
-    background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%);
-    border-color: #0284c7;
+    background: linear-gradient(135deg, #dcfce7 0%, #ffffff 100%);
+    border-color: #22c55e;
 }
 
 .slide[data-slide="10"] #large-capDetail .performance-analysis-card:nth-child(3) {
-    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
-    border-color: #0ea5e9;
+    background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+    border-color: #34d399;
 }
 
 .slide[data-slide="10"] #large-capDetail .performance-analysis-card:nth-child(4) {
-    background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
-    border-color: #10b981;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+    border-color: #4ade80;
 }
 
-/* Mid Cap Fund - Orange theme */
+/* Mid Cap Fund - Green theme */
 .slide[data-slide="10"] #mid-capDetail .performance-analysis-card::before {
-    background: linear-gradient(90deg, #ea580c, #f97316, #fb923c);
+    background: linear-gradient(90deg, #059669, #10b981, #34d399);
 }
 
 .slide[data-slide="10"] #mid-capDetail .performance-analysis-card:nth-child(1) {
-    background: linear-gradient(135deg, #fed7aa 0%, #ffffff 100%);
-    border-color: #f97316;
+    background: linear-gradient(135deg, #d1fae5 0%, #ffffff 100%);
+    border-color: #10b981;
 }
 
 .slide[data-slide="10"] #mid-capDetail .performance-analysis-card:nth-child(2) {
-    background: linear-gradient(135deg, #ffedd5 0%, #ffffff 100%);
-    border-color: #fb923c;
+    background: linear-gradient(135deg, #dcfce7 0%, #ffffff 100%);
+    border-color: #22c55e;
 }
 
 .slide[data-slide="10"] #mid-capDetail .performance-analysis-card:nth-child(3) {
-    background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%);
-    border-color: #fdba74;
+    background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+    border-color: #34d399;
 }
 
 .slide[data-slide="10"] #mid-capDetail .performance-analysis-card:nth-child(4) {
-    background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
-    border-color: #10b981;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+    border-color: #4ade80;
 }
 
 /* Debt Fund - Green theme */
@@ -3883,19 +3883,26 @@ em, i {
     border-color: #4ade80;
 }
 
-/* Key Takeaways - Purple theme */
+/* Key Takeaways - Green theme */
 .slide[data-slide="10"] #key-takeawaysDetail .performance-analysis-card::before {
-    background: linear-gradient(90deg, #7c3aed, #8b5cf6, #a78bfa);
+    background: linear-gradient(90deg, #059669, #10b981, #34d399);
 }
 
 .slide[data-slide="10"] #key-takeawaysDetail .performance-analysis-card {
-    background: linear-gradient(135deg, #ede9fe 0%, #ffffff 100%);
-    border-color: #8b5cf6;
+    background: linear-gradient(135deg, #d1fae5 0%, #ffffff 100%);
+    border-color: #10b981;
+}
+
+/* Special layout for Key Takeaways - 1x3 grid */
+.slide[data-slide="10"] #key-takeawaysDetail .detailed-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
 /* Responsive design for slide 10 */
 @media (max-width: 768px) {
-    .slide[data-slide="10"] .detailed-grid {
+    .slide[data-slide="10"] .detailed-grid,
+    .slide[data-slide="10"] #key-takeawaysDetail .detailed-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
