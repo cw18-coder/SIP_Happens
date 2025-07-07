@@ -1,111 +1,194 @@
 <!-- Slide 13: Common Investment Mistakes -->
 <div class="slide common-mistakes-slide" data-slide="13">
-  <div class="slide-content">
-    <div class="slide-header">
-      <h1 class="slide-title"><span class="emoji-icon" role="img" aria-label="bug">🐞</span> Common Investment Mistakes</h1>
-      <h2 class="slide-subtitle">The Production Bugs of Mutual Fund Investing</h2>
+    <div class="slide-content">
+        <div class="slide-header">
+            <h1 class="slide-title">Common Investment Mistakes</h1>
+            <h2 class="slide-subtitle">The Production Bugs of Mutual Fund Investing</h2>
+        </div>
+        <div class="content-body">
+            <div class="intro-text">
+                <p class="lead">Learning from common mistakes is like learning from post-mortems – it prevents you from repeating expensive errors.</p>
+            </div>
+            
+            <!-- Main Category Cards (Level 1) -->
+            <div class="mistakes-main-categories" id="mistakesMainCategories">
+                <div class="category-card" data-category="classic-antipatterns">
+                    <div class="category-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f41e.svg" alt="Bug" class="emoji-icon">
+                    </div>
+                    <h3>Classic Anti-Patterns</h3>
+                    <div class="category-stats">
+                        <span class="stat">Chasing Winners, Market Timing</span>
+                        <span class="stat">Over-Diversification, Emotions</span>
+                    </div>
+                    <button class="explore-btn">Click to Explore →</button>
+                </div>
+                <div class="category-card" data-category="tech-professional-mistakes">
+                    <div class="category-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f468-200d-1f4bb.svg" alt="Tech Professional" class="emoji-icon">
+                    </div>
+                    <h3>Tech Professional Specific</h3>
+                    <div class="category-stats">
+                        <span class="stat">Analysis Paralysis, DIY Syndrome</span>
+                        <span class="stat">FOMO Betting, Overconfidence</span>
+                    </div>
+                    <button class="explore-btn">Click to Explore →</button>
+                </div>
+                <div class="category-card" data-category="recovery-playbook">
+                    <div class="category-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f6e0.svg" alt="Tools" class="emoji-icon">
+                    </div>
+                    <h3>Recovery Playbook</h3>
+                    <div class="category-stats">
+                        <span class="stat">Systematic Recovery Process</span>
+                    </div>
+                    <button class="explore-btn">Click to Explore →</button>
+                </div>
+            </div>
+
+            <!-- Detailed View (Level 2) -->
+            <div class="mistakes-detailed-view" id="mistakesDetailedView" style="display: none;">
+                <div class="back-button">
+                    <button id="backToMistakesMain">← Back to Mistakes Overview</button>
+                </div>
+                
+                <!-- Classic Anti-Patterns Detail -->
+                <div class="detailed-view" id="classicAntipatternsDetail" data-section="classic-antipatterns" style="display: none;">
+                    <div class="card">
+                        <h3>🎯 Chasing Last Year's Winners</h3>
+                        <div class="tech-analogy"><em>Like adopting every new JavaScript framework</em></div>
+                        <div class="highlight">
+                            <strong>The Mistake:</strong> Investing in funds that performed well recently<br>
+                            <strong>Why It Fails:</strong> Past performance doesn't predict future results<br>
+                            <strong>Real Example:</strong> Technology funds in 2000 vs 2001<br>
+                            <strong>Solution:</strong> Focus on consistent long-term performers
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>⏰ Market Timing Attempts</h3>
+                        <div class="tech-analogy"><em>Like trying to predict when servers will crash</em></div>
+                        <div class="highlight">
+                            <strong>The Mistake:</strong> Trying to buy low and sell high<br>
+                            <strong>Why It Fails:</strong> Even professionals can't time markets consistently<br>
+                            <strong>Real Example:</strong> Investors who sold during March 2020 crash<br>
+                            <strong>Solution:</strong> Stay invested, use SIPs for averaging
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>📊 Over-Diversification</h3>
+                        <div class="tech-analogy"><em>Like using 20 different databases for one application</em></div>
+                        <div class="highlight">
+                            <strong>The Mistake:</strong> Buying too many funds "to be safe"<br>
+                            <strong>Why It Fails:</strong> Dilutes returns, increases complexity, higher costs<br>
+                            <strong>Real Example:</strong> Holding 15 large-cap funds<br>
+                            <strong>Solution:</strong> 8-10 funds across categories is sufficient
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>😰 Emotional Decision Making</h3>
+                        <div class="tech-analogy"><em>Like pushing to production when frustrated</em></div>
+                        <div class="highlight">
+                            <strong>The Mistake:</strong> Buying when euphoric, selling when scared<br>
+                            <strong>Why It Fails:</strong> Emotions are terrible investment advisors<br>
+                            <strong>Real Example:</strong> Selling everything during COVID crash<br>
+                            <strong>Solution:</strong> Automate decisions through SIPs, stick to plan
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Professional Mistakes Detail -->
+                <div class="detailed-view" id="techProfessionalMistakesDetail" data-section="tech-professional-mistakes" style="display: none;">
+                    <div class="card">
+                        <h3>🔄 Analysis Paralysis</h3>
+                        <div class="tech-analogy"><em>Like spending 6 months choosing between React and Vue</em></div>
+                        <div class="highlight">
+                            <strong>The Mistake:</strong> Researching endlessly without starting<br>
+                            <strong>Why It Fails:</strong> Time in market beats timing the market<br>
+                            <strong>Real Example:</strong> Waiting for "perfect" fund while missing years of growth<br>
+                            <strong>Solution:</strong> Start with simple, broad-based funds; optimize later
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>🛠️ DIY Everything Syndrome</h3>
+                        <div class="tech-analogy"><em>Like building your own operating system</em></div>
+                        <div class="highlight">
+                            <strong>The Mistake:</strong> Thinking you can beat professional fund managers<br>
+                            <strong>Why It Fails:</strong> Investing is a full-time job requiring specialized skills<br>
+                            <strong>Real Example:</strong> Direct stock picking vs mutual fund returns<br>
+                            <strong>Solution:</strong> Leverage professional expertise, focus on asset allocation
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>🎢 FOMO-Driven Sector Betting</h3>
+                        <div class="tech-analogy"><em>Like rewriting everything in the latest trendy language</em></div>
+                        <div class="highlight">
+                            <strong>The Mistake:</strong> Putting large amounts in trending sectors<br>
+                            <strong>Why It Fails:</strong> Sectors go in and out of favor unpredictably<br>
+                            <strong>Real Example:</strong> IT funds during dot-com boom, pharma funds during COVID<br>
+                            <strong>Solution:</strong> Limit sectoral exposure to 5-10% of portfolio
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>💰 Overconfidence from Tech Salary Growth</h3>
+                        <div class="tech-analogy"><em>Like assuming infinite scaling without considering bottlenecks</em></div>
+                        <div class="highlight">
+                            <strong>The Mistake:</strong> Taking excessive risk assuming income will always grow<br>
+                            <strong>Why It Fails:</strong> Tech careers have volatility too (layoffs, market downturns)<br>
+                            <strong>Real Example:</strong> 2022 tech layoffs affecting investment plans<br>
+                            <strong>Solution:</strong> Build emergency funds, diversify income sources
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>💸 Ignoring Tax Implications</h3>
+                        <div class="tech-analogy"><em>Like optimizing performance while ignoring memory leaks</em></div>
+                        <div class="highlight">
+                            <strong>The Mistake:</strong> Not considering tax efficiency in investment decisions<br>
+                            <strong>Why It Fails:</strong> Taxes can significantly impact net returns<br>
+                            <strong>Real Example:</strong> Frequent switching between funds triggering capital gains<br>
+                            <strong>Solution:</strong> Use tax-efficient strategies, hold for long term
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recovery Playbook Detail -->
+                <div class="detailed-view" id="recoveryPlaybookDetail" data-section="recovery-playbook" style="display: none;">
+                    <div class="card recovery-playbook">
+                        <h3>🚫 Don't Panic Sell</h3>
+                        <div class="tech-analogy"><em>Like not rolling back immediately after finding a bug</em></div>
+                        <div class="highlight">
+                            Take a step back and assess the situation calmly before making drastic changes to your portfolio.
+                        </div>
+                    </div>
+                    <div class="card recovery-playbook">
+                        <h3>🔍 Assess Damage</h3>
+                        <div class="tech-analogy"><em>Like conducting a proper post-mortem analysis</em></div>
+                        <div class="highlight">
+                            Understand what went wrong, why it happened, and what factors contributed to the mistake.
+                        </div>
+                    </div>
+                    <div class="card recovery-playbook">
+                        <h3>🎯 Course Correct</h3>
+                        <div class="tech-analogy"><em>Like implementing gradual fixes rather than complete rewrites</em></div>
+                        <div class="highlight">
+                            Make gradual, systematic adjustments to your strategy rather than drastic changes.
+                        </div>
+                    </div>
+                    <div class="card recovery-playbook">
+                        <h3>📝 Learn and Document</h3>
+                        <div class="tech-analogy"><em>Like updating your investment "runbook"</em></div>
+                        <div class="highlight">
+                            Document lessons learned and update your investment process to prevent similar mistakes.
+                        </div>
+                    </div>
+                    <div class="card recovery-playbook">
+                        <h3>🤖 Automate Future</h3>
+                        <div class="tech-analogy"><em>Like setting up automated testing to prevent regression</em></div>
+                        <div class="highlight">
+                            Set up systematic processes (like SIPs) to reduce the chance of emotional decision-making.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="content-body">
-      <div class="intro-text">
-        <p class="lead">Learning from common mistakes is like learning from post-mortems – it prevents you from repeating expensive errors.</p>
-      </div>
-      <div class="mistake-cards-grid">
-        <div class="category-card">
-          <div class="category-icon"><span class="emoji-icon" role="img" aria-label="bug">🐞</span></div>
-          <h3>The Classic Anti-Patterns</h3>
-          <ol>
-            <li><b>Chasing Last Year's Winners</b>
-              <ul>
-                <li>The Mistake: Investing in funds that performed well recently</li>
-                <li>Why It Fails: Past performance doesn't predict future results</li>
-                <li>Real Example: Technology funds in 2000 vs 2001</li>
-                <li>Solution: Focus on consistent long-term performers</li>
-              </ul>
-            </li>
-            <li><b>Market Timing Attempts</b>
-              <ul>
-                <li>The Mistake: Trying to buy low and sell high</li>
-                <li>Why It Fails: Even professionals can't time markets consistently</li>
-                <li>Real Example: Investors who sold during March 2020 crash</li>
-                <li>Solution: Stay invested, use SIPs for averaging</li>
-              </ul>
-            </li>
-            <li><b>Over-Diversification</b>
-              <ul>
-                <li>The Mistake: Buying too many funds "to be safe"</li>
-                <li>Why It Fails: Dilutes returns, increases complexity, higher costs</li>
-                <li>Real Example: Holding 15 large-cap funds</li>
-                <li>Solution: 8-10 funds across categories is sufficient</li>
-              </ul>
-            </li>
-            <li><b>Emotional Decision Making</b>
-              <ul>
-                <li>The Mistake: Buying when euphoric, selling when scared</li>
-                <li>Why It Fails: Emotions are terrible investment advisors</li>
-                <li>Real Example: Selling everything during COVID crash</li>
-                <li>Solution: Automate decisions through SIPs, stick to plan</li>
-              </ul>
-            </li>
-          </ol>
-        </div>
-        <div class="category-card">
-          <div class="category-icon"><span class="emoji-icon" role="img" aria-label="technologist">👨‍💻</span></div>
-          <h3>Tech Professional Specific Mistakes</h3>
-          <ol>
-            <li><b>Analysis Paralysis</b>
-              <ul>
-                <li>The Mistake: Researching endlessly without starting</li>
-                <li>Why It Fails: Time in market beats timing the market</li>
-                <li>Real Example: Waiting for "perfect" fund while missing years of growth</li>
-                <li>Solution: Start with simple, broad-based funds; optimize later</li>
-              </ul>
-            </li>
-            <li><b>DIY Everything Syndrome</b>
-              <ul>
-                <li>The Mistake: Thinking you can beat professional fund managers</li>
-                <li>Why It Fails: Investing is a full-time job requiring specialized skills</li>
-                <li>Real Example: Direct stock picking vs mutual fund returns</li>
-                <li>Solution: Leverage professional expertise, focus on asset allocation</li>
-              </ul>
-            </li>
-            <li><b>FOMO-Driven Sector Betting</b>
-              <ul>
-                <li>The Mistake: Putting large amounts in trending sectors</li>
-                <li>Why It Fails: Sectors go in and out of favor unpredictably</li>
-                <li>Real Example: IT funds during dot-com boom, pharma funds during COVID</li>
-                <li>Solution: Limit sectoral exposure to 5-10% of portfolio</li>
-              </ul>
-            </li>
-            <li><b>Overconfidence from Tech Salary Growth</b>
-              <ul>
-                <li>The Mistake: Taking excessive risk assuming income will always grow</li>
-                <li>Why It Fails: Tech careers have volatility too (layoffs, market downturns)</li>
-                <li>Real Example: 2022 tech layoffs affecting investment plans</li>
-                <li>Solution: Build emergency funds, diversify income sources</li>
-              </ul>
-            </li>
-            <li><b>Ignoring Tax Implications</b>
-              <ul>
-                <li>The Mistake: Not considering tax efficiency in investment decisions</li>
-                <li>Why It Fails: Taxes can significantly impact net returns</li>
-                <li>Real Example: Frequent switching between funds triggering capital gains</li>
-                <li>Solution: Use tax-efficient strategies, hold for long term</li>
-              </ul>
-            </li>
-          </ol>
-        </div>
-        <div class="category-card">
-          <div class="category-icon"><span class="emoji-icon" role="img" aria-label="toolbox">🛠️</span></div>
-          <h3>The Recovery Playbook</h3>
-          <ul>
-            <li><b>Don't Panic Sell:</b> Like not rolling back immediately after finding a bug</li>
-            <li><b>Assess Damage:</b> Understand what went wrong and why</li>
-            <li><b>Course Correct:</b> Make gradual adjustments, not drastic changes</li>
-            <li><b>Learn and Document:</b> Update your investment "runbook"</li>
-            <li><b>Automate Future:</b> Set up systems to prevent repeat mistakes</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
