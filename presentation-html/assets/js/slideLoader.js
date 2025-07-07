@@ -375,21 +375,21 @@ class SlideLoader {
             10: `
                 <h3>TL;DR</h3>
                 <ul>
-                    <li><strong>Tax efficiency = maximize after-tax returns:</strong> Understand capital gains tax, dividend tax, and how to use them to your advantage</li>
-                    <li><strong>Tax-saving investments:</strong> Utilize ELSS, PPF, and other instruments to reduce taxable income</li>
-                    <li><strong>Long-term holding benefits:</strong> Lower tax rates on long-term capital gains; avoid frequent buying/selling</li>
-                    <li><strong>Tax-loss harvesting:</strong> Offset gains with losses to reduce tax liability</li>
-                    <li><strong>Consult a tax advisor:</strong> For personalized strategies and to navigate complex tax regulations</li>
+                    <li><strong>Real performance examples:</strong> HDFC Top 100 (12.8% CAGR, low volatility), DSP Midcap (16.4% CAGR, high volatility), ICICI Corporate Bond (6.8% CAGR, stable)</li>
+                    <li><strong>Risk-return tradeoff in action:</strong> Mid-cap funds offer higher returns (16.4%) but with much higher volatility (22.4% std dev vs 16.2% for large cap)</li>
+                    <li><strong>Alpha and beta matter:</strong> Both large-cap and mid-cap examples show positive alpha (+1.6%) indicating consistent outperformance</li>
+                    <li><strong>Drawdown awareness:</strong> Mid-cap funds can fall 45% vs 32% for large-cap during market crashes - plan accordingly</li>
+                    <li><strong>Numbers over narratives:</strong> Use actual performance data and metrics rather than chasing last year's winners or market stories</li>
                 </ul>
             `,
             11: `
                 <h3>TL;DR</h3>
                 <ul>
-                    <li><strong>Behavioral biases = emotional decision traps:</strong> Be aware of biases like overconfidence, loss aversion, and herd mentality</li>
-                    <li><strong>Systematic investing = bias buffer:</strong> Automate investments (SIPs) to reduce emotional interference</li>
-                    <li><strong>Stay informed, but not overwhelmed:</strong> Filter information to avoid analysis paralysis</li>
-                    <li><strong>Review and adjust:</strong> Regularly check portfolio and strategy; adjust for life changes and goals</li>
-                    <li><strong>Seek professional help:</strong> Consider a financial advisor for objective guidance</li>
+                    <li><strong>Fund selection = code review process:</strong> Apply systematic due diligence like reviewing code before deployment</li>
+                    <li><strong>Technical due diligence:</strong> Check 3-5 year track record, fund manager tenure, optimal AUM size (₹500-5000Cr), low expense ratios</li>
+                    <li><strong>Architecture review:</strong> Analyze investment philosophy, portfolio composition, risk metrics, and consistency with stated objectives</li>
+                    <li><strong>3-step implementation:</strong> Screen by category and basic metrics, analyze shortlisted funds in detail, select 1-2 per category</li>
+                    <li><strong>Red flags to avoid:</strong> Erratic performance, frequent manager changes, extreme AUM size, high costs vs category average</li>
                 </ul>
             `,
             12: `
@@ -400,6 +400,17 @@ class SlideLoader {
                     <li><strong>Four key practices:</strong> Start early & small, increase annually, don't stop during downturns, use goal-based allocation</li>
                     <li><strong>SIP vs Lumpsum:</strong> SIP wins for most investors due to behavioral advantages and risk mitigation</li>
                     <li><strong>Compound amplification:</strong> Time multiplies small consistent investments into exponential wealth growth</li>
+                </ul>
+            `,
+            13: `
+                <h3>TL;DR</h3>
+                <ul>
+                    <li><strong>Analysis Paralysis:</strong> Spending too much time researching without starting (like choosing between React and Vue for 6 months)</li>
+                    <li><strong>DIY Everything Syndrome:</strong> Thinking you can beat professional fund managers (like building your own OS)</li>
+                    <li><strong>FOMO-Driven Sector Betting:</strong> Putting large amounts in trending sectors (like rewriting everything in the latest trendy language)</li>
+                    <li><strong>Overconfidence from Tech Salary Growth:</strong> Taking excessive risk assuming income will always grow</li>
+                    <li><strong>Ignoring Tax Implications:</strong> Not considering tax efficiency (like optimizing performance while ignoring memory leaks)</li>
+                    <li><strong>Recovery Playbook:</strong> Don't panic sell, assess damage, course correct gradually, learn and document, automate future decisions</li>
                 </ul>
             `,
             20: `
