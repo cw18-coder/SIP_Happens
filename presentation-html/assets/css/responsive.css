@@ -1043,18 +1043,18 @@
 
 /* === SLIDE 12 RESPONSIVE STYLES === */
 
-/* Desktop and large screens - 2x3 grid layout (5 cards in 2 rows) */
+/* Desktop and large screens - 1x2 grid layout (2 cards in 1 row) */
 .slide[data-slide="12"] .sip-main-categories {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-xl);
     margin: var(--space-2xl) 0;
-    max-width: 1200px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Ensure consistent card sizing for 2x3 layout */
+/* Ensure consistent card sizing for 1x2 layout */
 .slide[data-slide="12"] .sip-main-categories .category-card {
     min-height: 280px;
     display: flex;
@@ -1067,7 +1067,7 @@
     padding: var(--space-2xl);
 }
 
-/* Large tablets (769px-1024px) - 2x2 grid plus 1 */
+/* Large tablets (769px-1024px) - keep 1x2 layout */
 @media (max-width: 1024px) and (min-width: 769px) {
     .slide[data-slide="12"] .sip-main-categories {
         grid-template-columns: repeat(2, 1fr);
@@ -1099,12 +1099,23 @@
         padding: var(--space-xl);
     }
     
-    .slide[data-slide="12"] .sip-list {
-        gap: var(--space-md);
+    /* SIP Section responsive adjustments */
+    .slide[data-slide="12"] .sip-section {
+        padding: var(--space-lg);
+        margin-bottom: var(--space-xl);
     }
     
-    .slide[data-slide="12"] .sip-list li {
-        padding: var(--space-lg);
+    .slide[data-slide="12"] .sip-section h4 {
+        font-size: 1.1rem;
+    }
+    
+    .slide[data-slide="12"] .practical-example {
+        padding: var(--space-md);
+    }
+    
+    .slide[data-slide="12"] .example-list li {
+        padding: 6px 10px;
+        font-size: 0.85rem;
     }
 }
 

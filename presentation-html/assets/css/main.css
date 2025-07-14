@@ -4620,6 +4620,103 @@ em, i {
     }
 }
 
+/* === SLIDE 12: SIP SECTION AND PRACTICAL EXAMPLE STYLING === */
+
+/* SIP Section styling for organized content */
+.slide[data-slide="12"] .sip-section {
+    margin-bottom: var(--space-2xl);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    padding: var(--space-xl);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    transition: all 0.3s ease;
+}
+
+.slide[data-slide="12"] .sip-section:hover {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(59, 130, 246, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.slide[data-slide="12"] .sip-section h4 {
+    color: #1e40af;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Practical example styling */
+.slide[data-slide="12"] .practical-example {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-radius: 8px;
+    padding: var(--space-lg);
+    margin-top: var(--space-lg);
+    border-left: 4px solid #10b981;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide[data-slide="12"] .practical-example::before {
+    content: '💡';
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.5rem;
+    opacity: 0.6;
+}
+
+.slide[data-slide="12"] .practical-example h5 {
+    color: #065f46;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.slide[data-slide="12"] .example-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slide[data-slide="12"] .example-list li {
+    background: white;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #374151;
+    border-left: 3px solid #10b981;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.slide[data-slide="12"] .example-list li:hover {
+    background: #f0fdf4;
+    transform: translateX(4px);
+}
+
+.slide[data-slide="12"] .example-list li::before {
+    content: '→';
+    color: #10b981;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.slide[data-slide="12"] .example-list li strong {
+    color: #065f46;
+    font-weight: 700;
+}
+
 @media (max-width: 480px) {
     .slide[data-slide="12"] #sipDetailedView {
         padding: var(--space-lg);
