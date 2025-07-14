@@ -940,3 +940,91 @@
         font-size: 1.5rem;
     }
 }
+
+/* === SLIDE 11 RESPONSIVE STYLES === */
+
+/* Desktop and large screens - 2x2 grid layout (3 cards + empty space like slide 10) */
+.slide[data-slide="11"] .fund-selection-main-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensure consistent card sizing */
+.slide[data-slide="11"] .fund-selection-main-categories .category-card {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Detailed view styling */
+.slide[data-slide="11"] .fund-selection-detailed-view {
+    padding: var(--space-2xl);
+}
+
+/* Tablet and below - stack vertically */
+@media (max-width: 768px) {
+    .slide[data-slide="11"] .fund-selection-main-categories {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: var(--space-lg);
+        margin: var(--space-xl) 0;
+    }
+    
+    .slide[data-slide="11"] .fund-selection-main-categories .category-card {
+        min-height: 220px;
+        padding: var(--space-lg);
+    }
+    
+    /* Detailed view responsive adjustments */
+    .slide[data-slide="11"] .fund-selection-detailed-view {
+        padding: var(--space-xl);
+    }
+    
+    .slide[data-slide="11"] .checklist-list {
+        gap: var(--space-md);
+    }
+    
+    .slide[data-slide="11"] .checklist-list li {
+        padding: var(--space-lg);
+    }
+}
+
+/* Mobile - optimized for small screens */
+@media (max-width: 480px) {
+    .slide[data-slide="11"] .fund-selection-main-categories {
+        gap: var(--space-md);
+        margin: var(--space-lg) 0;
+        max-width: 400px;
+    }
+    
+    .slide[data-slide="11"] .fund-selection-main-categories .category-card {
+        min-height: 200px;
+        padding: var(--space-md);
+    }
+    
+    .slide[data-slide="11"] .fund-selection-detailed-view {
+        padding: var(--space-lg);
+    }
+    
+    .slide[data-slide="11"] .checklist-list li {
+        padding: var(--space-md);
+    }
+    
+    .slide[data-slide="11"] .detail-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .slide[data-slide="11"] .checklist-list li strong {
+        font-size: 0.95rem;
+    }
+    
+    .slide[data-slide="11"] .checklist-list li div {
+        font-size: 0.85rem;
+    }
+}
