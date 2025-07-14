@@ -422,6 +422,74 @@ function initializeSlide12() {
     }
 }
 
+// Slide 13 Initialization (Common Investment Mistakes)
+function initializeSlide13() {
+    const mainView = document.getElementById('mistakesMainCategories');
+    const detailedView = document.getElementById('mistakesDetailedView');
+    const backButton = document.getElementById('backToMistakesMain');
+    const cards = document.querySelectorAll('#mistakesMainCategories .category-card .explore-btn');
+
+    if (!mainView || !detailedView || !backButton) {
+        console.log('Slide 13 elements not found, skipping initialization');
+        return;
+    }
+
+    console.log('Initializing Slide 13 with', cards.length, 'buttons');
+
+    // Add click event listeners to explore buttons
+    cards.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const card = this.closest('.category-card');
+            const category = card.getAttribute('data-category');
+            if (category) {
+                showSlide13Detail(category);
+            }
+        });
+    });
+
+    // Add click event listener to back button
+    if (backButton) {
+        backButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            showSlide13Main();
+        });
+    }
+
+    function showSlide13Detail(category) {
+        mainView.style.display = 'none';
+        detailedView.style.display = 'block';
+        
+        // Hide all detail views
+        const allDetails = document.querySelectorAll('#mistakesDetailedView .detailed-view');
+        allDetails.forEach(detail => detail.style.display = 'none');
+        
+        // Show the selected detail - convert hyphenated category to camelCase ID
+        let targetId;
+        if (category === 'classic-antipatterns') {
+            targetId = 'classicAntipatternsDetail';
+        } else if (category === 'tech-professional-mistakes') {
+            targetId = 'techProfessionalMistakesDetail';
+        } else if (category === 'recovery-playbook') {
+            targetId = 'recoveryPlaybookDetail';
+        }
+        
+        const targetDetail = document.getElementById(targetId);
+        if (targetDetail) {
+            targetDetail.style.display = 'block';
+            console.log('Slide 13: Showing detail for', category, 'with ID', targetId);
+        } else {
+            console.error('Slide 13: Could not find detail element with ID:', targetId);
+        }
+    }
+    
+    function showSlide13Main() {
+        mainView.style.display = 'grid';
+        detailedView.style.display = 'none';
+        console.log('Slide 13: Back to main view');
+    }
+}
+
 // Initialize when the page loads
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing all slides using slide 6 pattern');
@@ -435,6 +503,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSlide10();
     initializeSlide11();
     initializeSlide12();
+    initializeSlide13();
 });
 
 // Also initialize when navigating to specific slides
@@ -452,6 +521,7 @@ document.addEventListener('slideChange', function(e) {
         if (slideNum === 10) initializeSlide10();
         if (slideNum === 11) initializeSlide11();
         if (slideNum === 12) initializeSlide12();
+        if (slideNum === 13) initializeSlide13();
     }
 });
 

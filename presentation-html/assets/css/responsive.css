@@ -1148,3 +1148,117 @@
         font-size: 0.85rem;
     }
 }
+
+/* === SLIDE 13 RESPONSIVE STYLES === */
+
+/* Desktop and large screens - 1x3 horizontal layout (3 cards in 1 row) */
+.slide[data-slide="13"] .mistakes-main-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensure consistent card sizing for 1x3 layout */
+.slide[data-slide="13"] .mistakes-main-categories .category-card {
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Detailed view styling */
+.slide[data-slide="13"] .mistakes-detailed-view {
+    padding: var(--space-2xl);
+}
+
+/* Large tablets (769px-1024px) - 2x2 grid (first 3 cards fill grid) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .slide[data-slide="13"] .mistakes-main-categories {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+        gap: var(--space-lg);
+    }
+    
+    .slide[data-slide="13"] .mistakes-main-categories .category-card {
+        min-height: 260px;
+    }
+}
+
+/* Tablet and below - single column */
+@media (max-width: 768px) {
+    .slide[data-slide="13"] .mistakes-main-categories {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: var(--space-lg);
+        margin: var(--space-xl) 0;
+    }
+    
+    .slide[data-slide="13"] .mistakes-main-categories .category-card {
+        min-height: 220px;
+        padding: var(--space-lg);
+    }
+    
+    /* Detailed view responsive adjustments */
+    .slide[data-slide="13"] .mistakes-detailed-view {
+        padding: var(--space-xl);
+    }
+    
+    .slide[data-slide="13"] .detailed-view .card {
+        padding: var(--space-lg);
+        margin-bottom: var(--space-md);
+    }
+    
+    .slide[data-slide="13"] .detailed-view .card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .slide[data-slide="13"] .tech-analogy {
+        padding: var(--space-sm) var(--space-md);
+        font-size: 0.85rem;
+    }
+    
+    .slide[data-slide="13"] .highlight {
+        padding: var(--space-sm);
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile - optimized for small screens */
+@media (max-width: 480px) {
+    .slide[data-slide="13"] .mistakes-main-categories {
+        gap: var(--space-md);
+        margin: var(--space-lg) 0;
+        max-width: 400px;
+    }
+    
+    .slide[data-slide="13"] .mistakes-main-categories .category-card {
+        min-height: 200px;
+        padding: var(--space-md);
+    }
+    
+    .slide[data-slide="13"] .mistakes-detailed-view {
+        padding: var(--space-lg);
+    }
+    
+    .slide[data-slide="13"] .detailed-view .card {
+        padding: var(--space-md);
+    }
+    
+    .slide[data-slide="13"] .detailed-view .card h3 {
+        font-size: 1rem;
+    }
+    
+    .slide[data-slide="13"] .tech-analogy {
+        padding: var(--space-xs) var(--space-sm);
+        font-size: 0.8rem;
+    }
+    
+    .slide[data-slide="13"] .highlight {
+        padding: var(--space-xs);
+        font-size: 0.85rem;
+    }
+}

@@ -1821,7 +1821,7 @@ em, i {
 }
 
 /* Grid Layouts for Interactive Cards */
-.fund-main-categories, .triage-main-categories, .performance-main-categories, .fund-selection-main-categories, .sip-main-categories {
+.fund-main-categories, .triage-main-categories, .performance-main-categories, .fund-selection-main-categories, .sip-main-categories, .mistakes-main-categories {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-xl);
@@ -4731,6 +4731,262 @@ em, i {
     }
     
     .slide[data-slide="12"] .sip-list li {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== SLIDE 13: COMMON INVESTMENT MISTAKES - DETAILED VIEW STYLING ===== */
+
+/* Main category layout for 3 cards */
+.slide[data-slide="13"] .mistakes-main-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Main detailed view container */
+.slide[data-slide="13"] #mistakesDetailedView {
+    background: linear-gradient(135deg, #fef7f0 0%, #fed7aa 100%);
+    border-radius: 16px;
+    padding: var(--space-2xl);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid #fed7aa;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle animated background */
+.slide[data-slide="13"] #mistakesDetailedView::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(251, 146, 60, 0.03) 0%, transparent 70%);
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Back button styling */
+.slide[data-slide="13"] .back-button {
+    margin-bottom: var(--space-xl);
+    position: relative;
+    z-index: 2;
+}
+
+.slide[data-slide="13"] .back-button button {
+    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.slide[data-slide="13"] .back-button button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(234, 88, 12, 0.4);
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+/* Detail content sections */
+.slide[data-slide="13"] .detailed-view {
+    position: relative;
+    z-index: 2;
+}
+
+.slide[data-slide="13"] .detailed-view h3 {
+    color: #c2410c;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: var(--space-xl);
+    text-align: center;
+    position: relative;
+    padding-bottom: 16px;
+}
+
+.slide[data-slide="13"] .detailed-view h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #ea580c, #f59e0b);
+    border-radius: 2px;
+}
+
+/* Card styling for mistake details */
+.slide[data-slide="13"] .detailed-view .card {
+    background: white;
+    padding: var(--space-xl);
+    border-radius: 12px;
+    border-left: 4px solid #ea580c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: var(--space-lg);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.slide[data-slide="13"] .detailed-view .card:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-left-color: #dc2626;
+}
+
+.slide[data-slide="13"] .detailed-view .card h3 {
+    color: #c2410c;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    text-align: left;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(234, 88, 12, 0.2);
+}
+
+.slide[data-slide="13"] .detailed-view .card h3::after {
+    display: none;
+}
+
+.slide[data-slide="13"] .tech-analogy {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-radius: 6px;
+    padding: var(--space-sm) var(--space-md);
+    margin-bottom: var(--space-md);
+    font-style: italic;
+    color: #475569;
+    border-left: 3px solid #3b82f6;
+    font-size: 0.9rem;
+}
+
+.slide[data-slide="13"] .highlight {
+    background: rgba(254, 215, 170, 0.3);
+    border-radius: 8px;
+    padding: var(--space-md);
+    line-height: 1.6;
+    color: #374151;
+}
+
+.slide[data-slide="13"] .highlight strong {
+    color: #c2410c;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+/* Recovery playbook specific styling */
+.slide[data-slide="13"] .card.recovery-playbook {
+    border-left-color: #10b981;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.slide[data-slide="13"] .card.recovery-playbook:hover {
+    border-left-color: #059669;
+}
+
+.slide[data-slide="13"] .card.recovery-playbook h3 {
+    color: #065f46;
+    border-bottom-color: rgba(16, 185, 129, 0.2);
+}
+
+.slide[data-slide="13"] .card.recovery-playbook .highlight {
+    background: rgba(220, 252, 231, 0.6);
+    color: #065f46;
+}
+
+/* Color variations for different cards */
+.slide[data-slide="13"] .detailed-view .card:nth-child(1) { border-left-color: #dc2626; }
+.slide[data-slide="13"] .detailed-view .card:nth-child(2) { border-left-color: #ea580c; }
+.slide[data-slide="13"] .detailed-view .card:nth-child(3) { border-left-color: #f59e0b; }
+.slide[data-slide="13"] .detailed-view .card:nth-child(4) { border-left-color: #8b5cf6; }
+.slide[data-slide="13"] .detailed-view .card:nth-child(5) { border-left-color: #06b6d4; }
+
+/* Responsive design for slide 13 */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .slide[data-slide="13"] .mistakes-main-categories {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+        gap: var(--space-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .slide[data-slide="13"] .mistakes-main-categories {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: var(--space-lg);
+        margin: var(--space-xl) 0;
+    }
+    
+    .slide[data-slide="13"] #mistakesDetailedView {
+        padding: var(--space-xl);
+        min-height: 400px;
+    }
+    
+    .slide[data-slide="13"] .detailed-view h3 {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-lg);
+    }
+    
+    .slide[data-slide="13"] .detailed-view .card {
+        padding: var(--space-lg);
+        margin-bottom: var(--space-md);
+    }
+    
+    .slide[data-slide="13"] .detailed-view .card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .slide[data-slide="13"] .back-button button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide[data-slide="13"] .mistakes-main-categories {
+        gap: var(--space-md);
+        margin: var(--space-lg) 0;
+        max-width: 400px;
+    }
+    
+    .slide[data-slide="13"] #mistakesDetailedView {
+        padding: var(--space-lg);
+    }
+    
+    .slide[data-slide="13"] .detailed-view h3 {
+        font-size: 1.3rem;
+    }
+    
+    .slide[data-slide="13"] .detailed-view .card {
+        padding: var(--space-md);
+    }
+    
+    .slide[data-slide="13"] .detailed-view .card h3 {
+        font-size: 1rem;
+    }
+    
+    .slide[data-slide="13"] .tech-analogy {
+        padding: var(--space-xs) var(--space-sm);
+        font-size: 0.85rem;
+    }
+    
+    .slide[data-slide="13"] .highlight {
+        padding: var(--space-sm);
         font-size: 0.9rem;
     }
 }
