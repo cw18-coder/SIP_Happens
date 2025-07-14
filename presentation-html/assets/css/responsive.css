@@ -943,20 +943,20 @@
 
 /* === SLIDE 11 RESPONSIVE STYLES === */
 
-/* Desktop and large screens - 2x2 grid layout (3 cards + empty space like slide 10) */
+/* Desktop and large screens - 1x3 horizontal layout (3 cards in a row) */
 .slide[data-slide="11"] .fund-selection-main-categories {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-xl);
     margin: var(--space-2xl) 0;
-    max-width: 900px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Ensure consistent card sizing */
+/* Ensure consistent card sizing for 1x3 layout */
 .slide[data-slide="11"] .fund-selection-main-categories .category-card {
-    min-height: 300px;
+    min-height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -967,7 +967,19 @@
     padding: var(--space-2xl);
 }
 
-/* Tablet and below - stack vertically */
+/* Tablet and below - 2x2 grid, then single column on smaller tablets */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .slide[data-slide="11"] .fund-selection-main-categories {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+        gap: var(--space-lg);
+    }
+    
+    .slide[data-slide="11"] .fund-selection-main-categories .category-card {
+        min-height: 260px;
+    }
+}
+
 @media (max-width: 768px) {
     .slide[data-slide="11"] .fund-selection-main-categories {
         grid-template-columns: 1fr;
