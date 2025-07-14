@@ -1,0 +1,77 @@
+name: Deploy Mutual Fund Workshop to GitHub Pages
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Make start-presentation.sh executable
+        run: chmod +x presentation-html/start-presentation.sh
+
+      - name: Validate presentation files
+        run: |
+          echo "Checking presentation files..."
+          ls -la presentation-html/
+          echo "Checking main files exist..."
+          test -f presentation-html/index.html && echo "✅ index.html found"
+          test -f presentation-html/assets/css/main.css && echo "✅ main.css found"
+          test -f presentation-html/assets/js/slideLoader.js && echo "✅ slideLoader.js found"
+          test -f presentation-html/config/slides.json && echo "✅ slides.json found"
+          echo "All required files are present!"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload the presentation-html directory
+          path: 'presentation-html'
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Display deployment URL
+        run: |
+          echo "🚀 Presentation deployed successfully!"
+          echo "📋 Access your presentation at: ${{ steps.deployment.outputs.page_url }}"
+          echo ""
+          echo "Features available:"
+          echo "✅ Interactive slide navigation"
+          echo "✅ Slide overview with search"
+          echo "✅ Fullscreen mode"
+          echo "✅ Speaker notes / Key takeaways"
+          echo "✅ Responsive design"
+          echo "✅ Drill-down fund category exploration"
+          echo "✅ All animations and transitions"
