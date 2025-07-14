@@ -413,14 +413,15 @@ class SlideLoader {
                     <li><strong>Recovery Playbook:</strong> Don't panic sell, assess damage, course correct gradually, learn and document, automate future decisions</li>
                 </ul>
             `,
-            20: `
+            14: `
                 <h3>TL;DR</h3>
                 <ul>
-                    <li><strong>Action items:</strong> Download investment app, calculate emergency fund target, set first SIP amount, schedule start date</li>
-                    <li><strong>21-day challenge:</strong> Complete KYC (Day 1), start first SIP (Day 7), set up emergency fund (Day 14), share progress (Day 21)</li>
-                    <li><strong>Ongoing support:</strong> Workshop materials, discussion group, monthly market updates, quarterly portfolio reviews</li>
-                    <li><strong>Key momentum:</strong> Implementation within 7 days prevents analysis paralysis and ensures action</li>
-                    <li><strong>Community aspect:</strong> Accountability through shared progress and group support system</li>
+                    <li><strong>Interactive Q&A session:</strong> Open floor for all investment-related questions and doubts</li>
+                    <li><strong>Common topics:</strong> Fund selection, portfolio optimization, goal-based planning, tax implications</li>
+                    <li><strong>No question too basic:</strong> Create safe space for beginners to ask fundamental questions</li>
+                    <li><strong>Tech-friendly answers:</strong> Use programming analogies and logical frameworks to explain concepts</li>
+                    <li><strong>Action-oriented:</strong> End each answer with practical next steps and implementation guidance</li>
+                    <li><strong>Knowledge sharing:</strong> Encourage participants to share experiences and learn from each other</li>
                 </ul>
             `
         };

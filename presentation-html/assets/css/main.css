@@ -4991,4 +4991,191 @@ em, i {
     }
 }
 
+/* ===== SLIDE 14: Q&A SESSION STYLES ===== */
+
+/* Title Layout Styles (used by slide 1 and slide 14) */
+.title-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+    min-height: 70vh;
+    padding: var(--space-2xl);
+}
+
+.title-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.title-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Workshop Details Styling */
+.workshop-details {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin: var(--space-lg) 0;
+}
+
+.workshop-type,
+.duration,
+.level {
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--tertiary-bg);
+    border-radius: var(--border-radius);
+    color: var(--primary-text);
+}
+
+.separator {
+    color: var(--muted-text);
+    margin: 0 var(--space-xs);
+}
+
+/* Q&A Specific Styles */
+.qa-topics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    margin: var(--space-xl) 0;
+}
+
+.topic-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--tertiary-bg) 100%);
+    border-radius: var(--border-radius-lg);
+    border-left: 4px solid var(--primary-accent);
+    transition: all 0.3s ease;
+}
+
+.topic-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--secondary-accent);
+}
+
+.topic-item .icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.topic-item .topic {
+    font-weight: 600;
+    color: var(--primary-text);
+    font-size: 0.95rem;
+}
+
+/* Tech Icons Styling */
+.tech-icons {
+    display: flex;
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.tech-icons .icon {
+    font-size: 2rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.tech-icons .icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Code Visual Styling */
+.code-visual {
+    background: var(--secondary-bg);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    font-family: var(--font-mono);
+    min-width: 400px;
+}
+
+.code-content {
+    background: var(--primary-bg);
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--primary-text);
+}
+
+.code-line {
+    margin-bottom: var(--space-xs);
+    color: var(--primary-text);
+}
+
+.code-line:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive design for title layout */
+@media (max-width: 768px) {
+    .title-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+        text-align: center;
+        padding: var(--space-xl);
+    }
+    
+    .title-right {
+        order: -1;
+    }
+    
+    .qa-topics {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+    
+    .workshop-details {
+        flex-direction: column;
+        gap: var(--space-sm);
+        text-align: center;
+    }
+    
+    .tech-icons {
+        justify-content: center;
+    }
+    
+    .code-visual {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.75rem;
+    }
+    
+    .topic-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-xs);
+    }
+    
+    .code-content {
+        font-size: 0.8rem;
+        padding: var(--space-md);
+    }
+}
+
 

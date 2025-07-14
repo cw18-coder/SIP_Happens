@@ -1720,6 +1720,11 @@
     padding-left: 1rem;
 }
 
+.code-content .code-line:nth-child(6) {
+    color: var(--success-color);
+    padding-left: 1rem;
+}
+
 .code-content .code-line:last-child {
     color: var(--primary-accent);
     font-weight: 600;
