@@ -796,6 +796,87 @@
 */
 }
 
+/* === SLIDE 9 RESPONSIVE STYLES === */
+
+/* Desktop and large screens - 1x2 horizontal layout */
+.slide[data-slide="9"] .risk-main-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensure consistent card sizing */
+.slide[data-slide="9"] .risk-main-categories .category-card {
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Tablet and below - stack vertically */
+@media (max-width: 768px) {
+    .slide[data-slide="9"] .risk-main-categories {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: var(--space-lg);
+    }
+    
+    .slide[data-slide="9"] .risk-main-categories .category-card {
+        min-height: 200px;
+        padding: var(--space-lg);
+    }
+    
+    /* Detailed view responsive adjustments */
+    .slide[data-slide="9"] .risk-detailed-view {
+        padding: var(--space-lg);
+    }
+    
+    .slide[data-slide="9"] .risk-types-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .slide[data-slide="9"] .measurement-tools-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+}
+
+/* Mobile - optimized for small screens */
+@media (max-width: 480px) {
+    .slide[data-slide="9"] .risk-main-categories {
+        gap: var(--space-md);
+        margin: var(--space-lg) 0;
+    }
+    
+    .slide[data-slide="9"] .risk-main-categories .category-card {
+        min-height: 180px;
+        padding: var(--space-md);
+    }
+    
+    .slide[data-slide="9"] .risk-detailed-view {
+        padding: var(--space-md);
+    }
+    
+    .slide[data-slide="9"] .risk-type-card,
+    .slide[data-slide="9"] .tool-card {
+        padding: var(--space-md);
+    }
+    
+    .slide[data-slide="9"] .detail-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .slide[data-slide="9"] .risk-header h4,
+    .slide[data-slide="9"] .tool-header h4 {
+        font-size: 1rem;
+    }
+}
+
 /* === SLIDE 10 RESPONSIVE STYLES === */
 
 /* Tablet and below */
