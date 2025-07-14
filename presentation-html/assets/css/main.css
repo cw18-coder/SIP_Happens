@@ -3664,6 +3664,305 @@ em, i {
     transform: translateY(-2px);
 }
 
+/* ===== SLIDE 9: RISK EVALUATION FRAMEWORK - DETAILED VIEW STYLING ===== */
+
+.slide[data-slide="9"] .back-button {
+    margin-bottom: 2rem;
+}
+
+.slide[data-slide="9"] .back-button button {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.slide[data-slide="9"] .back-button button:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Main detailed view container */
+.slide[data-slide="9"] #riskDetailedView {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 2px solid #e1e8ed;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Detail content headers */
+.slide[data-slide="9"] .detail-content h3 {
+    color: #1e293b;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.slide[data-slide="9"] .detail-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #e74c3c, #ff6b6b);
+    border-radius: 2px;
+}
+
+/* Risk types grid layout */
+.slide[data-slide="9"] .risk-types-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Risk type cards */
+.slide[data-slide="9"] .risk-type-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fcff 100%);
+    border: 2px solid #e1e8ed;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.slide[data-slide="9"] .risk-type-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c 0%, #ff6b6b 100%);
+    border-radius: 12px 12px 0 0;
+}
+
+.slide[data-slide="9"] .risk-type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(231, 76, 60, 0.15);
+    border-color: #e74c3c;
+}
+
+/* Risk card headers */
+.slide[data-slide="9"] .risk-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.slide[data-slide="9"] .risk-header h4 {
+    color: #1e293b;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+    flex: 1;
+}
+
+.slide[data-slide="9"] .risk-header .emoji-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+/* Risk badges */
+.slide[data-slide="9"] .risk-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.slide[data-slide="9"] .risk-badge.critical {
+    background: rgba(220, 38, 127, 0.1);
+    color: #dc2626;
+}
+
+.slide[data-slide="9"] .risk-badge.medium {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+}
+
+.slide[data-slide="9"] .risk-badge.low {
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+}
+
+/* Risk analogy text */
+.slide[data-slide="9"] .risk-analogy {
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Risk info items */
+.slide[data-slide="9"] .risk-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.slide[data-slide="9"] .info-item {
+    color: #475569;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.slide[data-slide="9"] .info-item strong {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* Measurement tools grid layout */
+.slide[data-slide="9"] .measurement-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Measurement tool cards */
+.slide[data-slide="9"] .tool-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fcff 100%);
+    border: 2px solid #e1e8ed;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.slide[data-slide="9"] .tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6 0%, #64ffda 100%);
+    border-radius: 12px 12px 0 0;
+}
+
+.slide[data-slide="9"] .tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.15);
+    border-color: #3b82f6;
+}
+
+/* Tool card headers */
+.slide[data-slide="9"] .tool-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.slide[data-slide="9"] .tool-header h4 {
+    color: #1e293b;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.slide[data-slide="9"] .tool-header .emoji-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+/* Tool definition */
+.slide[data-slide="9"] .tool-definition {
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Tool info items */
+.slide[data-slide="9"] .tool-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.slide[data-slide="9"] .tool-info .info-item {
+    color: #475569;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.slide[data-slide="9"] .tool-info .info-item strong {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* Range items for standard deviation */
+.slide[data-slide="9"] .range-item {
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.slide[data-slide="9"] .range-item.low {
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+    border-left: 3px solid #16a34a;
+}
+
+.slide[data-slide="9"] .range-item.medium {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+    border-left: 3px solid #d97706;
+}
+
+.slide[data-slide="9"] .range-item.high {
+    background: rgba(220, 38, 127, 0.1);
+    color: #dc2626;
+    border-left: 3px solid #dc2626;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .slide[data-slide="9"] .risk-types-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .slide[data-slide="9"] .measurement-tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .slide[data-slide="9"] #riskDetailedView {
+        padding: 1rem;
+    }
+    
+    .slide[data-slide="9"] .risk-type-card,
+    .slide[data-slide="9"] .tool-card {
+        padding: 1rem;
+    }
+}
+
 /* ===== SLIDE 10: REAL PERFORMANCE DATA EXAMPLES - BACK BUTTON STYLING ===== */
 
 .slide[data-slide="10"] .back-button {
