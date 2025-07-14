@@ -3,7 +3,7 @@
     "title": "Mutual Fund Workshop",
     "subtitle": "Decoding the Matrix: A Tech Professional's Guide to MF Investing",
     "author": "Workshop Presenter",
-    "totalSlides": 25
+    "totalSlides": 14
   },
   "slides": [
     {
@@ -120,101 +120,12 @@
     },
     {
       "id": 14,
-      "title": "Building Your Investment Architecture",
-      "subtitle": "Portfolio Construction: The Microservices Approach",
-      "type": "architecture",
-      "template": "architecture.html",
-      "description": "Strategic approach to building a diversified investment portfolio"
-    },
-    {
-      "id": 15,
-      "title": "Age-Based Investment Strategy",
-      "subtitle": "Lifecycle Management: From Startup to Enterprise",
-      "type": "lifecycle",
-      "template": "lifecycle.html",
-      "description": "Adapting investment strategy based on life stage and age"
-    },
-    {
-      "id": 16,
-      "title": "Emergency Fund Strategy",
-      "subtitle": "Your Financial Disaster Recovery Plan",
-      "type": "strategy",
-      "template": "strategy.html",
-      "description": "Building and maintaining an emergency fund strategy"
-    },
-    {
-      "id": 17,
-      "title": "Tax Optimization Strategies",
-      "subtitle": "Legal Hacks for Better Returns",
-      "type": "optimization",
-      "template": "optimization.html",
-      "file": "slide-17.html",
-      "description": "Tax-efficient investment strategies and optimization techniques"
-    },
-    {
-      "id": 18,
-      "title": "Monitoring and Rebalancing",
-      "subtitle": "Your Investment DevOps Pipeline",
-      "type": "monitoring",
-      "template": "monitoring.html",
-      "description": "Ongoing portfolio monitoring and rebalancing strategies"
-    },
-    {
-      "id": 19,
-      "title": "Action Items",
-      "subtitle": "Your Investment Deployment Plan - From Workshop to Wealth",
-      "type": "action",
-      "template": "action.html",
-      "description": "Concrete next steps to implement your investment strategy"
-    },
-    {
-      "id": 20,
-      "title": "Advanced Strategies",
-      "subtitle": "Level Up: Advanced Investment Techniques",
-      "type": "advanced",
-      "template": "advanced.html",
-      "description": "Advanced investment strategies for experienced investors"
-    },
-    {
-      "id": 21,
-      "title": "Q&A Session",
-      "subtitle": "Debug Session: Your Investment Queries",
+      "title": "Questions & Answers",
+      "subtitle": "Let's Debug Your Investment Queries",
       "type": "qa",
       "template": "qa.html",
-      "description": "Interactive question and answer session"
-    },
-    {
-      "id": 22,
-      "title": "Resources and Tools",
-      "subtitle": "Your Investment Learning Stack",
-      "type": "resources",
-      "template": "resources.html",
-      "description": "Recommended tools and resources for continued learning"
-    },
-    {
-      "id": 23,
-      "title": "Closing Thoughts",
-      "subtitle": "The Final Commit: Your Wealth Creation Journey Begins",
-      "type": "closing",
-      "template": "closing.html",
-      "description": "Final thoughts and inspiration for your investment journey"
-    },
-    {
-      "id": 24,
-      "title": "Thank You & Stay Connected",
-      "subtitle": "May Your Investments Compile Without Errors and Your Returns Always Be Positive!",
-      "type": "thank-you",
-      "template": "thank-you.html",
-      "file": "slide-24.html",
-      "description": "Thank you slide with contact information and final message"
-    },
-    {
-      "id": 25,
-      "title": "Appendix: Investment Strategy Analogies",
-      "subtitle": "Cricket, Bollywood & Hollywood Investment Analogies",
-      "type": "appendix",
-      "template": "appendix.html",
-      "description": "Additional analogy slides moved to appendix for reference: Cricket team building, Bollywood directors, and Hollywood strategies"
+      "file": "slide-14.html",
+      "description": "Interactive Q&A session for all investment-related questions and doubts"
     }
   ]
 }

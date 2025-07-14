@@ -68,18 +68,7 @@ class NavigationController {
             { number: 11, title: "Fund Selection Checklist", subtitle: "Code Review Process for Mutual Funds" },
             { number: 12, title: "The SIP Strategy", subtitle: "DevOps of Investing" },
             { number: 13, title: "Common Investment Mistakes", subtitle: "Production Bugs" },
-            { number: 14, title: "Building Your Investment Architecture", subtitle: "Microservices Approach" },
-            { number: 15, title: "Age-Based Investment Strategy", subtitle: "Lifecycle Management" },
-            { number: 16, title: "Emergency Fund Strategy", subtitle: "Disaster Recovery Plan" },
-            { number: 17, title: "Tax Optimization Strategies", subtitle: "Legal Performance Hacks" },
-            { number: 18, title: "Monitoring and Rebalancing", subtitle: "DevOps Pipeline" },
-            { number: 19, title: "Action Items", subtitle: "Deployment Plan" },
-            { number: 20, title: "Advanced Strategies", subtitle: "Level Up Techniques" },
-            { number: 21, title: "Q&A Session", subtitle: "Debug Session" },
-            { number: 22, title: "Resources and Tools", subtitle: "Learning Stack" },
-            { number: 23, title: "Closing Thoughts", subtitle: "Final Commit" },
-            { number: 24, title: "Thank You & Stay Connected", subtitle: "Stay Connected" },
-            { number: 25, title: "Appendix: Investment Strategy Analogies", subtitle: "Cricket, Bollywood & Hollywood" }
+            { number: 14, title: "Let's Debug Your Investment Queries", subtitle: "Q&A" },
         ];
         
         return slides.map(slide => `
