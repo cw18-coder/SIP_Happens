@@ -1040,3 +1040,100 @@
         font-size: 0.85rem;
     }
 }
+
+/* === SLIDE 12 RESPONSIVE STYLES === */
+
+/* Desktop and large screens - 2x3 grid layout (5 cards in 2 rows) */
+.slide[data-slide="12"] .sip-main-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensure consistent card sizing for 2x3 layout */
+.slide[data-slide="12"] .sip-main-categories .category-card {
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Detailed view styling */
+.slide[data-slide="12"] .sip-detailed-view {
+    padding: var(--space-2xl);
+}
+
+/* Large tablets (769px-1024px) - 2x2 grid plus 1 */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .slide[data-slide="12"] .sip-main-categories {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+        gap: var(--space-lg);
+    }
+    
+    .slide[data-slide="12"] .sip-main-categories .category-card {
+        min-height: 260px;
+    }
+}
+
+/* Tablet and below - single column */
+@media (max-width: 768px) {
+    .slide[data-slide="12"] .sip-main-categories {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: var(--space-lg);
+        margin: var(--space-xl) 0;
+    }
+    
+    .slide[data-slide="12"] .sip-main-categories .category-card {
+        min-height: 220px;
+        padding: var(--space-lg);
+    }
+    
+    /* Detailed view responsive adjustments */
+    .slide[data-slide="12"] .sip-detailed-view {
+        padding: var(--space-xl);
+    }
+    
+    .slide[data-slide="12"] .sip-list {
+        gap: var(--space-md);
+    }
+    
+    .slide[data-slide="12"] .sip-list li {
+        padding: var(--space-lg);
+    }
+}
+
+/* Mobile - optimized for small screens */
+@media (max-width: 480px) {
+    .slide[data-slide="12"] .sip-main-categories {
+        gap: var(--space-md);
+        margin: var(--space-lg) 0;
+        max-width: 400px;
+    }
+    
+    .slide[data-slide="12"] .sip-main-categories .category-card {
+        min-height: 200px;
+        padding: var(--space-md);
+    }
+    
+    .slide[data-slide="12"] .sip-detailed-view {
+        padding: var(--space-lg);
+    }
+    
+    .slide[data-slide="12"] .sip-list li {
+        padding: var(--space-md);
+    }
+    
+    .slide[data-slide="12"] .detail-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .slide[data-slide="12"] .sip-list li {
+        font-size: 0.85rem;
+    }
+}
